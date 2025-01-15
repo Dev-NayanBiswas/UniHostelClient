@@ -8,6 +8,7 @@ import GoogleLogin from "./GoogleLogin"
 import { useForm } from "react-hook-form"
 import useAuth from "../../Hooks/useAuth"
 import useStudentsCURD from "../../Hooks/Students/useStudentsCURD"
+import HeadingTitle from "../../Components/HeadingTitle/HeadingTitle"
 
 
 function Register(){
@@ -21,7 +22,10 @@ const [inputImage, setInputImage] = useState("")
 const {register, handleSubmit, reset, formState:{errors}} = useForm()
 
 
-
+const headingData = {
+  heading:"Register",
+  desc:"Create your account to access personalized hostel services, manage your stay, and connect with the UniHostel community. Registration is quick, secure, and easy"
+}
 
 async function handleFileChange(e){
   e.preventDefault();
@@ -75,12 +79,10 @@ async function handleRegistration(data){
   return (
     <>
     <DynamicTitle/>
+    <HeadingTitle headingData={headingData}/>
     <div className="flex justify-center items-center h-full w-full">
-      <div className="w-full">
-          <div className="w-9/12 mx-auto">
-            <h1 className="text-5xl font-bold text-center cursor-default text-logo-yellow mb-10">
-              Register
-            </h1>
+      <div className="w-full mt-20">
+          <div className="lg:w-9/12 w-full mx-auto">
             <form onSubmit={handleSubmit(handleRegistration)} className="flex flex-col gap-7">
 
               <div className="flex md:flex-row flex-col gap-7">
@@ -93,7 +95,7 @@ async function handleRegistration(data){
               onChange={handleFileChange} 
                className="defaultInput opacity-0" type="file" placeholder="Choose your Profile Picture" />
               <div onClick={()=>document.querySelector('input[type="file"]').click()} className="absolute top-0 left-0 h-full w-full bg-logo-yellow rounded-lg font-semibold flex justify-center items-center text-white">
-                <p className="uppercase font-heading">Choose an image file</p>
+                <p className="uppercase font-heading text-sm">Choose an image file</p>
               </div>
               </div>
               {errors.image && <p className="text-xs text-red-400">{errors.image.message}</p>}

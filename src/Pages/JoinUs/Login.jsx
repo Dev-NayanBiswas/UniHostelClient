@@ -6,6 +6,14 @@ import { faEye, faEyeSlash } from "@fortawesome/free-regular-svg-icons"
 import GoogleLogin from "./GoogleLogin"
 import useAuth from "../../Hooks/useAuth"
 import { useForm } from "react-hook-form"
+import HeadingTitle from "../../Components/HeadingTitle/HeadingTitle"
+
+
+
+const headingData = {
+  heading:"Login",
+  desc:"Welcome back! Log in to manage your hostel bookings, explore services, and stay connected with your UniHostel account. Your home away from home awaits"
+}
 
 function Login(){
   const location = useLocation();
@@ -33,12 +41,10 @@ function Login(){
   return (
     <>
     <DynamicTitle/>
-    <div className="flex justify-center items-center h-full w-full">
+    <HeadingTitle headingData={headingData}/>
+    <div className="flex justify-center items-center h-full w-full mt-20">
       <div className="w-full">
-          <div className="w-9/12 mx-auto">
-            <h1 className="text-5xl font-bold text-center cursor-default text-logo-yellow mb-10">
-              Log in
-            </h1>
+          <div className="lg:w-9/12 w-full mx-auto">
             <form onSubmit={handleSubmit(handleLogin)} className="flex flex-col gap-7">
 
 

@@ -1,9 +1,7 @@
-// import useAxiosPublic from "../AxiosAPI/useAxiosPublic"
 
 import axios from "axios";
 
 function useStudentsCURD(){
-    // const axiosPublic = useAxiosPublic();
 
     //! POST 
     async function postStudent(data){
