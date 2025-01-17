@@ -6,6 +6,21 @@ import JoinUs from "../Pages/JoinUs/JoinUs";
 import UpComingMeals from "../Pages/Meals/UpComingMeals";
 import Login from "../Pages/JoinUs/Login";
 import Register from "../Pages/JoinUs/Register";
+import Dashboard from "../Pages/Dashboard/Dashboard";
+import StudentContainer from "../Pages/Dashboard/Student/StudentContainer";
+import Admin from "../Pages/Dashboard/Admin/Admin";
+import AdminProfile from "../Pages/Dashboard/Admin/AdminProfile";
+import Users from "../Pages/Dashboard/Admin/Users";
+import AddMeal from "../Pages/Dashboard/Admin/AddMeal";
+import AllMeals from "../Pages/Dashboard/Admin/AllMeals";
+import AllReviews from "../Pages/Dashboard/Admin/AllReviews";
+import UpcomingMeals from "../Pages/Dashboard/Admin/UpcomingMeals";
+import ServeMeals from "../Pages/Dashboard/Admin/ServeMeals";
+import MyProfile from "../Pages/Dashboard/Student/MyProfile";
+import RequestedMeals from "../Pages/Dashboard/Student/RequestedMeals";
+import MyReviews from "../Pages/Dashboard/Student/MyReviews";
+import PaymentHistory from "../Pages/Dashboard/Student/PaymentHistory";
+import MealDetails from "../Pages/Details/MealDetails";
 
 const Routers = createBrowserRouter([
     {
@@ -20,6 +35,10 @@ const Routers = createBrowserRouter([
             {
                 path:"meals",
                 element:<Meals/>
+            },
+            {
+                path:"details/:id",
+                element:<MealDetails/>
             },
             {
                 path:"upcoming",
@@ -39,7 +58,69 @@ const Routers = createBrowserRouter([
                     }
                 ]
             }
-
+        ]
+    },
+    {
+        path:"dashboard",
+        element:<Dashboard/>,
+        children:[
+            {
+                path:"student",
+                element:<StudentContainer/>,
+                children:[
+                    {
+                        index:true,
+                        element:<MyProfile/>
+                    },
+                    {
+                        path:"requestedMeals",
+                        element:<RequestedMeals/>
+                    },
+                    {
+                        path:"myReviews",
+                        element:<MyReviews/>
+                    },
+                    {
+                        path:"transactions",
+                        element:<PaymentHistory/>
+                    },
+                ]
+            },
+            {
+                path:"admin",
+                element:<Admin/>,
+                children:[
+                    {
+                        index:true,
+                        element:<AdminProfile/>
+                    },
+                    {
+                        path:"allUsers",
+                        element:<Users/>
+                    },
+                    {
+                        path:"addMeal",
+                        element:<AddMeal/>
+                    },
+                    {
+                        path:"allMeals",
+                        element:<AllMeals/>
+                    },
+                    {
+                        path:"allReviews",
+                        element:<AllReviews/>
+                    },
+                    {
+                        path:"serve",
+                        element:<ServeMeals/>
+                    },
+                    {
+                        path:"upcomingMeals",
+                        element:<UpcomingMeals/>
+                    },
+                    
+                ]
+            }
         ]
     }
 ])

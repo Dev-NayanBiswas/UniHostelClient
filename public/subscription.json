@@ -1,0 +1,41 @@
+[
+  {
+    "color": " #C0C0C0",
+    "name": "Silver",
+    "description": "Affordable option with basic nutritious meals, perfect for students on a budget.",
+    "price": 50,
+    "mealsPerDay": 3,
+    "menuHighlights": ["Breakfast", "Lunch", "Dinner"],
+    "extras": ["Dessert once a week"],
+    "validity": "1 Month",
+    "badge": "silver"
+  },
+  {
+    "color": " #FFD700",
+    "name": "Gold",
+    "description": "A balanced package offering three healthy meals a day and additional options.",
+    "price": 80,
+    "mealsPerDay": 3,
+    "menuHighlights": ["Breakfast", "Lunch", "Dinner"],
+    "extras": ["Dessert once a week", "Unlimited tea/coffee"],
+    "validity": "1 Month",
+    "badge": "gold"
+  },
+  {
+    "color": "#E5E4E2",
+    "name": "Platinum",
+    "description": "Premium package with gourmet meals, snacks, and exclusive perks for a luxurious experience.",
+    "price": 120,
+    "mealsPerDay": 5,
+    "menuHighlights": [
+      "Breakfast",
+      "Lunch",
+      "Dinner",
+      "Snacks",
+      "Midnight Snack"
+    ],
+    "extras": ["Daily desserts", "Custom meal options", "Room service"],
+    "validity": "1 Month",
+    "badge": "platinum"
+  }
+]

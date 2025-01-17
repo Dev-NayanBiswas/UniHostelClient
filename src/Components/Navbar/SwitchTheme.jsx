@@ -13,9 +13,9 @@ function SwitchTheme() {
 
     useEffect(() => {
         document.documentElement.setAttribute("data-theme", theme);
-        document.querySelector(".navContainer").style.background = theme === "lemonade" ? "#f8fdef" : "#121c22"
-        
+        document.querySelector(".navContainer").style.background = theme === "lemonade" ? "#f8fdef" : "#121c22";
     }, [theme]);
+
 
     return (
         <div className="flex items-center gap-2">

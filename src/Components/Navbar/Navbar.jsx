@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import logo from "../../assets/Logo/UniHostelYellow.png"
-import { faBars, faBed, faBellConcierge} from "@fortawesome/free-solid-svg-icons";
+import { faBars, faBellConcierge} from "@fortawesome/free-solid-svg-icons";
 import SwitchTheme from "./SwitchTheme";
 import { useLocation, useNavigate } from "react-router-dom";
 import useAuth from "../../Hooks/useAuth";
@@ -68,7 +68,7 @@ function Navbar(){
             tabIndex={0}
             role='button'
             className='btn btn-ghost btn-circle avatar'>
-            <div className='w-10 rounded-full ring-2 ring-gray-bg'>
+            <div className='w-10 rounded-full ring-2 ring-logo-yellow'>
               <img
                 alt='Tailwind CSS Navbar component'
                 src={userData?.photoURL}
@@ -79,7 +79,7 @@ function Navbar(){
             tabIndex={0}
             className='menu menu-sm dropdown-content bg-base-100 rounded-md z-[1] mt-3 w-fit p-2 shadow space-y-3'>
             <p className='text-lg text-center w-[150px] py-2 px-8 whitespace-nowrap items-end capitalize text-gray-400 font-button font-semibold'>{userData?.displayName}</p>
-            <button className='text-lg w-[150px] py-2 px-8 whitespace-nowrap items-end bg-gray-bg/65 text-logo-yellow font-button font-semibold'>Dashboard</button>
+            <button onClick={()=>handleNavLink("/dashboard")} className='text-lg w-[150px] py-2 px-8 whitespace-nowrap items-end bg-gray-bg/65 text-logo-yellow font-button font-semibold'>Dashboard</button>
             <button onClick={signOutUser} className='text-lg w-[150px] py-2 px-8 whitespace-nowrap items-end bg-red-500/85 text-white font-button font-semibold'>Signout</button>
           </section>
           </div>

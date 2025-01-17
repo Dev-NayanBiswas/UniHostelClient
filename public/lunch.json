@@ -1,0 +1,57 @@
+[
+      {
+        "id": 1,
+        "title": "Grilled Chicken Caesar Salad",
+        "category": "Lunch",
+        "image": "https://example.com/images/grilled-chicken-caesar-salad.jpg",
+        "ingredients": ["Grilled Chicken", "Romaine Lettuce", "Caesar Dressing", "Croutons", "Parmesan Cheese"],
+        "description": "A fresh and hearty Grilled Chicken Caesar Salad featuring tender, perfectly grilled chicken breast atop crisp romaine lettuce. Tossed with creamy Caesar dressing, crunchy garlic croutons, and a generous sprinkle of shaved Parmesan cheese, this dish is both nutritious and satisfying. Served with a lemon wedge for a zesty finish, it's a classic favorite for a light yet filling lunch.",
+        "price": 8.99
+      },
+      {
+        "id": 2,
+        "title": "Spaghetti Bolognese",
+        "category": "Lunch",
+        "image": "https://example.com/images/spaghetti-bolognese.jpg",
+        "ingredients": ["Spaghetti", "Ground Beef", "Tomato Sauce", "Garlic", "Basil", "Parmesan Cheese"],
+        "description": "Enjoy the rich and comforting flavors of our Spaghetti Bolognese, made with al dente pasta coated in a robust tomato sauce. The sauce is slow-cooked with ground beef, aromatic garlic, and fresh basil to create a hearty and flavorful dish. Finished with a sprinkle of Parmesan cheese, this classic Italian favorite is sure to satisfy your lunchtime cravings.",
+        "price": 9.99
+      },
+      {
+        "id": 3,
+        "title": "Vegetable Stir-Fry with Rice",
+        "category": "Lunch",
+        "image": "https://example.com/images/vegetable-stir-fry-rice.jpg",
+        "ingredients": ["Rice", "Bell Peppers", "Carrots", "Broccoli", "Soy Sauce", "Ginger"],
+        "description": "Our Vegetable Stir-Fry with Rice is a vibrant and healthy lunch option, packed with colorful vegetables like bell peppers, carrots, and broccoli. Cooked in a savory soy and ginger sauce, the vegetables retain their crunch and natural sweetness. Served over a bed of steamed rice, this dish is both nourishing and delicious, perfect for vegetarians and vegans.",
+        "price": 7.49
+      },
+      {
+        "id": 4,
+        "title": "Beef Burger with Fries",
+        "category": "Lunch",
+        "image": "https://example.com/images/beef-burger-fries.jpg",
+        "ingredients": ["Beef Patty", "Brioche Bun", "Lettuce", "Tomato", "Cheese", "Fries"],
+        "description": "Savor the ultimate comfort food with our Beef Burger and Fries. A juicy, seasoned beef patty is grilled to perfection and served on a soft brioche bun, layered with fresh lettuce, ripe tomatoes, and melted cheese. Paired with a side of crispy golden fries, this hearty meal is perfect for a quick and satisfying lunch.",
+        "price": 10.99
+      },
+      {
+        "id": 5,
+        "title": "Butter Chicken with Naan",
+        "category": "Lunch",
+        "image": "https://example.com/images/butter-chicken-naan.jpg",
+        "ingredients": ["Chicken", "Tomato Cream Sauce", "Butter", "Garlic", "Naan Bread"],
+        "description": "Indulge in the rich and creamy flavors of Butter Chicken, a beloved Indian dish. Tender chicken pieces are simmered in a luscious tomato-based cream sauce infused with aromatic spices and butter. Served with soft and fluffy naan bread, this dish is a perfect blend of savory and slightly sweet flavors, offering a satisfying lunch experience.",
+        "price": 11.99
+      },
+      {
+        "id": 6,
+        "title": "Grilled Salmon with Vegetables",
+        "category": "Lunch",
+        "image": "https://example.com/images/grilled-salmon-vegetables.jpg",
+        "ingredients": ["Salmon Fillet", "Asparagus", "Zucchini", "Lemon", "Olive Oil"],
+        "description": "A healthy and flavorful lunch option, our Grilled Salmon with Vegetables features a perfectly grilled salmon fillet seasoned with olive oil and a hint of lemon. Served alongside a medley of fresh, roasted vegetables including asparagus and zucchini, this dish is packed with nutrients and bursting with flavor. Ideal for those seeking a light yet wholesome meal.",
+        "price": 13.99
+      }
+    ]
+  

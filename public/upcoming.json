@@ -1,0 +1,85 @@
+[
+      {
+        "id": 1,
+        "title": "Avocado Toast with Poached Egg",
+        "category": "Breakfast",
+        "image": "https://example.com/images/avocado-toast-egg.jpg",
+        "ingredients": ["Avocado", "Poached Egg", "Whole Grain Bread", "Lemon Juice", "Chili Flakes"],
+        "description": "A modern breakfast favorite featuring creamy mashed avocado seasoned with lemon juice and chili flakes, served on crisp whole-grain toast. Topped with a perfectly poached egg, this dish is a delicious combination of flavors and textures, offering a nutritious start to your day.",
+        "price": 6.49
+      },
+      {
+        "id": 2,
+        "title": "Mediterranean Grilled Chicken Salad",
+        "category": "Lunch",
+        "image": "https://example.com/images/mediterranean-chicken-salad.jpg",
+        "ingredients": ["Grilled Chicken", "Mixed Greens", "Feta Cheese", "Olives", "Vinaigrette"],
+        "description": "A vibrant Mediterranean salad featuring juicy grilled chicken, crisp mixed greens, tangy feta cheese, and briny olives. Tossed with a light vinaigrette, this dish offers a fresh and flavorful option for a healthy lunch.",
+        "price": 9.49
+      },
+      {
+        "id": 3,
+        "title": "Shrimp Alfredo Pasta",
+        "category": "Dinner",
+        "image": "https://example.com/images/shrimp-alfredo-pasta.jpg",
+        "ingredients": ["Shrimp", "Fettuccine", "Alfredo Sauce", "Parmesan Cheese", "Garlic"],
+        "description": "Indulge in our creamy Shrimp Alfredo Pasta, featuring tender shrimp sautéed with garlic and tossed in a rich Alfredo sauce. Served over perfectly cooked fettuccine and topped with grated Parmesan cheese, this dish is a comforting and decadent dinner choice.",
+        "price": 14.99
+      },
+      {
+        "id": 4,
+        "title": "Blueberry Pancakes",
+        "category": "Breakfast",
+        "image": "https://example.com/images/blueberry-pancakes.jpg",
+        "ingredients": ["Flour", "Milk", "Eggs", "Blueberries", "Maple Syrup"],
+        "description": "Fluffy pancakes bursting with the natural sweetness of fresh blueberries. Cooked to golden perfection and drizzled with warm maple syrup, this breakfast treat is a delightful way to start your morning.",
+        "price": 5.99
+      },
+      {
+        "id": 5,
+        "title": "Chicken Tikka Masala with Rice",
+        "category": "Lunch",
+        "image": "https://example.com/images/chicken-tikka-masala.jpg",
+        "ingredients": ["Chicken", "Tomato Cream Sauce", "Spices", "Basmati Rice", "Cilantro"],
+        "description": "A classic Indian dish featuring tender chicken pieces cooked in a flavorful tomato-based cream sauce infused with aromatic spices. Served with fragrant basmati rice and garnished with fresh cilantro, this dish is a hearty and satisfying lunch option.",
+        "price": 11.49
+      },
+      {
+        "id": 6,
+        "title": "Grilled Salmon with Lemon Butter",
+        "category": "Dinner",
+        "image": "https://example.com/images/grilled-salmon-lemon.jpg",
+        "ingredients": ["Salmon", "Lemon Butter Sauce", "Asparagus", "Garlic"],
+        "description": "Perfectly grilled salmon topped with a zesty lemon butter sauce, served with a side of tender asparagus spears. This dish combines simplicity and elegance for a healthy and flavorful dinner option.",
+        "price": 16.99
+      },
+      {
+        "id": 7,
+        "title": "Greek Yogurt Parfait",
+        "category": "Breakfast",
+        "image": "https://example.com/images/greek-yogurt-parfait.jpg",
+        "ingredients": ["Greek Yogurt", "Granola", "Berries", "Honey", "Chia Seeds"],
+        "description": "A light and refreshing breakfast option featuring creamy Greek yogurt layered with crunchy granola and sweet, juicy berries. Drizzled with honey and sprinkled with chia seeds, this parfait is both nutritious and delicious.",
+        "price": 4.99
+      },
+      {
+        "id": 8,
+        "title": "Vegetarian Burrito Bowl",
+        "category": "Lunch",
+        "image": "https://example.com/images/vegetarian-burrito-bowl.jpg",
+        "ingredients": ["Brown Rice", "Black Beans", "Corn", "Avocado", "Salsa"],
+        "description": "A hearty and colorful burrito bowl packed with brown rice, black beans, sweet corn, fresh avocado, and tangy salsa. This vegetarian-friendly dish is loaded with flavor and nutrients, making it a satisfying lunch option.",
+        "price": 8.99
+      },
+      {
+        "id": 9,
+        "title": "Stuffed Bell Peppers",
+        "category": "Dinner",
+        "image": "https://example.com/images/stuffed-bell-peppers.jpg",
+        "ingredients": ["Bell Peppers", "Ground Beef", "Rice", "Tomato Sauce", "Cheese"],
+        "description": "Our Stuffed Bell Peppers are filled with a savory mixture of seasoned ground beef, rice, and tomato sauce. Baked to perfection and topped with melted cheese, this dish is both comforting and satisfying, ideal for a wholesome dinner.",
+        "price": 12.49
+      }
+    ]
+
+  

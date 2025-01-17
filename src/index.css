@@ -5,7 +5,11 @@
 @tailwind components;
 @tailwind utilities;
 
-
+@layer components{
+    .badgeShadow{
+        filter: drop-shadow(.75em .75em .80em, silver);
+    }
+}
 
 @layer utilities{
     .defaultInput{

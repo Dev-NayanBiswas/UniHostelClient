@@ -6,6 +6,7 @@ import useAuth from "../../Hooks/useAuth"
 import DynamicTitle from "../../Utilities/DynamicTitle.jsx"
 import HeadingTitle from "../HeadingTitle/HeadingTitle.jsx"
 import dateToday from "../../Utilities/dateToday.js"
+import AvatarHeading from "../HeadingTitle/AvatarHeading.jsx"
 
 
 
@@ -60,7 +61,8 @@ async function handleAddMeal(data){
         adminPhoto:userData.photoURL,
         reviewCount:0,
         likes:0,
-        rating:0
+        rating:0,
+        state:"published"
     }
     console.log(newData)
     reset({
@@ -79,9 +81,11 @@ async function handleAddMeal(data){
     <>
     <DynamicTitle/>
     <HeadingTitle headingData={headingData}/>
-    <div className="flex justify-center items-center h-full w-full mt-20">
+    
+    <div className="flex justify-center items-center h-full w-full mt-8">
       <div className="w-full">
           <div className="lg:w-9/12 w-full mx-auto">
+          <AvatarHeading avatarData={userData}/>
             <form onSubmit={handleSubmit(handleAddMeal)} className="flex flex-col gap-7">
 
               <div className="flex md:flex-row flex-col gap-7">
@@ -113,37 +117,52 @@ async function handleAddMeal(data){
               </div>
               {/* Desc & Price & Thumbnail */}
               <section className="flex lg:flex-row flex-col justify-between items-center gap-7 min-h-[18vh]">
-                <div className="w-full">
-                <textarea {...register("description",{required:"Description Required"})} placeholder="Meal Description here . . ." className="w-full min-h-[18vh] defaultInput"></textarea>
+
+                <div className="w-full h-full">
+                <textarea {...register("description",{required:"Description Required"})} placeholder="Meal Description here . . ." className="w-full h-full min-h-[15vh] defaultInput"></textarea>
                 {errors.description && <p className="text-xs text-red-400">{errors.description.message}</p>}
                 </div>
 
 
 
-                <div className="h-full lg:flex-col flex-row flex w-full lg:gap-4 gap-7 justify-between">
+                <div className="h-full lg:min-h-[15vh] lg:flex-col flex-row flex w-full lg:gap-4 gap-7 justify-between">
+
+
+
+
                 <div className="w-full">
-              <div className="relative">
+              <div className="relative -top-1">
               <input 
               {...register("image",{
                 required:"Please choose a Photo"
               })}
               onChange={handleFileChange} 
                className="defaultInput opacity-0" type="file" placeholder="Choose your Profile Picture" />
-              <div onClick={()=>document.querySelector('input[type="file"]').click()} className="absolute top-0 left-0 h-full w-full bg-logo-yellow rounded-lg font-semibold flex justify-center items-center text-white">
+              <div onClick={()=>document.querySelector('input[type="file"]').click()} className="absolute top-0 left-0 h-full w-full bg-logo-yellow rounded-lg font-semibold flex justify-center items-center text-white cursor-pointer hover:bg-logo-yellow/85">
                 <p className="uppercase font-heading">Choose a Photo</p>
               </div>
               </div>
               {errors.image && <p className="text-xs text-red-400">{errors.image.message}</p>}
               </div>
 
+
+
               {/* price */}
               <div className="w-full">
               <input {...register("price",{required:"Price is Required"})} className="defaultInput" type="number" placeholder="Price" />
               {errors.price && <p className="text-xs text-red-400">{errors.price.message}</p>}
               </div>
+                  
+
+
 
                 </div>
+
+
+
               </section>
+
+              
               <button className="w-full p-3 mt-4 text-white font-semibold rounded-lg hover:scale-105 bg-logo-yellow transition transform duration-300 shadow-lg focus:outline-none focus:ring-2" type="submit">
                 Add Meal
               </button>

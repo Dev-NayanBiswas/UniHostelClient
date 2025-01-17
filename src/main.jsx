@@ -8,6 +8,7 @@ import Routers from "./Routes/Routes";
 import { HelmetProvider } from "react-helmet-async";
 import AuthProvider from "./Providers/AuthProvider";
 import axios from "axios";
+import { ParallaxProvider } from "react-scroll-parallax";
 
 const queryClient = new QueryClient();
 
@@ -18,8 +19,10 @@ createRoot(document.getElementById("root")).render(
     <HelmetProvider>
       <AuthProvider>
       <QueryClientProvider client={queryClient}>
+        <ParallaxProvider>
       <RouterProvider router={Routers}/>
       <ReactQueryDevtools initialIsOpen />
+      </ParallaxProvider>
     </QueryClientProvider>
       </AuthProvider>
     </HelmetProvider>

@@ -1,0 +1,53 @@
+[
+      {
+        "title": "Classic Pancakes",
+        "category": "Breakfast",
+        "image": "https://example.com/images/classic-pancakes.jpg",
+        "ingredients": ["Flour", "Milk", "Eggs", "Butter", "Maple Syrup"],
+        "description": "Indulge in a stack of our signature classic pancakes, carefully crafted to achieve the perfect balance of fluffiness and golden crispness. Made with high-quality flour, fresh milk, and farm-fresh eggs, each pancake is lightly buttered for an irresistible melt-in-your-mouth texture. Served warm, they come with a generous drizzle of rich maple syrup that adds a touch of sweetness to every bite. Perfectly paired with a side of seasonal fruits or whipped cream for a wholesome breakfast experience.",
+        "price": 5.99
+      },
+      {
+        "title": "Veggie Omelette",
+        "category": "Breakfast",
+        "image": "https://example.com/images/veggie-omelette.jpg",
+        "ingredients": ["Eggs", "Bell Peppers", "Onions", "Spinach", "Cheese"],
+        "description": "Start your morning with a nutritious and satisfying veggie omelette, packed with fresh and vibrant flavors. Made with free-range eggs, this omelette is generously filled with sautéed bell peppers, finely chopped onions, and nutrient-rich spinach. A sprinkle of shredded cheese melts beautifully, adding a creamy and savory touch. The dish is cooked to perfection, with a slight golden crust on the outside while remaining fluffy and tender inside. Served hot, this hearty omelette is a great source of protein and vegetables to fuel your day.",
+        "price": 6.49
+      },
+      {
+        "title": "Full English Breakfast",
+        "category": "Breakfast",
+        "image": "https://example.com/images/full-english-breakfast.jpg",
+        "ingredients": ["Bacon", "Sausages", "Eggs", "Beans", "Toast", "Tomatoes"],
+        "description": "Treat yourself to the ultimate Full English Breakfast, a classic and satisfying morning feast. This hearty platter includes crispy smoked bacon, juicy grilled sausages, and perfectly cooked eggs made to your liking. Complemented by baked beans in a rich tomato sauce, buttered toast slices, and roasted vine tomatoes for a burst of natural sweetness. Every component is carefully prepared to ensure an authentic British breakfast experience. Ideal for those mornings when you need a filling and flavorful start to the day.",
+        "price": 9.99
+      },
+      {
+        "title": "Fruit & Yogurt Bowl",
+        "category": "Breakfast",
+        "image": "https://example.com/images/fruit-yogurt-bowl.jpg",
+        "ingredients": ["Seasonal Fruits", "Granola", "Plant-Based Yogurt", "Chia Seeds"],
+        "description": "Enjoy a refreshing and healthy start to your day with our Fruit & Yogurt Bowl. This delightful dish features an assortment of freshly cut seasonal fruits, chosen for their ripeness and natural sweetness. The fruits are layered over creamy and smooth plant-based yogurt, providing a dairy-free alternative that is both rich and satisfying. A sprinkle of crunchy granola adds texture, while chia seeds provide an extra boost of nutrition. This bowl is as visually appealing as it is nourishing, perfect for a light yet fulfilling breakfast.",
+        "price": 4.99
+      },
+      {
+        "title": "Avocado Toast",
+        "category": "Breakfast",
+        "image": "https://example.com/images/avocado-toast.jpg",
+        "ingredients": ["Whole Grain Bread", "Avocado", "Lemon Juice", "Chili Flakes"],
+        "description": "Savor the simplicity and goodness of our Avocado Toast, a modern breakfast classic that combines flavor and nutrition. Thick slices of whole-grain bread are lightly toasted to achieve a crisp texture, then generously spread with creamy, mashed avocado seasoned with a hint of fresh lemon juice. A sprinkle of chili flakes adds a gentle kick, while the wholesome bread provides a satisfying crunch. Packed with healthy fats and fiber, this dish is a perfect choice for anyone looking for a quick and nutritious breakfast option.",
+        "price": 5.49
+      },
+      {
+        "id": 6,
+        "title": "Banana Walnut French Toast",
+        "category": "Breakfast",
+        "image": "https://example.com/images/banana-walnut-french-toast.jpg",
+        "ingredients": ["Bread", "Eggs", "Milk", "Bananas", "Walnuts", "Cinnamon", "Maple Syrup"],
+        "description": "Delight in our Banana Walnut French Toast, a comforting and indulgent breakfast favorite. Thick slices of bread are dipped in a rich batter made with eggs, milk, and a hint of cinnamon, then pan-fried to golden perfection. Topped with caramelized banana slices and crunchy toasted walnuts, this dish offers a delightful mix of soft and crunchy textures. A generous drizzle of warm maple syrup ties all the flavors together, creating a balanced blend of sweetness and nuttiness. Perfect for those mornings when you crave a little extra decadence.",
+        "price": 6.99
+      }
+    ]
+
+  
