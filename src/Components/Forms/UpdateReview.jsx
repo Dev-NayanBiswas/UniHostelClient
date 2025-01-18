@@ -1,6 +1,6 @@
 import { useForm } from "react-hook-form";
 import ReactStars from "react-rating-stars-component";
-import dateToday from "../../Utilities/dateToday";
+import dateToday from "../../Utilities/dateConverter";
 import useAuth from "../../Hooks/useAuth";
 import HeadingTitle from "../HeadingTitle/HeadingTitle";
 

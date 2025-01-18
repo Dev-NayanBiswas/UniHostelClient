@@ -5,8 +5,8 @@ function StudentContainer() {
   return (
     <section className="my-20">
         <Container>
-        <Outlet/>
-    </Container>
+          <Outlet/>
+        </Container>
     </section>
   )
 }

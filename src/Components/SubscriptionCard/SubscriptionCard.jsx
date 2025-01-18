@@ -5,7 +5,7 @@ function SubscriptionCard({cardData}){
       const {color, name, description, price, mealsPerDay, menuHighlights, extras, validity, badge} = cardData || {}
   return (
     <>
-<div className="group relative h-96 w-72 [perspective:2000px]">
+<div className="group relative h-96 md:w-72 w-80  [perspective:2000px]">
   <div
   style={{
     background:`${color}72`,
@@ -65,14 +65,14 @@ function SubscriptionCard({cardData}){
         <p className="text-xs">{description}</p>
             <p className="text-lg font-semibold text-center">Meals</p>
             <div className="border-b-[1px]"/>
-          <ul className="pl-4 flex justify-between gap-1 flex-wrap">
+          <ul className="pl-4 flex justify-between gap-3 flex-wrap">
             {
                 menuHighlights.map((item,index)=><li className="list-disc" key={index}>{item}</li>)
             }
           </ul>
-            <p className="text-lg font-semibold text-center mt-2">Extras</p>
+            <p className="text-lg font-semibold text-center mt-1">Extras</p>
             <div className="border-b-[1px]"/>
-          <ul className="pl-4 flex flex-col justify-start gap-1">
+          <ul className="pl-4 flex flex-col justify-start my-1">
             {
                 extras.map((item,index)=><li className="list-disc" key={index}>{item}</li>)
             }

@@ -5,8 +5,9 @@ import { useForm} from "react-hook-form"
 import useAuth from "../../Hooks/useAuth"
 import DynamicTitle from "../../Utilities/DynamicTitle.jsx"
 import HeadingTitle from "../HeadingTitle/HeadingTitle.jsx"
-import dateToday from "../../Utilities/dateToday.js"
 import AvatarHeading from "../HeadingTitle/AvatarHeading.jsx"
+import useMealCURD from "../../Hooks/CURDS/useMealCURD.jsx"
+import { useMutation, useQueryClient } from "@tanstack/react-query"
 
 
 
@@ -23,6 +24,8 @@ const headingData = {
   ];
 
 function AddMealForm(){
+const queryClient = useQueryClient();
+const {postMeal} = useMealCURD();
 const navigate = useNavigate();
 const {userData} = useAuth();
 
@@ -48,6 +51,18 @@ async function handleFileChange(e){
  
 }
 
+const postMealMutation = useMutation({
+  mutationKey:["PostMeal"],
+  mutationFn:(data)=>postMeal(data),
+  onSuccess:()=>{
+    queryClient.invalidateQueries(["meals"])
+    alert("Successfully added Meal from Mutation")
+  },
+  onError:(error)=>{
+    console.log(error)
+  }
+})
+
 // console.log(dateToday);
 
 async function handleAddMeal(data){
@@ -55,7 +70,7 @@ async function handleAddMeal(data){
         ...data,
         ingredients:data.ingredients.split(/[\s,]+/).join(",").split(","),
         image:inputImage,
-        date:dateToday,
+        date:Date.now(),
         email:userData.email,
         adminName:userData.displayName,
         adminPhoto:userData.photoURL,
@@ -63,6 +78,9 @@ async function handleAddMeal(data){
         likes:0,
         rating:0,
         state:"published"
+    }
+    if(userData?.email){
+      postMealMutation.mutate(newData)
     }
     console.log(newData)
     reset({
