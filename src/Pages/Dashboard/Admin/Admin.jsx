@@ -5,7 +5,7 @@ function Admin() {
   return (
     <div>
         <Container>
-            <h1>Admin Profile</h1>
+            <h1>Admin DEsk</h1>
         </Container>
         <Container>
             <Outlet/>

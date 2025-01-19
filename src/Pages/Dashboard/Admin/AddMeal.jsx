@@ -1,6 +1,12 @@
+import AddMealForm from "../../../Components/Forms/AddMealForm"
+
 function AddMeal() {
   return (
-    <div>AddMeal</div>
+    <>
+      <section>
+        <AddMealForm/>
+      </section>
+    </>
   )
 }
 

@@ -1,8 +1,11 @@
 import React from 'react'
+import UpcomingMealForm from '../../../Components/Forms/UpcomingMealForm'
 
 function UpcomingMeals() {
   return (
-    <div>UpcomingMeals</div>
+    <>
+      <UpcomingMealForm/>
+    </>
   )
 }
 

@@ -12,7 +12,6 @@ import axios from "axios";
 import FoodLoading from "../../Components/Loadings/FoodLoading";
 import dateConverter from "../../Utilities/dateConverter";
 import ReviewInput2 from "../../Components/Forms/ReviewInput2";
-import Container from "../../Components/Container";
 import ReviewCard from "../../Components/ReviewCard/ReviewCard";
 
 function MealDetails() {
@@ -73,6 +72,7 @@ function MealDetails() {
 
             <section className='bg-gray-bg/45 absolute left-0 bottom-0 h-fit w-full p-2 text-white font-para'>
               <table className='px-2'>
+                <tbody>
                 <tr className='px-2'>
                   <td className='px-2'>Category</td>
                   <td className=''>:</td>
@@ -95,6 +95,7 @@ function MealDetails() {
                   <td className=''>:</td>
                   <td className='px-2'>$ {price}.00</td>
                 </tr>
+                </tbody>
               </table>
             </section>
             <div className='flex relative justify-start items-center gap-2 my-2 ml-2'>
@@ -107,6 +108,7 @@ function MealDetails() {
                 />
               </section>
               <table className='px-2 font-normal text-white z-30'>
+                <tbody>
                 <tr className='px-2'>
                   <td className='px-2 font-semibold font-heading'>Admin</td>
                   <td className='px-2'>-</td>
@@ -117,6 +119,7 @@ function MealDetails() {
                   <td className='px-2'>-</td>
                   <td className='px-2'>{dateConverter(date)}</td>
                 </tr>
+                </tbody>
               </table>
             </div>
           </ParallaxBanner>
@@ -132,6 +135,7 @@ function MealDetails() {
 
             <section className='my-4'>
               <table className='px-2 font-normal text-gray-500'>
+                <tbody>
                 <tr className='px-2'>
                   <td className='px-2 font-semibold font-heading'>
                     <button>
@@ -155,10 +159,11 @@ function MealDetails() {
                       icon={faStar}
                     />
                     <span className='mx-3'>
-                      {rating > 0 ? Math.ceil(rating / likes) : rating}/5
+                      {rating > 0 ? Math.ceil(rating / reviewCount) : rating}/5
                     </span>
                   </td>
                 </tr>
+                </tbody>
               </table>
             </section>
           </section>

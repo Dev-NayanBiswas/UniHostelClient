@@ -13,8 +13,8 @@ import { useMutation, useQueryClient } from "@tanstack/react-query"
 
 
 const headingData = {
-    heading:"Add Meal",
-    desc:"Add a meal options effortlessly to ensure a seamless dining experience for your users."
+    heading:"Upcoming Meal",
+    desc:"Ready to impress Students with our upcoming meal! A delicious blend of flavors awaits, crafted to delight and energize. Perfect for breakfast, lunch, or dinner—stay tuned!"
   }
 
   const options = [
@@ -23,7 +23,7 @@ const headingData = {
     { value: "dinner", label: "Dinner" },
   ];
 
-function AddMealForm(){
+function UpcomingMealForm(){
 const queryClient = useQueryClient();
 const {postMeal} = useMealCURD();
 const navigate = useNavigate();
@@ -78,7 +78,7 @@ async function handleAddMeal(data){
         reviewCount:0,
         likes:0,
         rating:0,
-        state:"published"
+        state:"upcoming"
     }
     if(userData?.email){
       postMealMutation.mutate(newData)
@@ -196,4 +196,4 @@ async function handleAddMeal(data){
   )
 }
 
-export default AddMealForm
+export default UpcomingMealForm

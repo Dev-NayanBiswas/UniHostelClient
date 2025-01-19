@@ -22,9 +22,9 @@ function Home(){
         <MealCard/>
       </Container>
 
-      <Container>
+      <section>
         <CategoryMeals/>
-      </Container>
+      </section>
 
 
       <Container>

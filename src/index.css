@@ -17,9 +17,9 @@
     }
 
     .tabActive{
-        @apply px-4 py-2 bg-gray-bg text-lg transition-all duration-500 text-logo-yellow  font-semibold font-button w-full
+        @apply px-4 py-2 bg-gray-bg/65 text-lg transition-all duration-500 text-logo-yellow  font-semibold font-button w-full
     }
     .tabInActive{
-        @apply px-4 py-2 bg-transparent text-lg text-gray-400 transition-all duration-500 font-semibold font-button w-full
+        @apply px-4 py-2 bg-transparent hover:bg-gray-bg/45 hover:text-white text-lg text-gray-400 transition-all duration-500 font-semibold font-button w-full
     }
 }

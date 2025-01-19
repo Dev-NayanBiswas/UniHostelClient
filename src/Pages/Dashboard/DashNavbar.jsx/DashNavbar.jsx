@@ -57,7 +57,7 @@ function DashNavbar(){
 
 // const dashMenu = adminInfo?.data?.isAdmin ? adminMenu : userMenu;
 
-const isAdmin = false;
+const isAdmin = true;
 
 const dashMenu = isAdmin ? adminMenu : userMenu;
 
@@ -70,7 +70,7 @@ function handleNavLink(path){
   return (
     <>
       <section>
-        <div className='drawer relative'>
+        <div className='drawer relative z-40'>
           <nav className="absolute top-0 right-0 w-fit flex gap-4 my-2 mr-4">
             {
               floatMenu.map(({path, icon}, index)=><button className="px-2 py-[7px] border-2 border-logo-yellow rounded-full" onClick={()=>handleNavLink(path)} key={index}>

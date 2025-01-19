@@ -1,59 +1,59 @@
-{
-    "dinnerMenu": [
-      {
-        "id": 1,
-        "title": "Herb-Crusted Roast Chicken",
-        "category": "Dinner",
-        "image": "https://example.com/images/herb-crusted-roast-chicken.jpg",
-        "ingredients": ["Chicken", "Herbs", "Garlic", "Olive Oil", "Roasted Vegetables"],
-        "description": "Savor the rich flavors of our Herb-Crusted Roast Chicken, marinated with a fragrant blend of fresh herbs, garlic, and olive oil. The chicken is roasted to golden perfection, achieving a crispy skin and juicy, tender meat. Served with a medley of roasted vegetables like carrots, potatoes, and zucchini, this hearty dish is perfect for a satisfying and wholesome dinner.",
-        "price": 12.99
-      },
-      {
-        "id": 2,
-        "title": "Vegetable Lasagna",
-        "category": "Dinner",
-        "image": "https://example.com/images/vegetable-lasagna.jpg",
-        "ingredients": ["Lasagna Sheets", "Tomato Sauce", "Zucchini", "Spinach", "Ricotta Cheese"],
-        "description": "Enjoy layers of wholesome goodness with our Vegetable Lasagna. Alternating sheets of lasagna are layered with a rich tomato sauce, sautéed zucchini, spinach, and creamy ricotta cheese. Topped with a generous layer of melted mozzarella, this dish is baked to bubbly perfection, making it an indulgent yet vegetarian-friendly dinner option.",
-        "price": 10.49
-      },
-      {
-        "id": 3,
-        "title": "Beef Stroganoff with Rice",
-        "category": "Dinner",
-        "image": "https://example.com/images/beef-stroganoff-rice.jpg",
-        "ingredients": ["Beef", "Mushrooms", "Cream Sauce", "Rice", "Onions"],
-        "description": "Our Beef Stroganoff is a classic comfort food, featuring tender strips of beef cooked in a rich and creamy mushroom sauce. Infused with the savory flavors of caramelized onions and fresh herbs, this dish is served over a bed of steamed rice, creating a hearty and satisfying dinner that’s full of flavor.",
-        "price": 13.49
-      },
-      {
-        "id": 4,
-        "title": "Grilled Lamb Chops",
-        "category": "Dinner",
-        "image": "https://example.com/images/grilled-lamb-chops.jpg",
-        "ingredients": ["Lamb Chops", "Garlic", "Rosemary", "Mashed Potatoes", "Gravy"],
-        "description": "Treat yourself to the succulent taste of Grilled Lamb Chops, seasoned with garlic, rosemary, and a touch of olive oil. These chops are grilled to perfection, offering a smoky and flavorful crust while remaining tender and juicy inside. Paired with creamy mashed potatoes and a rich, savory gravy, this dish is a gourmet dinner experience.",
-        "price": 17.99
-      },
-      {
-        "id": 5,
-        "title": "Seafood Paella",
-        "category": "Dinner",
-        "image": "https://example.com/images/seafood-paella.jpg",
-        "ingredients": ["Rice", "Shrimp", "Mussels", "Squid", "Saffron"],
-        "description": "Dive into the vibrant flavors of our Seafood Paella, a traditional Spanish dish made with saffron-infused rice. Loaded with fresh shrimp, tender mussels, and perfectly cooked squid, this dish is bursting with the essence of the sea. Garnished with lemon wedges and fresh parsley, it’s a dinner option that’s both visually stunning and incredibly delicious.",
-        "price": 15.99
-      },
-      {
-        "id": 6,
-        "title": "Thai Green Curry with Jasmine Rice",
-        "category": "Dinner",
-        "image": "https://example.com/images/thai-green-curry.jpg",
-        "ingredients": ["Chicken", "Green Curry Paste", "Coconut Milk", "Jasmine Rice", "Basil"],
-        "description": "Experience the exotic flavors of Thailand with our Thai Green Curry. Tender pieces of chicken are simmered in a fragrant green curry sauce made with coconut milk and aromatic spices. Served alongside perfectly steamed jasmine rice, this dish is a harmonious blend of spicy, creamy, and herbal flavors, making it a perfect choice for dinner.",
-        "price": 11.99
-      }
-    ]
-  }
+// {
+//     "dinnerMenu": [
+      // {
+      //   "id": 1,
+      //   "title": "Herb-Crusted Roast Chicken",
+      //   "category": "Dinner",
+      //   "image": "https://example.com/images/herb-crusted-roast-chicken.jpg",
+      //   "ingredients": ["Chicken", "Herbs", "Garlic", "Olive Oil", "Roasted Vegetables"],
+      //   "description": "Savor the rich flavors of our Herb-Crusted Roast Chicken, marinated with a fragrant blend of fresh herbs, garlic, and olive oil. The chicken is roasted to golden perfection, achieving a crispy skin and juicy, tender meat. Served with a medley of roasted vegetables like carrots, potatoes, and zucchini, this hearty dish is perfect for a satisfying and wholesome dinner.",
+      //   "price": 12.99
+      // },
+      // {
+      //   "id": 2,
+      //   "title": "Vegetable Lasagna",
+      //   "category": "Dinner",
+      //   "image": "https://example.com/images/vegetable-lasagna.jpg",
+      //   "ingredients": ["Lasagna Sheets", "Tomato Sauce", "Zucchini", "Spinach", "Ricotta Cheese"],
+      //   "description": "Enjoy layers of wholesome goodness with our Vegetable Lasagna. Alternating sheets of lasagna are layered with a rich tomato sauce, sautéed zucchini, spinach, and creamy ricotta cheese. Topped with a generous layer of melted mozzarella, this dish is baked to bubbly perfection, making it an indulgent yet vegetarian-friendly dinner option.",
+      //   "price": 10.49
+      // },
+      // {
+      //   "id": 3,
+      //   "title": "Beef Stroganoff Rice",
+      //   "category": "Dinner",
+      //   "image": "https://example.com/images/beef-stroganoff-rice.jpg",
+      //   "ingredients": ["Beef", "Mushrooms", "Cream Sauce", "Rice", "Onions"],
+      //   "description": "Our Beef Stroganoff is a classic comfort food, featuring tender strips of beef cooked in a rich and creamy mushroom sauce. Infused with the savory flavors of caramelized onions and fresh herbs, this dish is served over a bed of steamed rice, creating a hearty and satisfying dinner that’s full of flavor.",
+      //   "price": 13.49
+      // },
+      // {
+      //   "id": 4,
+      //   "title": "Grilled Lamb Chops",
+      //   "category": "Dinner",
+      //   "image": "https://example.com/images/grilled-lamb-chops.jpg",
+      //   "ingredients": ["Lamb Chops", "Garlic", "Rosemary", "Mashed Potatoes", "Gravy"],
+      //   "description": "Treat yourself to the succulent taste of Grilled Lamb Chops, seasoned with garlic, rosemary, and a touch of olive oil. These chops are grilled to perfection, offering a smoky and flavorful crust while remaining tender and juicy inside. Paired with creamy mashed potatoes and a rich, savory gravy, this dish is a gourmet dinner experience.",
+      //   "price": 17.99
+      // },
+      // {
+      //   "id": 5,
+      //   "title": "Seafood Paella",
+      //   "category": "Dinner",
+      //   "image": "https://example.com/images/seafood-paella.jpg",
+      //   "ingredients": ["Rice", "Shrimp", "Mussels", "Squid", "Saffron"],
+      //   "description": "Dive into the vibrant flavors of our Seafood Paella, a traditional Spanish dish made with saffron-infused rice. Loaded with fresh shrimp, tender mussels, and perfectly cooked squid, this dish is bursting with the essence of the sea. Garnished with lemon wedges and fresh parsley, it’s a dinner option that’s both visually stunning and incredibly delicious.",
+      //   "price": 15.99
+      // },
+  //     {
+  //       "id": 6,
+  //       "title": "Thai Green Curry with Jasmine Rice",
+  //       "category": "Dinner",
+  //       "image": "https://example.com/images/thai-green-curry.jpg",
+  //       "ingredients": ["Chicken", "Green Curry Paste", "Coconut Milk", "Jasmine Rice", "Basil"],
+  //       "description": "Experience the exotic flavors of Thailand with our Thai Green Curry. Tender pieces of chicken are simmered in a fragrant green curry sauce made with coconut milk and aromatic spices. Served alongside perfectly steamed jasmine rice, this dish is a harmonious blend of spicy, creamy, and herbal flavors, making it a perfect choice for dinner.",
+  //       "price": 11.99
+  //     }
+  //   ]
+  // }
   
