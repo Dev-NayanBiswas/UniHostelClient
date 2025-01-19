@@ -22,7 +22,7 @@ function SubscriptionCard({cardData}){
     >
       <div className="flex flex-col h-full">
         <div className="flex justify-between items-start">
-          <div className="text-5xl flex justify-between items-center text-center gap-4 w-full">
+          <div className="text-5xl flex justify-between items-center text-center gap-4 w-full rounded-s-full bg-black/25 relative -right-[24px]">
           
                 <p style={{
                 color:color,

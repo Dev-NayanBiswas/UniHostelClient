@@ -15,4 +15,11 @@
     .defaultInput{
         @apply border-2 border-logo-yellow outline-none placeholder:text-logo-yellow placeholder:text-xl bg-transparent  p-3 rounded-lg w-full transition transform hover:scale-105 duration-300
     }
+
+    .tabActive{
+        @apply px-4 py-2 bg-gray-bg text-lg transition-all duration-500 text-logo-yellow  font-semibold font-button w-full
+    }
+    .tabInActive{
+        @apply px-4 py-2 bg-transparent text-lg text-gray-400 transition-all duration-500 font-semibold font-button w-full
+    }
 }

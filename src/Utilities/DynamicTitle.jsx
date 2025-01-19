@@ -1,11 +1,13 @@
 import { Helmet } from "react-helmet-async"
 import { useLocation } from "react-router-dom"
 
-function DynamicTitle(manual){
+function DynamicTitle({manual}){
   const location = useLocation()
-  const path = location.pathname.split("/").pop();
+  
+  const titleName = location.pathname.split("/").pop();
+  const myTitle = titleName === "/" ? "home" : manual? manual : titleName
   return (
-    <Helmet title={!path? "home" : manual? manual : path}/>
+    <Helmet title={!titleName? "home" : manual? manual : titleName}/>
   )
 }
 

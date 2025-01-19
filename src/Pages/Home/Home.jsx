@@ -2,9 +2,11 @@ import Container from "../../Components/Container"
 import AddMealForm from "../../Components/Forms/AddMealForm"
 import ReviewInput from "../../Components/Forms/ReviewInput"
 import UpdateReview from "../../Components/Forms/UpdateReview"
+import MealCard from "../../Components/MealCard/MealCard"
 import SubscriptionsContainer from "../../Components/SubscriptionCard/SubscriptionsContainer"
 import dateConverter from "../../Utilities/dateConverter"
 import DynamicTitle from "../../Utilities/DynamicTitle"
+import CategoryMeals from "./MealByCategory/CategoryMeals"
 
 function Home(){
 
@@ -17,17 +19,14 @@ function Home(){
       <DynamicTitle/>
       Home
       <Container>
+        <MealCard/>
+      </Container>
 
-      </Container>
       <Container>
-        <AddMealForm/>
+        <CategoryMeals/>
       </Container>
-      <Container>
-        <UpdateReview/>
-      </Container>
-      <Container>
-        <ReviewInput/>
-      </Container>
+
+
       <Container>
         <SubscriptionsContainer/>
       </Container>
