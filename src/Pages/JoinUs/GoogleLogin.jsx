@@ -20,8 +20,6 @@ function GoogleLogin(){
               email:allData.email,
               image:allData.photoURL,
               badge:"bronze",
-              pendingMeals:[],
-              servedMeals:[]
             }
             postStudent(studentData);
             navigate(location.state? location.state : "/");

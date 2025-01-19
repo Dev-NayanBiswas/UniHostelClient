@@ -49,8 +49,8 @@ function Meals(){
       hasMore={cardNumber < data?.result?.length}
       loader = {<span className="absolute -bottom-20 left-1/2 text-2xl font-semibold font-heading text-logo-yellow">Please wait . . .</span>}
       endMessage={
-        <p className="absolute -bottom-20 left-1/2 text-2xl font-semibold font-heading text-logo-yellow">
-          Yay! You have seen it all
+        <p className="absolute -bottom-20 left-1/2 -translate-x-1/2 md:text-2xl text-lg whitespace-nowrap font-semibold font-heading text-logo-yellow my-6">
+          Stay tune for updates . . .
         </p>
       }
       className="flex gap-10 flex-wrap justify-center items-center lg:my-12 my-14">

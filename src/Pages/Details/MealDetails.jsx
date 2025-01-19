@@ -59,16 +59,35 @@ function MealDetails() {
     email,
     date,
   } = bannerData || {};
-  console.log(title);
+
+  async function handleRequestedMeal(){
+    if(state === "upcoming"){
+      alert("Coming Soon hold your Horse");
+      return;
+    }
+    console.log("Handle Requested Meal")
+  }
+
+  async function handleLike(){
+    console.log("Handle Like Clicked");
+  }
+
+  async function handleReview(){
+    console.log("Handle Review Clicked")
+  }
+
+
+
   return (
     <>
       <HeadingTitle headingData={{ heading: title }} />
       <section className='flex lg:flex-row flex-col lg:gap-7 gap-4'>
         <section className='lg:w-7/12 w-full h-[60vh] flex'>
           <ParallaxBanner
-            className='w-full h-full relative rounded-tl-3xl'
+            className='w-full h-full relative rounded-tl-3xl group'
             layers={[{ image: image, speed: -20 }]}>
-            <div className='inset-0 absolute z-[2] w-full h-full top-0 bottom-0 right-0 left-0'></div>
+            <div className='inset-0 absolute z-[2] w-full h-full top-0 bottom-0 right-0 left-0'/>
+            <button onClick={handleRequestedMeal} className="text-lg font-semibold w-[100px] group-hover:w-[130px] transition-width duration-500 pr-3 pl-2 py-[4px]  bg-gray-bg/75 text-white rounded-s-full absolute top-1/2 right-0 cursor-pointer z-40">Request</button>
 
             <section className='bg-gray-bg/45 absolute left-0 bottom-0 h-fit w-full p-2 text-white font-para'>
               <table className='px-2'>
@@ -100,27 +119,28 @@ function MealDetails() {
             </section>
             <div className='flex relative justify-start items-center gap-2 my-2 ml-2'>
                 <div className="absolute top-0 left-0 w-full h-[54px] bg-black/45 rounded-s-full"/>
-              <section className=''>
+
                 <img
                   className='avatar rounded-full max-h-12 ring-2 ring-logo-yellow object-cover aspect-square'
                   src={adminPhoto}
                   alt=''
                 />
-              </section>
+
               <table className='px-2 font-normal text-white z-30'>
                 <tbody>
-                <tr className='px-2'>
+                <tr className='text-sm'>
                   <td className='px-2 font-semibold font-heading'>Admin</td>
                   <td className='px-2'>-</td>
                   <td className='px-2'>{adminName}</td>
                 </tr>
-                <tr>
+                <tr className="text-sm">
                   <td className='px-2 font-semibold font-heading'>From</td>
                   <td className='px-2'>-</td>
                   <td className='px-2'>{dateConverter(date)}</td>
                 </tr>
                 </tbody>
               </table>
+              <span className="text-sm text-logo-yellow font-semibold flex justify-between items-center absolute right-4 top-[13px] bg-gray-bg/65 rounded-e-full rounded-s-full py-1 px-3">{state}</span>
             </div>
           </ParallaxBanner>
         </section>
@@ -138,7 +158,7 @@ function MealDetails() {
                 <tbody>
                 <tr className='px-2'>
                   <td className='px-2 font-semibold font-heading'>
-                    <button>
+                    <button onClick={handleLike}>
                       <FontAwesomeIcon
                         className='text-blue-400 md:text-2xl text-lg'
                         icon={faThumbsUp}

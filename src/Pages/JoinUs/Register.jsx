@@ -34,7 +34,7 @@ async function handleFileChange(e){
 
   try{
       const image = await imageUploader(files)
-      setInputImage(image);
+      await setInputImage(image);
 
   }catch(error){
     alert("Error in uploading Image");
@@ -52,15 +52,15 @@ async function handleRegistration(data){
     email:data.email,
     image:inputImage,
     badge:"bronze",
-    pendingMeals:[],
-    servedMeals:[]
   }
    const login = await registrationWithEmail(data.email, data.password);
    if(login.user.accessToken){
     try{
-      await updateUserProfile(data.name, inputImage);
-            postStudent(studentData);
-            navigate(location.state? location.state : "/")
+            if(inputImage.length > 5){
+              await updateUserProfile(data.name, inputImage);
+              await postStudent(studentData);
+              await navigate(location.state? location.state : "/")
+            }
     }catch(error){
       console.error(error.message)
     }
