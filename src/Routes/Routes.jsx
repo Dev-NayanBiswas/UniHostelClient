@@ -70,6 +70,10 @@ const Routers = createBrowserRouter([
                 children:[
                     {
                         index:true,
+                        element:<Navigate to='studentProfile' replace/>
+                    },
+                    {
+                        path:"studentProfile",
                         element:<MyProfile/>
                     },
                     {
@@ -92,6 +96,10 @@ const Routers = createBrowserRouter([
                 children:[
                     {
                         index:true,
+                        element:<Navigate to='adminProfile' replace/>
+                    },
+                    {
+                        path:'adminProfile',
                         element:<AdminProfile/>
                     },
                     {

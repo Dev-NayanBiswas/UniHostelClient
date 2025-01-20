@@ -15,7 +15,6 @@ function Register(){
 const {postStudent} = useStudentsCURD();
 const location = useLocation();
 const navigate = useNavigate();
-console.log(location);
 const {updateUserProfile,registrationWithEmail} = useAuth();
 const [showPass, setShowPass] = useState(false);
 const [inputImage, setInputImage] = useState("")
@@ -38,7 +37,6 @@ async function handleFileChange(e){
 
   }catch(error){
     alert("Error in uploading Image");
-    console.log(error)
   }
  
 }
@@ -54,6 +52,8 @@ async function handleRegistration(data){
     badge:"bronze",
   }
    const login = await registrationWithEmail(data.email, data.password);
+  //  console.log(login.user.accessToken)
+  //  console.log(studentData)
    if(login.user.accessToken){
     try{
             if(inputImage.length > 5){

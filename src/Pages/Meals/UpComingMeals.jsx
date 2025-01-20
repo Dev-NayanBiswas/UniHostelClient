@@ -33,7 +33,6 @@ function UpComingMeals(){
   if(isLoading){
     return <FoodLoading/>
   }
-  console.log(data);
 
   return (
     <>

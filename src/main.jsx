@@ -9,6 +9,7 @@ import { HelmetProvider } from "react-helmet-async";
 import AuthProvider from "./Providers/AuthProvider";
 import axios from "axios";
 import { ParallaxProvider } from "react-scroll-parallax";
+import { ToastContainer } from "react-toastify";
 
 const queryClient = new QueryClient();
 
@@ -23,6 +24,7 @@ createRoot(document.getElementById("root")).render(
       <RouterProvider router={Routers}/>
       <ReactQueryDevtools initialIsOpen />
       </ParallaxProvider>
+      <ToastContainer position='top-center' />
     </QueryClientProvider>
       </AuthProvider>
     </HelmetProvider>

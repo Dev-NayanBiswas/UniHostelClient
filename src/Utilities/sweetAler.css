@@ -1,0 +1,61 @@
+  .custom-popup {
+    border: 2px solid #febd59;
+    background-color: #3f3e3c;
+    border-radius: 10px;
+    color: aliceblue;
+  }
+  
+  .custom-title{
+    color: #febd59;
+    font-weight: bold;
+  }
+
+  
+  .custom-confirm-button{
+    background-color: #febd5980;
+    color: white;
+    font-size: 1.2rem;
+    border: none;
+    padding: 5px 30px;
+    border-radius:5px;
+  }
+  
+  .custom-cancel-button{
+    background: red;
+    color: white;
+    font-size: 1.2rem;
+    border: none;
+    padding: 5px 30px;
+    border-radius: 5px;
+  }
+
+
+  .colored-toast.swal2-icon-success {
+    background-color: #a5dc86 !important;
+  }
+  
+  .colored-toast.swal2-icon-error {
+    background-color: #f27474 !important;
+  }
+  
+  .colored-toast.swal2-icon-warning {
+    background-color: #f8bb86 !important;
+  }
+  
+  .colored-toast.swal2-icon-info {
+    background-color: #3fc3ee !important;
+  }
+  
+  .colored-toast.swal2-icon-question {
+    background-color: #87adbd !important;
+  }
+  
+  .colored-toast .swal2-title {
+    color: #3f3e3c;
+    font-size: 1rem;
+    font-style: italic;
+  }
+  
+  
+  
+  

@@ -2,7 +2,6 @@ import { useQuery } from "@tanstack/react-query"
 import DynamicTitle from "../../Utilities/DynamicTitle"
 import axios from "axios"
 import FoodLoading from "../../Components/Loadings/FoodLoading";
-import UpcomingCard from "../../Components/UpcommingCard/UpcomingCard";
 import MealCard from "../../Components/MealCard/MealCard";
 import HeadingTitle from "../../Components/HeadingTitle/HeadingTitle";
 import { useState } from "react";
@@ -36,7 +35,6 @@ function Meals(){
   }
 
   const displayedCards = data?.result?.slice(0, cardNumber)
-  console.log(displayedCards.length);
 
   return (
     <>

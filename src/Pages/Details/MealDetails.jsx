@@ -13,6 +13,8 @@ import FoodLoading from "../../Components/Loadings/FoodLoading";
 import dateConverter from "../../Utilities/dateConverter";
 import ReviewInput2 from "../../Components/Forms/ReviewInput2";
 import ReviewCard from "../../Components/ReviewCard/ReviewCard";
+import confirmToast from "../../Utilities/confirmToast";
+import Toast from "../../Utilities/sweetToast";
 
 function MealDetails() {
   const { id } = useParams();
@@ -72,9 +74,6 @@ function MealDetails() {
     console.log("Handle Like Clicked");
   }
 
-  async function handleReview(){
-    console.log("Handle Review Clicked")
-  }
 
 
 
@@ -158,7 +157,7 @@ function MealDetails() {
                 <tbody>
                 <tr className='px-2'>
                   <td className='px-2 font-semibold font-heading'>
-                    <button onClick={handleLike}>
+                    <button onClick={()=>confirmToast(handleLike)}>
                       <FontAwesomeIcon
                         className='text-blue-400 md:text-2xl text-lg'
                         icon={faThumbsUp}

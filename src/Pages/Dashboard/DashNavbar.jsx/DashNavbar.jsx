@@ -10,14 +10,14 @@ import { FaMoon} from "react-icons/fa";
 
 
 const userMenu = [
-  { name: 'My Profile', path: '/dashboard/student', icon:faUserGraduate},
+  { name: 'My Profile', path: '/dashboard/student/studentProfile', icon:faUserGraduate},
   { name: 'Requested Meals', path: '/dashboard/student/requestedMeals', icon:faBellConcierge},
   { name: 'My Reviews', path: '/dashboard/student/myReviews', icon:faCommentAlt},
   { name: 'My Payments', path: '/dashboard/student/transactions', icon:faWallet}
 
 ];
 const adminMenu = [
-  { name: 'Admin Profile', path: '/dashboard/admin', icon:faUserCog},
+  { name: 'Admin Profile', path: '/dashboard/admin/adminProfile', icon:faUserCog},
   { name: 'All Users', path: '/dashboard/admin/allUsers', icon:faPeopleGroup},
   { name: 'Add Meal', path: '/dashboard/admin/addMeal', icon:faBowlFood},
   { name: 'All Meals', path: '/dashboard/admin/allMeals', icon:faWheatAlt},
@@ -91,8 +91,8 @@ function handleNavLink(path){
               htmlFor='my-drawer'
               aria-label='close sidebar'
               className='drawer-overlay'></label>
-            <section className='menu bg-gray-bg flex flex-col items-start justify-start text-base-content min-h-full w-80 p-4'>
-              <div className="flex w-full justify-between items-center px-3 py-2 border-[1px] border-logo-yellow/25 rounded-lg">
+            <section className='menu bg-gray-bg flex flex-col gap-2 items-start justify-start text-base-content min-h-full w-80 p-4'>
+              <div className="flex w-full justify-between items-center px-3 py-2 border-[1px] border-logo-yellow/25 rounded-lg my-20">
               <h1  className="w-full text-logo-yellow text-center text-2xl font-semibold">Admin Dashboard</h1>
               <DarkTheme/>
               </div>

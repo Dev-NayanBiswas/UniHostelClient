@@ -46,7 +46,7 @@ async function handleFileChange(e){
 
   }catch(error){
     alert("Error in uploading Image");
-    console.log(error)
+    // console.log(error)
   }
  
 }

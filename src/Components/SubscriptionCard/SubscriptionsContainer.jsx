@@ -32,7 +32,6 @@ function SubscriptionsContainer(){
   }
 
 
-  console.log(data);
 
   return (
     <>

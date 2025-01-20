@@ -5,7 +5,9 @@ function MyProfile() {
   return (
     <>
     <DynamicTitle manual={"My Profile"}/>
-
+        <section>
+          studentProfile
+        </section>
     </>
   )
 }

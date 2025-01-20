@@ -10,8 +10,10 @@ import {
     createUserWithEmailAndPassword, 
     updateProfile,
     } from "firebase/auth";
+import useToken from "../Hooks/Token/useToken.jsx";
 
 function AuthProvider({children}){
+  const {createToken} = useToken()
     const [userData, setUserData] = useState(null);
     const [loading, setLoading] = useState(true);
   
@@ -53,22 +55,30 @@ function AuthProvider({children}){
       function signOutUser(){
         setLoading(true)
         signOut(auth)
-        .then(()=>alert('You just Signed out'))
+        .then(()=>{
+          alert('You just Signed out')})
         .catch(error=>alert(error.message))
       }
   
       //! Observer 
       useEffect(()=>{
         const subscriber = onAuthStateChanged(auth, async (currentUser)=>{
-            setUserData(currentUser)
-            setLoading(false)
+            setUserData(currentUser);
+            if(currentUser){
+              const email = {email:currentUser.email};
+              createToken(email)
+              setLoading(false)
+            }else{
+              localStorage.removeItem("ClientSecret")
+              setLoading(false)
+            }
           return ()=>{
             subscriber()
           }
         }) 
       },[])
   
-      
+      // console.log(userData);
   
       const authObject = {
         loading,

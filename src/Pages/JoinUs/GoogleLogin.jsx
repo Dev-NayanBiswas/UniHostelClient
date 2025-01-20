@@ -8,7 +8,7 @@ function GoogleLogin(){
   const {postStudent} = useStudentsCURD()
   const location = useLocation();
   const navigate = useNavigate();
-  console.log(location);
+  // console.log(location);
 
     const {googleLogin} = useAuth();
     async function handleGoogleLogin(){
@@ -16,7 +16,7 @@ function GoogleLogin(){
             const result = await googleLogin();
             const allData = result.user;
             const studentData = {
-              name:allData.name,
+              name:allData.displayName,
               email:allData.email,
               image:allData.photoURL,
               badge:"bronze",

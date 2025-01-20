@@ -6,6 +6,7 @@ import axios from "axios";
 import MealLoading from "../../../Components/Loadings/MealLoading";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAnglesLeft, faAnglesRight } from "@fortawesome/free-solid-svg-icons";
+import Container from "../../../Components/Container";
 
 
 const headingData = {
@@ -36,13 +37,12 @@ function CategoryMeals(){
     }
 
 
-    console.log(data);
 
   return (
     <>
     <section className="min-h-[70vh]">
       <HeadingTitle headingData={headingData}/>
-        <section className="flex justify-between items-center bg-transparent rounded-xl border-[2px] border-gray-bg/65 overflow-hidden lg:w-5/12 md:w-10/12 w-full mx-auto">
+        <section className="flex justify-between items-center bg-transparent rounded-xl border-[2px] border-logo-yellow/45 overflow-hidden lg:w-5/12 md:w-10/12 w-full mx-auto">
             <button onClick={()=>setCategory("breakfast")}  className={category === 'breakfast' ? "tabActive" : "tabInActive"}>Breakfast</button>
             <button onClick={()=>setCategory("lunch")}  className={category === 'lunch' ? "tabActive" : "tabInActive"}>Lunch</button>
             <button onClick={()=>setCategory("dinner")}  className={category === 'dinner' ? "tabActive" : "tabInActive"}>Dinner</button>
@@ -53,7 +53,8 @@ function CategoryMeals(){
             data?.data?.result.slice(0,cardNumber).map((item)=><MealCard key={item._id} cardData={item}/>)
           }
         </section>
-          <section className="my-5 flex items-center">
+
+          <section className="my-5 mx-10 flex justify-between items-center">
           {
             cardNumber > 10 ? <button onClick={()=>setCardNumber(prev=>prev-5)}>
             <FontAwesomeIcon className="text-xl font-semibold text-logo-yellow fa-beat" icon={faAnglesLeft}/>
@@ -67,6 +68,7 @@ function CategoryMeals(){
           </button> : ""
           }
         </section>
+
     </section>
     </>
   )
