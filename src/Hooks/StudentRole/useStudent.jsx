@@ -1,21 +1,21 @@
 import { useQuery } from "@tanstack/react-query";
 import useAxiosSecure from "../AxiosAPI/useAxiosSecure";
-import useAuth from "../useAuth"
+import useAuth from "../useAuth";
 
-function useAdmin(){
+function useStudent(){
     const {userData, loading} = useAuth();
     const axiosSecure = useAxiosSecure();
 
-    const adminQuery = useQuery({
-        queryKey:['isAdmin', userData?.email],
+    const studentQuery = useQuery({
+        queryKey:['isStudent', userData?.email],
         queryFn:async()=>{
-            const response = await axiosSecure.get(`/admin/${userData?.email}`);
+            const response = await axiosSecure.get(`/isStudent/${userData?.email}`);
             const result = await response.data;
             return result;
         },
         enabled: !!userData?.email && !loading,
     }) 
-  return adminQuery;
+  return studentQuery;
 }
 
-export default useAdmin
+export default useStudent

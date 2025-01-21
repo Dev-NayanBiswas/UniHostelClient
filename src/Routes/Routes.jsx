@@ -21,6 +21,9 @@ import RequestedMeals from "../Pages/Dashboard/Student/RequestedMeals";
 import MyReviews from "../Pages/Dashboard/Student/MyReviews";
 import PaymentHistory from "../Pages/Dashboard/Student/PaymentHistory";
 import MealDetails from "../Pages/Details/MealDetails";
+import StudentRoute from "../Pages/Private/StudentRoute";
+import SecureRoute from "../Pages/Private/SecureRoute";
+import AdminRoute from "../Pages/Private/AdminRoute";
 
 const Routers = createBrowserRouter([
     {
@@ -62,11 +65,19 @@ const Routers = createBrowserRouter([
     },
     {
         path:"dashboard",
-        element:<Dashboard/>,
+        element:<SecureRoute>
+            <Dashboard/>
+        </SecureRoute>,
         children:[
             {
+                index:true,
+                element:<Navigate to="student" replace/>
+            },
+            {
                 path:"student",
-                element:<StudentContainer/>,
+                element:<StudentRoute>
+                    <StudentContainer/>
+                </StudentRoute>,
                 children:[
                     {
                         index:true,
@@ -92,7 +103,9 @@ const Routers = createBrowserRouter([
             },
             {
                 path:"admin",
-                element:<Admin/>,
+                element:<AdminRoute>
+                    <Admin/>
+                </AdminRoute>,
                 children:[
                     {
                         index:true,

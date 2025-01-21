@@ -1,18 +1,13 @@
 import axios from "axios"
 
-function useToken(){
-    function createToken (userCred){
-        axios.post("/token", userCred)
-        .then(res=>{
-            if(res.data.result){
-                localStorage.setItem("ClientSecret", res.data.result)
-            }
-        })
-        .catch(error=>console.log(error))
-    }
-  return {
-    createToken,
-  }
+async function setToken(userCred){
+        const response = await axios.post("/token", userCred);
+        const result = await response.data
+        console.log(result.result)
+        if(result){
+          localStorage.setItem("ClientSecret", result.result)
+        }
+  
 }
 
-export default useToken
+export default setToken;

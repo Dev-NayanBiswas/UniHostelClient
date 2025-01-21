@@ -1,12 +1,11 @@
-import { FaGraduationCap, FaHeadSideCoughSlash, FaShieldAlt, FaUserGraduate, FaUsersCog} from "react-icons/fa"
+import { FaGraduationCap, FaUsersCog} from "react-icons/fa"
 import HeadingTitle from "../../../Components/HeadingTitle/HeadingTitle"
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query"
 import useAxiosSecure from "../../../Hooks/AxiosAPI/useAxiosSecure"
 import FoodLoading from "../../../Components/Loadings/FoodLoading";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCross, faCrosshairs, faShieldBlank, faSlash, faUserGear, faUserGraduate, faUserShield, faUserSlash } from "@fortawesome/free-solid-svg-icons";
-import { faNodeJs } from "@fortawesome/free-brands-svg-icons";
 import Toast from "../../../Utilities/sweetToast";
+import { faBagShopping, faShieldBlank } from "@fortawesome/free-solid-svg-icons";
 
 
 
@@ -132,7 +131,8 @@ function TableRow({item, mutationFn, idx}){
           {
             role === "admin" ? <button onClick={()=>mutationFn.mutate(_id)} className="p-2 aspect-square rounded-full bg-gray-300/25 drop-shadow-2xl shadow shadow-black/65">
             <FaUsersCog className="lg:text-3xl md:text-lg text-sm text-blue-500"/>
-        </button> : <button onClick={()=>mutationFn.mutate(_id)} className="p-2 aspect-square rounded-full bg-gray-300/25 drop-shadow-2xl shadow shadow-black/65">
+        </button> :  
+        <button onClick={()=>mutationFn.mutate(_id)} className="p-2 aspect-square rounded-full bg-gray-300/25 drop-shadow-2xl shadow shadow-black/65">
               <FaGraduationCap className="lg:text-3xl md:text-lg text-sm text-gray-400"/>
           </button>
           }

@@ -6,6 +6,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import useAuth from "../../Hooks/useAuth";
 import useAdmin from "../../Hooks/Admin/useAdmin";
 import MealLoading from "../Loadings/MealLoading";
+import useStudent from "../../Hooks/StudentRole/useStudent";
 
 
 
@@ -21,6 +22,7 @@ const navMenu = [
 
 function Navbar(){
   const {data:isAdmin, isLoading,isFetching} = useAdmin()
+  const {data:isStudent, isLoading:studentLoading,isFetching:studentFetching} = useStudent();
   const {userData,signOutUser, loading} = useAuth()
   const location = useLocation();
   const navigate = useNavigate();
@@ -28,7 +30,7 @@ function Navbar(){
   // console.log(userData);
 // console.log(isAdmin);
 
-if(isLoading || isFetching || loading){
+if(isLoading || isFetching || loading || studentLoading){
   return <MealLoading/>
 }
 
@@ -37,6 +39,9 @@ if(isLoading || isFetching || loading){
   }
 
   console.log(isAdmin);
+  console.log(isStudent);
+
+  
   return (
     <div className='navbar navContainer flex'>
       <div className='navbar-start'>
@@ -74,7 +79,7 @@ if(isLoading || isFetching || loading){
 
 
         {/* Avatar */}
-        <div className='dropdown dropdown-end'>
+        {userData?.email ? <div className='dropdown dropdown-end'>
           <div
             tabIndex={0}
             role='button'
@@ -93,7 +98,7 @@ if(isLoading || isFetching || loading){
             <button onClick={()=>handleNavLink(isAdmin ? "/dashboard/admin" : "/dashboard/student")} className='text-lg w-[150px] py-2 px-8 whitespace-nowrap items-end bg-gray-bg/65 text-logo-yellow font-button font-semibold'>Dashboard</button>
             <button onClick={()=>signOutUser()} className='text-lg w-[150px] py-2 px-8 whitespace-nowrap items-end bg-red-500/85 text-white font-button font-semibold'>Signout</button>
           </section>
-          </div>
+          </div> : ""}
 
 
         {/* Small MenuBar */}
