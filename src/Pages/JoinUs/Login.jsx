@@ -25,16 +25,19 @@ function Login(){
   const {handleSubmit, formState:{errors}, register, reset} = useForm();
 
 
-  async function handleLogin(data){
-      const response = await signingWithEmail(data.email, data.password);
-      if(response?.user?.accessToken){
+function handleLogin(data){
+      signingWithEmail(data.email, data.password)
+      .then((response)=>{
+        if(response?.user?.accessToken){
           reset({
             email:"",
             password:""
           });
           alert("Successfully Logged in");
           navigate(redirect);
-      };
+      }
+      })
+      .catch(error=>console.error(error.message))
   }
 
 

@@ -43,7 +43,7 @@ async function handleFileChange(e){
 
 
 
-async function handleRegistration(data){
+function handleRegistration(data){
 
   const studentData = {
     name:data.name,
@@ -51,21 +51,15 @@ async function handleRegistration(data){
     image:inputImage,
     badge:"bronze",
   }
-   const login = await registrationWithEmail(data.email, data.password);
+   registrationWithEmail(data.email, data.password)
+   .then(()=>{
+                updateUserProfile(data.name, inputImage);
+                postStudent(studentData);
+                navigate(location.state? location.state : "/")
+   })
+   .catch((error)=>console.error(error.message))
   //  console.log(login.user.accessToken)
   //  console.log(studentData)
-   if(login.user.accessToken){
-    try{
-            if(inputImage.length > 5){
-              await updateUserProfile(data.name, inputImage);
-              await postStudent(studentData);
-              await navigate(location.state? location.state : "/")
-            }
-    }catch(error){
-      console.error(error.message)
-    }
-    
-   }
    reset({
     name:"",
     image:"",

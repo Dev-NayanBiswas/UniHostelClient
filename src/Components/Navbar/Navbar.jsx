@@ -4,6 +4,8 @@ import { faBars, faBellConcierge} from "@fortawesome/free-solid-svg-icons";
 import SwitchTheme from "./SwitchTheme";
 import { useLocation, useNavigate } from "react-router-dom";
 import useAuth from "../../Hooks/useAuth";
+import useAdmin from "../../Hooks/Admin/useAdmin";
+import MealLoading from "../Loadings/MealLoading";
 
 
 
@@ -16,18 +18,25 @@ const navMenu = [
   {name:"register", path:"/joinUs/register"}
 ]
 
-const isAdmin = true;
 
 function Navbar(){
-  const {userData,signOutUser} = useAuth()
+  const {data:isAdmin, isLoading,isFetching} = useAdmin()
+  const {userData,signOutUser, loading} = useAuth()
   const location = useLocation();
   const navigate = useNavigate();
 
   // console.log(userData);
+// console.log(isAdmin);
+
+if(isLoading || isFetching || loading){
+  return <MealLoading/>
+}
 
   function handleNavLink(path){
       navigate(path);
   }
+
+  console.log(isAdmin);
   return (
     <div className='navbar navContainer flex'>
       <div className='navbar-start'>
@@ -80,9 +89,9 @@ function Navbar(){
           <section
             tabIndex={0}
             className='menu menu-sm dropdown-content bg-base-100 rounded-md z-[1] mt-3 w-fit p-2 shadow space-y-3'>
-            <p className='text-lg text-center w-[150px] py-2 px-8 whitespace-nowrap items-end capitalize text-gray-400 font-button font-semibold'>{userData?.displayName}</p>
-            <button onClick={()=>handleNavLink(`${isAdmin ? "/dashboard/admin" : "/dashboard/student"}`)} className='text-lg w-[150px] py-2 px-8 whitespace-nowrap items-end bg-gray-bg/65 text-logo-yellow font-button font-semibold'>Dashboard</button>
-            <button onClick={signOutUser} className='text-lg w-[150px] py-2 px-8 whitespace-nowrap items-end bg-red-500/85 text-white font-button font-semibold'>Signout</button>
+            <p className='text-lg text-center w-[150px] mx-auto py-2 whitespace-nowrap items-end capitalize text-gray-400 font-button font-semibold'>{userData?.displayName}</p>
+            <button onClick={()=>handleNavLink(isAdmin ? "/dashboard/admin" : "/dashboard/student")} className='text-lg w-[150px] py-2 px-8 whitespace-nowrap items-end bg-gray-bg/65 text-logo-yellow font-button font-semibold'>Dashboard</button>
+            <button onClick={()=>signOutUser()} className='text-lg w-[150px] py-2 px-8 whitespace-nowrap items-end bg-red-500/85 text-white font-button font-semibold'>Signout</button>
           </section>
           </div>
 

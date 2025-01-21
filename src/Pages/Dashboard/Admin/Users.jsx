@@ -32,11 +32,7 @@ function Users(){
   })
 
   async function fetchUsers(){
-    const response = await axiosSecure.get("/students",{
-      headers:{
-        Authorization: `Bearer ${localStorage.getItem('ClientSecret')}`
-      }
-    });
+    const response = await axiosSecure.get("/students");
     const result = await response.data;
     return result;
   }

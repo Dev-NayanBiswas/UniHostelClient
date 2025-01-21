@@ -20,58 +20,57 @@ function AuthProvider({children}){
       const googleProvider = new GoogleAuthProvider();
   
       //!Login with Google 
-      async function googleLogin(){
+      function googleLogin(){
         setLoading(true)
-          const response = await signInWithPopup(auth, googleProvider);
-          return response;
+        return signInWithPopup(auth, googleProvider);
+
       }
   
       //! Sign Up with Email
-      async function registrationWithEmail(email,password){
+      function registrationWithEmail(email,password){
         setLoading(true)
-        const response = await createUserWithEmailAndPassword(auth, email, password);
-        return response;
+        return createUserWithEmailAndPassword(auth, email, password);
+
       }
       
       //!Sign In with Email 
-      async function signingWithEmail(email,password){
+        function signingWithEmail(email,password){
         setLoading(true)
-        const response = await signInWithEmailAndPassword(auth, email, password);
-        return response;
+        return signInWithEmailAndPassword(auth, email, password);
+       
       }
   
       //! Update UserProfile
-      async function updateUserProfile(displayName, photoURL){
+      function updateUserProfile(displayName, photoURL){
         setLoading(true)
-        const response =  await updateProfile(auth.currentUser, {
+        return updateProfile(auth.currentUser, {
           displayName: displayName, photoURL: photoURL
         })
-
-        return response;
       }
   
   
       //! SignOut 
       function signOutUser(){
-        setLoading(true)
-        signOut(auth)
-        .then(()=>{
-          alert('You just Signed out')})
-        .catch(error=>alert(error.message))
+        setLoading(false)
+        console.log('sign out just triggered')
+        return signOut(auth)
       }
   
       //! Observer 
       useEffect(()=>{
-        const subscriber = onAuthStateChanged(auth, async (currentUser)=>{
-            setUserData(currentUser);
-            if(currentUser){
+        const subscriber = onAuthStateChanged(auth,(currentUser)=>{
+          console.log(currentUser);
+          
+          
+          if(currentUser?.email){
+              setUserData(currentUser);
               const email = {email:currentUser.email};
               createToken(email)
-              setLoading(false)
             }else{
+              setUserData(currentUser);
               localStorage.removeItem("ClientSecret")
-              setLoading(false)
             }
+            setLoading(false)
           return ()=>{
             subscriber()
           }

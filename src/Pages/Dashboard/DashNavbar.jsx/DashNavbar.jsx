@@ -4,6 +4,8 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { AiFillSun } from "react-icons/ai";
 import { FaMoon} from "react-icons/fa";
+import useAdmin from "../../../Hooks/Admin/useAdmin";
+import useAuth from "../../../Hooks/useAuth";
 
 
 
@@ -34,32 +36,33 @@ const floatMenu = [
 
 
 function DashNavbar(){
+  const {loading, userData} = useAuth()
     const navigate = useNavigate();
     const location = useLocation();
-//   const {data:adminInfo, isLoading:adminLoading, isError:adminIsError, error:adminError} = useAdmin();
+  const {data:adminInfo, isLoading:adminLoading, isError:adminIsError, error:adminError} = useAdmin();
 
-// if (adminLoading) {
-//   return (
-//     <p className='text-center text-5xl text-green-500 font-semibold italic'>
-//       Loading . . .
-//     </p>
-//   );
-// }
+if (adminLoading || loading) {
+  return (
+    <p className='text-center text-5xl text-green-500 font-semibold italic'>
+      Loading . . .
+    </p>
+  );
+}
 
-// if (adminIsError) {
-//   console.log(adminError)
-//   return (
-//     <p className='text-center text-5xl text-red-500 font-semibold italic'>
-//       {adminError?.response?.data?.message}
-//     </p>
-//   );
-// }
+if (adminIsError) {
+  console.log(adminError)
+  return (
+    <p className='text-center text-5xl text-red-500 font-semibold italic'>
+      {adminError?.response?.data?.message}
+    </p>
+  );
+}
 
-// const dashMenu = adminInfo?.data?.isAdmin ? adminMenu : userMenu;
 
-const isAdmin = true;
 
-const dashMenu = isAdmin ? adminMenu : userMenu;
+const dashMenu = adminInfo ? adminMenu : userMenu;
+
+// console.log(dashMenu);
 
 
 function handleNavLink(path){
@@ -93,7 +96,7 @@ function handleNavLink(path){
               className='drawer-overlay'></label>
             <section className='menu bg-gray-bg flex flex-col gap-2 items-start justify-start text-base-content min-h-full w-80 p-4'>
               <div className="flex w-full justify-between items-center px-3 py-2 border-[1px] border-logo-yellow/25 rounded-lg my-20">
-              <h1  className="w-full text-logo-yellow text-center text-2xl font-semibold">Admin Dashboard</h1>
+              <h1  className="w-full text-logo-yellow text-center text-2xl font-semibold">{adminInfo? 'Admin Dashboard' : 'Student Dashboard'}</h1>
               <DarkTheme/>
               </div>
             {dashMenu.map((item, index) => (
