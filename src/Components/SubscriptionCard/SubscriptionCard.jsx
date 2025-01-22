@@ -1,8 +1,9 @@
 import { faShield} from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { Link } from "react-router-dom"
 
 function SubscriptionCard({cardData}){
-      const {color, name, description, price, mealsPerDay, menuHighlights, extras, validity, badge} = cardData || {}
+      const {_id,color, name, description, price, mealsPerDay, menuHighlights, extras, validity, badge} = cardData || {}
   return (
     <>
 <div className="group relative h-96 md:w-72 w-80  [perspective:2000px]">
@@ -79,11 +80,11 @@ function SubscriptionCard({cardData}){
           </ul>
         </div>
         <div className="flex justify-between items-center mt-auto">
-          <button
+          <Link to={`/subscription/${_id}`}
             className="px-4 py-2 bg-gray-bg text-logo-yellow rounded-lg font-semibold hover:bg-opacity-90 transition-colors"
           >
             Get the Badge
-          </button>
+          </Link>
           <span className="text-3xl">
           <FontAwesomeIcon style={{
                 color:color,

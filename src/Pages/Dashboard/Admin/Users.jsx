@@ -5,7 +5,7 @@ import useAxiosSecure from "../../../Hooks/AxiosAPI/useAxiosSecure"
 import FoodLoading from "../../../Components/Loadings/FoodLoading";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Toast from "../../../Utilities/sweetToast";
-import { faBagShopping, faShieldBlank } from "@fortawesome/free-solid-svg-icons";
+import { faBagShopping, faShieldBlank, faShieldHalved } from "@fortawesome/free-solid-svg-icons";
 
 
 
@@ -100,7 +100,7 @@ function Users(){
 
 
 function TableRow({item, mutationFn, idx}){
-  const {_id,role,name,image,email,badge} = item || {}
+  const {_id,role,name,image,email,badge,color} = item || {}
   return (
     <tr>
       <td className="w-[20px] text-lg font-heading italic">
@@ -123,8 +123,13 @@ function TableRow({item, mutationFn, idx}){
           <h1>{email}</h1>
         </td>
         <td className="">
-        <button className="md:p-2 p-1 aspect-square rounded-full bg-gray-300/25 drop-shadow-2xl shadow shadow-black/65">
-              <FontAwesomeIcon icon={faShieldBlank} className="lg:text-3xl px-[3px] md:text-lg text-sm text-gray-600"/>
+        <button className="md:p-2 p-1 aspect-square rounded-full bg-gray-300/10 drop-shadow-2xl shadow shadow-black/65">
+              <FontAwesomeIcon
+                style={{
+                  color:badge==='bronze'?'gray':color,
+                  filter:badge==='bronze'?'':'drop-shadow(0 0 4px gray)'
+                }}
+               icon={badge==='bronze'? faShieldHalved : faShieldBlank} className="lg:text-3xl px-[3px] md:text-lg text-sm shadow-black"/>
           </button>
         </td>
         <td className="">

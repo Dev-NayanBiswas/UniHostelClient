@@ -41,8 +41,10 @@ async function handleFileChange(e){
   if(!files)return;
 
   try{
-      const image = await imageUploader(files)
-      setInputImage(image);
+      const image = await imageUploader(files);
+      if(image?.length > 2){
+        setInputImage(image);
+      };
 
   }catch(error){
     alert("Error in uploading Image");

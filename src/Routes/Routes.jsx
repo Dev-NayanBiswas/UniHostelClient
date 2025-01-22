@@ -24,6 +24,8 @@ import MealDetails from "../Pages/Details/MealDetails";
 import StudentRoute from "../Pages/Private/StudentRoute";
 import SecureRoute from "../Pages/Private/SecureRoute";
 import AdminRoute from "../Pages/Private/AdminRoute";
+import BuySubscription from "../Pages/BuySubscription/BuySubscription";
+import axios from "axios";
 
 const Routers = createBrowserRouter([
     {
@@ -46,6 +48,12 @@ const Routers = createBrowserRouter([
             {
                 path:"upcoming",
                 element:<UpComingMeals/>
+            },
+            {
+                path:"subscription/:id",
+                element:<SecureRoute>
+                    <BuySubscription/>
+                </SecureRoute>
             },
             {
                 path:"joinUs",
