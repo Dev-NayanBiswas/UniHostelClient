@@ -5,7 +5,7 @@ import useAxiosSecure from "../../../Hooks/AxiosAPI/useAxiosSecure"
 import FoodLoading from "../../../Components/Loadings/FoodLoading";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Toast from "../../../Utilities/sweetToast";
-import { faBagShopping, faShieldBlank, faShieldHalved } from "@fortawesome/free-solid-svg-icons";
+import { faShieldBlank, faShieldHalved } from "@fortawesome/free-solid-svg-icons";
 
 
 
@@ -122,15 +122,18 @@ function TableRow({item, mutationFn, idx}){
         <td className="">
           <h1>{email}</h1>
         </td>
-        <td className="">
-        <button className="md:p-2 p-1 aspect-square rounded-full bg-gray-300/10 drop-shadow-2xl shadow shadow-black/65">
+        <td className="flex justify-center items-center group gap-2">
+        <button className="md:p-2 p-1 aspect-square rounded-full bg-gray-300/10 drop-shadow-2xl shadow z-20 shadow-black/65">
               <FontAwesomeIcon
                 style={{
                   color:badge==='bronze'?'gray':color,
                   filter:badge==='bronze'?'':'drop-shadow(0 0 4px gray)'
                 }}
-               icon={badge==='bronze'? faShieldHalved : faShieldBlank} className="lg:text-3xl px-[3px] md:text-lg text-sm shadow-black"/>
+               icon={badge==='bronze'? faShieldHalved : faShieldBlank} className="lg:text-3xl px-[3px] text-lg shadow-black"/>
           </button>
+          <span style={{
+                  color:badge==='bronze'?'gray': color,
+                }} className="font-semibold font-para w-14">{badge}</span>
         </td>
         <td className="">
           {
@@ -141,7 +144,6 @@ function TableRow({item, mutationFn, idx}){
               <FaGraduationCap className="lg:text-3xl md:text-lg text-sm text-gray-400"/>
           </button>
           }
-          
         </td>
       </tr>
   )

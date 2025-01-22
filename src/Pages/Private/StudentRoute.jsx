@@ -6,16 +6,16 @@ import useAuth from "../../Hooks/useAuth";
 function StudentRoute({children}){
     const location = useLocation()
     const {userData, loading} = useAuth();
-    const {data, isLoading} = useStudent();
+    const {data, isLoading, isFetching} = useStudent();
 
     console.log(data);
     console.log(userData);
 
-    if(loading || isLoading){
+    if(loading || isLoading || isFetching){
         return <FoodLoading/>
     }
 
-    if(userData?.email && data){
+    if(userData?.email && data.isStudent){
         return children;
     }
 

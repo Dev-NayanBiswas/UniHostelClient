@@ -15,7 +15,14 @@ function useTX(){
             const response = await axiosSecure.post('/transactions', data);
         const result = await response.data;
         if(result.result.insertedId){
-            patchStudentBadge(newData);
+           const updateBadge = await patchStudentBadge(newData);
+        //    console.log(updateBadge)
+           if(updateBadge?.result?.modifiedCount > 0){
+            Toast.fire({
+              icon:"success",
+              title:"Congratulations Badge Updated"
+            })
+          }
         };
         }catch(error){
             alert(error.message);

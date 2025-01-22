@@ -2,7 +2,9 @@ import React from 'react'
 
 function AdminProfile() {
   return (
-    <div>AdminProfile</div>
+    <>
+      <h1>Hello Admin</h1>
+    </>
   )
 }
 

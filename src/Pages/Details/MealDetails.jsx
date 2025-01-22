@@ -6,18 +6,29 @@ import {
   faStar,
   faThumbsUp,
 } from "@fortawesome/free-solid-svg-icons";
-import { useParams } from "react-router-dom";
-import { useQuery } from "@tanstack/react-query";
+import { useNavigate, useParams } from "react-router-dom";
+import { useQuery, useQueryClient } from "@tanstack/react-query";
 import axios from "axios";
 import FoodLoading from "../../Components/Loadings/FoodLoading";
 import dateConverter from "../../Utilities/dateConverter";
 import ReviewInput2 from "../../Components/Forms/ReviewInput2";
 import ReviewCard from "../../Components/ReviewCard/ReviewCard";
-import confirmToast from "../../Utilities/confirmToast";
 import Toast from "../../Utilities/sweetToast";
+import useStudent from "../../Hooks/StudentRole/useStudent";
+import useStudentsCURD from "../../Hooks/Students/useStudentsCURD";
+import useMealCURD from "../../Hooks/CURDS/useMealCURD";
 
-function MealDetails() {
+
+
+function MealDetails(){
+  const queryClient = useQueryClient();
+  const {incLikeCount} = useMealCURD();
+  const {patchStudentBadge} = useStudentsCURD();
+  const navigate = useNavigate();
+  // const axiosSecure = useAxiosSecure();
   const { id } = useParams();
+  const {data:student, isError:studentError, isLoading:studentLoading} = useStudent();
+
   const {
     data: bannerData,
     isLoading,
@@ -33,11 +44,11 @@ function MealDetails() {
   });
 
 
-  if (isLoading) {
+  if (isLoading || studentLoading) {
     return <FoodLoading />;
   }
 
-  if (isError) {
+  if (isError || studentError) {
     return (
       <p className='text-2xl text-red-600 text-center my-28 font-semibold font-heading'>
         {error.message}
@@ -46,6 +57,7 @@ function MealDetails() {
   }
 
   const {
+    _id,
     category,
     ingredients,
     description,
@@ -58,20 +70,69 @@ function MealDetails() {
     likes,
     rating,
     state,
-    email,
     date,
   } = bannerData || {};
 
-  async function handleRequestedMeal(){
-    if(state === "upcoming"){
-      alert("Coming Soon hold your Horse");
-      return;
-    }
-    console.log("Handle Requested Meal")
-  }
+  const {badge,role,name,image:studentPhoto,email, pendingMeals} = student?.studentData || {};
 
-  async function handleLike(){
-    console.log("Handle Like Clicked");
+
+  // console.log(pendingMeals, typeof _id);
+
+  // const disabled = pendingMeals.includes(_id);
+  const disabled = pendingMeals?.indexOf(_id) !== -1;
+
+  // console.log(disabled, disabled2);
+
+  async function handleActions(action){
+    console.log(action)
+    const isUser = student?.isStudent
+    const value = handleSanitization(state, navigate, badge, isUser)
+
+    if(!value){
+      return
+    }
+
+    if(action === "request"){
+      if(state === "upcoming"){
+        Toast.fire({
+          icon:"info",
+          title:"wait till Published"
+        });
+        return;
+      }
+      const setData = {
+        email:email,
+        mealID:_id,
+        requested:true
+      }
+      const result = await patchStudentBadge(setData);
+      if(result?.result?.modifiedCount){
+        Toast.fire({
+          icon:"success",
+          title:"Request under Process"
+        });
+        queryClient.invalidateQueries(["details"]);
+      }
+    }
+
+    if(action === "like"){
+      const newData = {
+        like:true,
+        id:_id
+      }
+      const result = await incLikeCount(newData);
+      console.log(result);
+      if(result?.result?.modifiedCount){
+        Toast.fire({
+          icon:"info",
+          title:"Thank You"
+        });
+        queryClient.invalidateQueries(["details"]);
+      }
+    }
+    
+    console.log("handleActions", _id, action);
+
   }
 
 
@@ -86,7 +147,11 @@ function MealDetails() {
             className='w-full h-full relative rounded-tl-3xl group'
             layers={[{ image: image, speed: -20 }]}>
             <div className='inset-0 absolute z-[2] w-full h-full top-0 bottom-0 right-0 left-0'/>
-            <button onClick={handleRequestedMeal} className="text-lg font-semibold w-[100px] group-hover:w-[130px] transition-width duration-500 pr-3 pl-2 py-[4px]  bg-gray-bg/75 text-white rounded-s-full absolute top-1/2 right-0 cursor-pointer z-40">Request</button>
+            <button
+            style={{
+              background:disabled? "#a84e32" : "#3f3e3cbf"
+            }}
+            onClick={()=>handleActions("request")} className={`text-lg font-semibold w-[100px] group-hover:w-[130px] transition-width duration-500 pr-3 pl-2 py-[4px] text-white rounded-s-full absolute top-1/2 right-0 cursor-pointer z-40 ${disabled? "pointer-events-none" : "cursor-pointer"}`}>{disabled?"Pending" : "Request"}</button>
 
             <section className='bg-gray-bg/45 absolute left-0 bottom-0 h-fit w-full p-2 text-white font-para'>
               <table className='px-2'>
@@ -157,7 +222,7 @@ function MealDetails() {
                 <tbody>
                 <tr className='px-2'>
                   <td className='px-2 font-semibold font-heading'>
-                    <button onClick={()=>confirmToast(handleLike)}>
+                    <button onClick={()=>handleActions("like")}>
                       <FontAwesomeIcon
                         className='text-blue-400 md:text-2xl text-lg'
                         icon={faThumbsUp}
@@ -204,6 +269,39 @@ function MealDetails() {
       </section>
     </>
   );
+}
+
+
+function handleSanitization(state, navigate, badge, isUser){
+
+  if(badge === "bronze"){
+    Toast.fire({
+      icon:"warning",
+      title:"Buy a Subscription First"
+    });
+    return false;
+  }
+
+
+  if(state === "upcoming" && badge === "bronze"){
+    Toast.fire({
+      icon:"warning",
+      title:"Update your Badge"
+    });
+    return false;
+  }
+  
+  
+  if(!isUser){
+    Toast.fire({
+      icon:"warning",
+      title:"Need to Login"
+    });
+    navigate("/joinUs")
+    return false;
+  }
+
+  return true;
 }
 
 export default MealDetails;

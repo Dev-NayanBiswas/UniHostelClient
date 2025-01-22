@@ -23,12 +23,7 @@ function useStudentsCURD(){
       try{
         const response = await axiosSecure.patch(`/students/badge/${data.email}`, data);
         const result = await response.data;
-        if(result?.result.modifiedCount > 0){
-          Toast.fire({
-            icon:"success",
-            title:"Congratulations Badge Updated"
-          })
-        }
+        return result;
       }catch(error){
         console.error(error)
       }

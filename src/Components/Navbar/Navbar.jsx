@@ -22,7 +22,7 @@ const navMenu = [
 
 function Navbar(){
   const {data:isAdmin, isLoading,isFetching} = useAdmin()
-  const {data:isStudent, isLoading:studentLoading,isFetching:studentFetching} = useStudent();
+  const {data, isLoading:studentLoading} = useStudent();
   const {userData,signOutUser, loading} = useAuth()
   const location = useLocation();
   const navigate = useNavigate();
@@ -38,8 +38,8 @@ if(isLoading || isFetching || loading || studentLoading){
       navigate(path);
   }
 
-  console.log(isAdmin);
-  console.log(isStudent);
+  // console.log(isAdmin);
+  // console.log(isStudent);
 
   
   return (
@@ -95,7 +95,7 @@ if(isLoading || isFetching || loading || studentLoading){
             tabIndex={0}
             className='menu menu-sm dropdown-content bg-base-100 rounded-md z-[1] mt-3 w-fit p-2 shadow space-y-3'>
             <p className='text-lg text-center w-[150px] mx-auto py-2 whitespace-nowrap items-end capitalize text-gray-400 font-button font-semibold'>{userData?.displayName}</p>
-            <button onClick={()=>handleNavLink(isAdmin ? "/dashboard/admin" : "/dashboard/student")} className='text-lg w-[150px] py-2 px-8 whitespace-nowrap items-end bg-gray-bg/65 text-logo-yellow font-button font-semibold'>Dashboard</button>
+            <button onClick={()=>handleNavLink(isAdmin ? "/dashboard/admin" : data.isStudent ? "/dashboard/student" : "/joinUs")} className='text-lg w-[150px] py-2 px-8 whitespace-nowrap items-end bg-gray-bg/65 text-logo-yellow font-button font-semibold'>Dashboard</button>
             <button onClick={()=>signOutUser()} className='text-lg w-[150px] py-2 px-8 whitespace-nowrap items-end bg-red-500/85 text-white font-button font-semibold'>Signout</button>
           </section>
           </div> : ""}
