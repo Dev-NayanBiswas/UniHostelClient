@@ -51,7 +51,7 @@ function AuthProvider({children}){
       //! SignOut 
       function signOutUser(){
         setLoading(false)
-        console.log('sign out just triggered');
+        // console.log('sign out just triggered');
         localStorage.removeItem("ClientSecret");
         return signOut(auth)
       }
@@ -59,13 +59,13 @@ function AuthProvider({children}){
       //! Observer 
       useEffect(()=>{
         const subscriber = onAuthStateChanged(auth, async(currentUser)=>{
-          console.log(currentUser);
+          // console.log(currentUser);
           
           
           if(currentUser?.email){
               setUserData(currentUser);
               const email = {email:currentUser.email};
-              console.log(email);
+              // console.log(email);
               await setToken(email)
             }else{
               setUserData(null);

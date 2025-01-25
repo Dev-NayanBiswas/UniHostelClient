@@ -21,7 +21,7 @@ const stripePromise = loadStripe(import.meta.env.VITE_PAYMENT_GATEWAY_PK)
 
 function BuySubscription(){
     const {id} = useParams();
-    console.log(id)
+    // console.log(id)
     const {data, isPending, isLoading, isError, error} = useQuery({
         queryKey:["buySubs", id],
         queryFn:()=>fetchSubscriptionData(id),

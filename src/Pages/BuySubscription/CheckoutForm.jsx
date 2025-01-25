@@ -21,7 +21,7 @@ function CheckoutForm({cardData}){
     useEffect(()=>{
         axiosSecure.post('/payment',{price:price})
         .then(res=>{
-            console.log(res.data.clientSecret);
+            // console.log(res.data.clientSecret);
             setClientSecret(res.data.clientSecret)
         })
         .catch(error=>console.log(error))
@@ -63,7 +63,7 @@ function CheckoutForm({cardData}){
           if(confirmError){
             // console.log("Confirm Error",confirmError)
           }else{
-            console.log("Payment Intent",paymentIntent);
+            // console.log("Payment Intent",paymentIntent);
             if(paymentIntent.status === 'succeeded'){
                 // console.log("TXID", paymentIntent.id);
                 const paymentData = {

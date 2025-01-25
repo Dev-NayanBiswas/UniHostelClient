@@ -1,8 +1,6 @@
 
 import axios from "axios";
 import useAxiosSecure from "../AxiosAPI/useAxiosSecure";
-import Toast from "../../Utilities/sweetToast";
-
 function useStudentsCURD(){
   const axiosSecure = useAxiosSecure();
 

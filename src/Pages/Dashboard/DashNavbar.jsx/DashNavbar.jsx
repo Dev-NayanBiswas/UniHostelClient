@@ -50,7 +50,7 @@ if (adminLoading || loading) {
 }
 
 if (adminIsError) {
-  console.log(adminError)
+  // console.log(adminError)
   return (
     <p className='text-center text-5xl text-red-500 font-semibold italic'>
       {adminError?.response?.data?.message}

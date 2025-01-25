@@ -84,7 +84,7 @@ async function handleAddMeal(data){
     }
     if(userData?.email){
       postMealMutation.mutate(newData)
-      console.log(newData)
+      // console.log(newData)
     }
     reset({
         title:"",

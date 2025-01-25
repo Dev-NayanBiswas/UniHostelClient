@@ -8,8 +8,8 @@ function StudentRoute({children}){
     const {userData, loading} = useAuth();
     const {data, isLoading, isFetching} = useStudent();
 
-    console.log(data);
-    console.log(userData);
+    // console.log(data);
+    // console.log(userData);
 
     if(loading || isLoading || isFetching){
         return <FoodLoading/>

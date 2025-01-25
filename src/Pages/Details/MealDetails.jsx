@@ -17,6 +17,7 @@ import Toast from "../../Utilities/sweetToast";
 import useStudent from "../../Hooks/StudentRole/useStudent";
 import useStudentsCURD from "../../Hooks/Students/useStudentsCURD";
 import useMealCURD from "../../Hooks/CURDS/useMealCURD";
+import useReviews from "../../Hooks/Reviews/useReviews";
 
 
 
@@ -24,6 +25,7 @@ function MealDetails(){
   const queryClient = useQueryClient();
   const {incLikeCount} = useMealCURD();
   const {patchStudentBadge} = useStudentsCURD();
+  const {getReviews} = useReviews();
   const navigate = useNavigate();
   // const axiosSecure = useAxiosSecure();
   const { id } = useParams();
@@ -42,6 +44,11 @@ function MealDetails(){
       return result;
     },
   });
+  const {data:allMealReviews} = useQuery({
+    queryKey:['mealReviews', id],
+    queryFn:async()=> await getReviews(id,null),
+    enabled:!!id
+  })
 
 
   if (isLoading || studentLoading) {
@@ -79,12 +86,12 @@ function MealDetails(){
   // console.log(pendingMeals, typeof _id);
 
   // const disabled = pendingMeals.includes(_id);
-  const disabled = pendingMeals?.indexOf(_id) !== -1;
+  const disabled = pendingMeals?.includes(_id);
 
   // console.log(disabled, disabled2);
 
   async function handleActions(action){
-    console.log(action)
+    // console.log(action)
     const isUser = student?.isStudent
     const value = handleSanitization(state, navigate, badge, isUser)
 
@@ -121,7 +128,7 @@ function MealDetails(){
         id:_id
       }
       const result = await incLikeCount(newData);
-      console.log(result);
+      // console.log(result);
       if(result?.result?.modifiedCount){
         Toast.fire({
           icon:"info",
@@ -131,11 +138,11 @@ function MealDetails(){
       }
     }
     
-    console.log("handleActions", _id, action);
+    // console.log("handleActions", _id, action);
 
   }
 
-
+console.log(allMealReviews);
 
 
   return (
@@ -252,20 +259,16 @@ function MealDetails(){
             </section>
           </section>
           <div>
-            <ReviewInput2/>
+            <ReviewInput2 mealID={_id}/>
           </div>
         </section>
       </section>
       <div className="my-10"/>
       <HeadingTitle headingData={{ heading: "Students Reviews" }} />
       <section className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-2">
-        <ReviewCard/>
-        <ReviewCard/>
-        <ReviewCard/>
-        <ReviewCard/>
-        <ReviewCard/>
-        <ReviewCard/>
-        <ReviewCard/>
+        {
+          allMealReviews?.result?.map((item)=><ReviewCard key={item._id} cardData={item}/>)
+        }
       </section>
     </>
   );

@@ -1,25 +1,48 @@
 import { useForm } from "react-hook-form";
 import ReactStars from "react-rating-stars-component";
-import dateToday from "../../Utilities/dateConverter";
 import useAuth from "../../Hooks/useAuth";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
+import useReviews from "../../Hooks/Reviews/useReviews";
+import { useNavigate } from "react-router-dom";
+import Toast from "../../Utilities/sweetToast";
 
-function ReviewInput2({prevReview}){
+function ReviewInput2({mealID}){
+  const redirect = useNavigate();
+  const queryClient = useQueryClient();
     const {userData} = useAuth();
-    const {register,handleSubmit,watch,setValue, formState:{errors}, clearErrors, setError, reset} = useForm({defaultValues:{
-        comment:prevReview?.comment||"",
-        rating:prevReview?.rating||0
-    }})
+    const {postReview} = useReviews()
+    const {register,handleSubmit,watch,setValue, formState:{errors}, clearErrors, setError, reset} = useForm()
 
     const currentRating = watch("rating" || 0);
     const identifier = {
+        mealID:mealID,
         name:userData?.displayName,
         email:userData?.email,
         image:userData?.photoURL,
-        postedDate:dateToday,
+        postedDate:Date.now(),
     }
+
+    const postReviewMutation = useMutation({
+      mutationKey:['details'],
+      mutationFn:(data)=>postReview(data),
+      onSuccess:()=>{
+        queryClient.invalidateQueries(["details"]);
+        alert("Review Added Successfully")
+      },
+      onError:(error)=>{
+        console.error(error.message)
+      }
+    })
 
 
     function formHandler(data){
+      if(!userData?.email){
+        Toast.fire({
+          icon:"warning",
+          title:"Need to Login First"
+        })
+        return redirect("/joinUs")
+      } 
         if (!data?.rating || data?.rating === 0){
             setError("rating", {
                 type: "manual",
@@ -27,7 +50,12 @@ function ReviewInput2({prevReview}){
             })
             return;
         }else{
-            console.log(data)
+            const newData = {...data,...identifier};
+            postReviewMutation.mutate(newData);
+            reset({
+              comment:"",
+              rating:0
+            })
         }
     }
   return (

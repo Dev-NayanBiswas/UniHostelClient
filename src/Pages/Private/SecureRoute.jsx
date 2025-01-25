@@ -6,7 +6,7 @@ function SecureRoute({children}){
     const location = useLocation()
     const {userData, loading} = useAuth();
 
-    console.log(userData);
+    // console.log(userData);
 
     if(loading){
         return <FoodLoading/>

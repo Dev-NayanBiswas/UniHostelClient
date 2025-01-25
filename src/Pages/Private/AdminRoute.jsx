@@ -7,7 +7,7 @@ function AdminRoute({children}){
     const {userData, loading} = useAuth();
     const {data,isLoading, isPending} = useAdmin();
 
-    console.log(data);
+    // console.log(data);
 
     if(loading || isLoading || isPending){
         return <FoodLoading/>

@@ -11,7 +11,7 @@ function useAdmin(){
         queryFn:async()=>{
             const response = await axiosSecure.get(`/admin/${userData?.email}`);
             const result = await response.data;
-            console.log(result);
+            // console.log(result);
             
             return result.isAdmin;
         },
