@@ -4,13 +4,13 @@ import { useQuery, useQueryClient } from "@tanstack/react-query";
 import useAuth from "../../../../Hooks/useAuth";
 import useStudentsCURD from "../../../../Hooks/Students/useStudentsCURD";
 
-function PendingMeals({pendingMeals=[], email}){
+function PendingMeals(){
     const queryClient = useQueryClient();
     const {userData,loading} = useAuth();
-    const {patchStudentBadge} = useStudentsCURD();
+    const {} = useStudentsCURD();
     const {getStudentMeals} = useMealCURD();
     const {data, isLoading, isError, error} = useQuery({
-        queryKey:["studentMeals", pendingMeals],
+        queryKey:["studentMeals"],
         queryFn:()=>getStudentMeals(pendingMeals),
         enabled:!!email && !loading
     })
@@ -35,10 +35,10 @@ function PendingMeals({pendingMeals=[], email}){
         mealID:id,
         remove:true
       }
-      const response = await patchStudentBadge(setData);
-      if(response?.result?.modifiedCount){
-        queryClient.invalidateQueries(['studentMeals'])
-      };
+      // const response = await ""(setData);
+      // if(response?.result?.modifiedCount){
+      //   queryClient.invalidateQueries(['studentMeals'])
+      // };
     }
 
   return (

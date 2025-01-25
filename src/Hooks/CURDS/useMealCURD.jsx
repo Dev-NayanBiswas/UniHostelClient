@@ -1,3 +1,4 @@
+import axios from "axios";
 import useAxiosSecure from "../AxiosAPI/useAxiosSecure"
 import useAuth from "../useAuth";
 
@@ -6,14 +7,6 @@ function useMealCURD(){
     const {userData} = useAuth();
     const email = userData?.email;
 
-    async function getStudentMeals(meals){
-      // const [_, params] = queryKey;
-      // const {meals} = params;
-      const response = await axiosSecure.get(`/studentMeals/${email}`,{params:{meals:meals}});
-      const result = await response.data;
-      // console.log(result);
-      return result;
-  }
 
     //! Admin Adding Meals 
     async function postMeal(data){
@@ -22,6 +15,7 @@ function useMealCURD(){
         return result;
     }
 
+    
     //! Incrementing Like Count 
     async function incLikeCount(data){
       try{
@@ -33,10 +27,31 @@ function useMealCURD(){
         console.error(error)
       }
     }
+
+
+
+
+    //!* Adding Requested meals 
+    async function addRequestedMeals(data){
+        const response = await axiosSecure.post(`/studentMeals/${data.email}`, data);
+        const result = await response?.data;
+        return result;
+    }
+
+
+    //* Get Users REquested Meals 
+    async function getAllRequestedMeals(email){
+      const response = await axiosSecure.get(`/studentMeals/pendingMeals/${email}`);
+      const result = await response.data;
+      console.log(result)
+      return result;
+    }
+    
   return {
     postMeal,
     incLikeCount,
-    getStudentMeals,
+    addRequestedMeals,
+    getAllRequestedMeals,
   }
 }
 

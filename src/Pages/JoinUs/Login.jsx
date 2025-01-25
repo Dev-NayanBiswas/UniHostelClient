@@ -7,6 +7,7 @@ import GoogleLogin from "./GoogleLogin"
 import useAuth from "../../Hooks/useAuth"
 import { useForm } from "react-hook-form"
 import HeadingTitle from "../../Components/HeadingTitle/HeadingTitle"
+import Toast from "../../Utilities/sweetToast"
 
 
 
@@ -33,11 +34,19 @@ function handleLogin(data){
             email:"",
             password:""
           });
-          alert("Successfully Logged in");
+          Toast.fire({
+            icon:"success",
+            title:"Successfully LoggedIn"
+          })
           navigate(redirect);
       }
       })
-      .catch(error=>console.error(error.message))
+      .catch(error=>{
+        error && Toast.fire({icon:"error", title:"Wrong Email or Password"});
+        return;
+      }
+        
+      )
   }
 
 

@@ -1,18 +1,17 @@
 import Swal from "sweetalert2";
 import './sweetAler.css'
-import Toast from "./sweetToast";
 
-function confirmToast(fn){
-    const messages = {
-        title1:"Sure you want to Update?",
-        title2:"Updated Successfully",
-        text1:'Update will Change the review',
-        btnText:'Update',
-        icon:'question',
-        icon2:'success',
-    }
+function confirmToast(fn,messages){
+    // const messages = {
+    //     title1:"Sure you want to Update?",
+    //     title2:"Updated Successfully",
+    //     text1:'Update will Change the review',
+    //     btnText:'Update',
+    //     icon:'question',
+    //     icon2:'success',
+    // }
 
-    const {title1, title2, text1, btnText, icon, icon2} = messages || {}
+    const {title1, text1, btnText, icon} = messages || {}
 
   Swal.fire({
     title: title1,
@@ -30,10 +29,6 @@ function confirmToast(fn){
   }).then((result) => {
     if (result.isConfirmed){
         fn();
-          Toast.fire({
-    icon: icon2,
-    title: title2
-  })
 }
 });
 }

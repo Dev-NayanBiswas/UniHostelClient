@@ -11,7 +11,7 @@ function StudentRoute({children}){
     // console.log(data);
     // console.log(userData);
 
-    if(loading || isLoading || isFetching){
+    if(loading || isLoading){
         return <FoodLoading/>
     }
 

@@ -27,10 +27,16 @@ function ReviewInput2({mealID}){
       mutationFn:(data)=>postReview(data),
       onSuccess:()=>{
         queryClient.invalidateQueries(["details"]);
-        alert("Review Added Successfully")
+        Toast.fire({
+          icon:"info",
+          title:"Thanks You"
+        })
       },
       onError:(error)=>{
-        console.error(error.message)
+        Toast.fire({
+          icon:"error",
+          title:`${error.message}`
+        })
       }
     })
 

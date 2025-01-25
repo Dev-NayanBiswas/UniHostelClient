@@ -34,7 +34,10 @@ function AuthProvider({children}){
       
       //!Sign In with Email 
         function signingWithEmail(email,password){
-        setLoading(true)
+          setLoading(true);
+          setTimeout(()=>{
+          setLoading(false);
+        },3000)
         return signInWithEmailAndPassword(auth, email, password);
        
       }
@@ -61,20 +64,20 @@ function AuthProvider({children}){
         const subscriber = onAuthStateChanged(auth, async(currentUser)=>{
           // console.log(currentUser);
           
-          
           if(currentUser?.email){
               setUserData(currentUser);
               const email = {email:currentUser.email};
               // console.log(email);
               await setToken(email)
+              setLoading(false)
             }else{
               setUserData(null);
               localStorage.removeItem("ClientSecret")
+              setLoading(false)
             }
-            setLoading(false)
-          
-        })
-        return ()=>{
+            
+          })
+          return ()=>{
           subscriber()
         } 
       },[])

@@ -18,7 +18,7 @@ function MyProfile(){
   const axiosSecure = useAxiosSecure()
   const {userData, loading} = useAuth();
   const email = userData?.email;
-  const {data, isFetching, isLoading, isError, error, isPending} = useQuery({
+  const {data, isLoading, isError, error} = useQuery({
     queryKey:["myProfile", email],
     queryFn:async()=>{
       const response = await axiosSecure.get(`/students/${email}`);
@@ -28,7 +28,7 @@ function MyProfile(){
     enabled:!!email && !loading,
   })
 
-  if(isLoading || isFetching){
+  if(isLoading){
     return <FoodLoading/>
   }
 

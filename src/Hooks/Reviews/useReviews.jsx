@@ -6,7 +6,7 @@ function useReviews(){
 
 
     async function getReviews(mealID,email){
-        const query = mealID ? `mealID=${mealID}`:`email=${email}`
+        const query = mealID ? `mealID=${mealID}`: email ?`email=${email}`:{}
         const response = await axios.get(`/reviews?${query}`);
         const result = await response.data;
         return result;

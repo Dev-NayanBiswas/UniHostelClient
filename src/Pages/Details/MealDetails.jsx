@@ -6,7 +6,7 @@ import {
   faStar,
   faThumbsUp,
 } from "@fortawesome/free-solid-svg-icons";
-import { useNavigate, useParams } from "react-router-dom";
+import { replace, useNavigate, useParams } from "react-router-dom";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import axios from "axios";
 import FoodLoading from "../../Components/Loadings/FoodLoading";
@@ -15,28 +15,36 @@ import ReviewInput2 from "../../Components/Forms/ReviewInput2";
 import ReviewCard from "../../Components/ReviewCard/ReviewCard";
 import Toast from "../../Utilities/sweetToast";
 import useStudent from "../../Hooks/StudentRole/useStudent";
-import useStudentsCURD from "../../Hooks/Students/useStudentsCURD";
 import useMealCURD from "../../Hooks/CURDS/useMealCURD";
 import useReviews from "../../Hooks/Reviews/useReviews";
+import useAuth from "../../Hooks/useAuth";
+import useAxiosSecure from "../../Hooks/AxiosAPI/useAxiosSecure";
 
 
 
 function MealDetails(){
   const queryClient = useQueryClient();
-  const {incLikeCount} = useMealCURD();
-  const {patchStudentBadge} = useStudentsCURD();
+  const axiosSecure = useAxiosSecure();
+  const {incLikeCount, addRequestedMeals,getAllRequestedMeals} = useMealCURD();
   const {getReviews} = useReviews();
   const navigate = useNavigate();
-  // const axiosSecure = useAxiosSecure();
+  const {userData,loading} = useAuth();
+  const userEmail = userData?.email;
   const { id } = useParams();
   const {data:student, isError:studentError, isLoading:studentLoading} = useStudent();
+  
+  const {data:mealArrayValue} = useQuery({
+    queryKey:["mealArray", userEmail],
+    queryFn:async()=>{
+      const response = await axiosSecure.get(`/studentMeals/${userEmail}`);
+      const result = await response.data;
+      console.log(result);
+      return result;
+    },
+    enabled:!!userEmail && !loading,
+  })
 
-  const {
-    data: bannerData,
-    isLoading,
-    isError,
-    error,
-  } = useQuery({
+  const {data: bannerData,isLoading,isError,error,} = useQuery({
     queryKey: ["details", id],
     queryFn: async () => {
       const response = await axios.get(`/meals/${id}`);
@@ -80,18 +88,14 @@ function MealDetails(){
     date,
   } = bannerData || {};
 
-  const {badge,role,name,image:studentPhoto,email, pendingMeals} = student?.studentData || {};
+  const {badge,role,name,image:studentPhoto,email} = student?.studentData || {};
 
+  console.log(mealArrayValue)
 
-  // console.log(pendingMeals, typeof _id);
+  const disabled = mealArrayValue?.mealIDs?.includes(_id);
 
-  // const disabled = pendingMeals.includes(_id);
-  const disabled = pendingMeals?.includes(_id);
-
-  // console.log(disabled, disabled2);
 
   async function handleActions(action){
-    // console.log(action)
     const isUser = student?.isStudent
     const value = handleSanitization(state, navigate, badge, isUser)
 
@@ -108,12 +112,16 @@ function MealDetails(){
         return;
       }
       const setData = {
+        image:image,
+        title:title,
+        name:name,
         email:email,
         mealID:_id,
-        requested:true
+        status:"requested",
       }
-      const result = await patchStudentBadge(setData);
-      if(result?.result?.modifiedCount){
+      const result = await addRequestedMeals(setData);
+      console.log(result);
+      if(result?.result?.insertedId){
         Toast.fire({
           icon:"success",
           title:"Request under Process"
@@ -128,7 +136,7 @@ function MealDetails(){
         id:_id
       }
       const result = await incLikeCount(newData);
-      // console.log(result);
+      
       if(result?.result?.modifiedCount){
         Toast.fire({
           icon:"info",
@@ -142,7 +150,7 @@ function MealDetails(){
 
   }
 
-console.log(allMealReviews);
+// console.log(allMealReviews);
 
 
   return (
