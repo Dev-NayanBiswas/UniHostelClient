@@ -17,9 +17,16 @@ function useReviews(){
         const result = await response.data;
         return result
     }
+
+    async function patchReviews(data){
+      const response = await axiosSecure.patch(`/reviews/studentReviews/${data.email}`, data);
+      const result = await response.data;
+      return result;
+    }
   return {
     postReview,
     getReviews,
+    patchReviews,
   }
 }
 

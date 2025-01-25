@@ -141,13 +141,6 @@ function TableRow({item,idx, cancelMeal}){
         
         <FontAwesomeIcon className="lg:text-3xl md:text-2xl text-lg font-bold italic text-green-500 " icon={faCheck}/>
          }
- 
-        {/* <button onClick={()=>(console.log("object"))} className="p-2 aspect-square rounded-full bg-gray-300/25 drop-shadow-2xl shadow shadow-black/65">
-              btn
-          </button>
-        <button onClick={()=>(console.log("object"))} className="p-2 aspect-square rounded-full bg-gray-300/25 drop-shadow-2xl shadow shadow-black/65">
-              btn
-          </button> */}
          </div>
         </td>
       </tr>

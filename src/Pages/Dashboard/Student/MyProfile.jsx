@@ -99,7 +99,7 @@ function MyProfile(){
 
 
 
-            <h1>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste, ea repudiandae est fugiat, molestias velit excepturi accusamus commodi, facere voluptatem hic dolor exercitationem tenetur omnis! Adipisci quo asperiores aspernatur eligendi incidunt. Suscipit error unde facilis ullam ab aut, soluta corrupti neque quis quisquam odit, labore alias accusamus quo eveniet enim!</h1>
+            <h1>I am a Computer Science and Engineering (CSE) student with a passion for learning, innovation, and technology. I enjoy solving problems, exploring new concepts in programming, and working on exciting projects. Beyond academics, I value collaboration and building meaningful connections with my peers. Living in the hostel has been a great opportunity to meet diverse individuals, exchange ideas, and grow together. I believe in balancing studies with personal growth and enjoy engaging in activities that challenge and inspire me. Always eager to learn and contribute, I look forward to making the most of my time here.</h1>
           </section>
         </section>
         </section>

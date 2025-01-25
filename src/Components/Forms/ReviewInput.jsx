@@ -3,20 +3,25 @@ import ReactStars from "react-rating-stars-component";
 import dateToday from "../../Utilities/dateConverter";
 import useAuth from "../../Hooks/useAuth";
 import HeadingTitle from "../HeadingTitle/HeadingTitle";
+import useReviews from "../../Hooks/Reviews/useReviews";
+import Toast from "../../Utilities/sweetToast";
+import { useQueryClient } from "@tanstack/react-query";
 
 
 
 const headingData = {
-    heading:"Review",
+    heading:"Update Review",
     desc:"Your feedback matters! Help us improve by sharing your experience with our hostel meals. Whether it’s your favorite dish or a suggestion for improvement, your review can make a difference."
   }
 
 
-function ReviewInput({prevReview}){
+function ReviewInput({prevReview,closeModal}){
+  const queryClient = useQueryClient();
+  const {patchReviews} = useReviews();
     const {userData} = useAuth();
     const {register,handleSubmit,watch,setValue, formState:{errors}, clearErrors, setError, reset} = useForm({defaultValues:{
         comment:prevReview?.comment||"",
-        rating:prevReview?.rating||0
+        rating:prevReview?.myRating||0
     }})
 
     const currentRating = watch("rating" || 0);
@@ -27,8 +32,11 @@ function ReviewInput({prevReview}){
         postedDate:dateToday,
     }
 
+    const email = userData?.email;
+    const reviewID = prevReview?.reviewID;
+    const mealID = prevReview?._id;
 
-    function formHandler(data){
+    async function formHandler(data){
         if (!data?.rating || data?.rating === 0){
             setError("rating", {
                 type: "manual",
@@ -36,7 +44,24 @@ function ReviewInput({prevReview}){
             })
             return;
         }else{
-            console.log(data)
+          const newData = {
+            ...data,
+            email, reviewID,mealID
+          }
+          const result = await patchReviews(newData);
+
+          if(result?.result?.modifiedCount){
+            queryClient.invalidateQueries(["myReviews"]);
+            Toast.fire({
+              icon:"success",
+              title:"Review Updated"
+            });
+            closeModal();
+            reset({
+              comment:"",
+              rating:0
+            });
+          };
         }
     }
   return (
@@ -74,13 +99,13 @@ function ReviewInput({prevReview}){
                 <span className='ml-2'>{currentRating.toFixed(1)}/5</span>
               )}
               {errors.rating && (
-              <p className='text-xs text-red-500 my-2'>Rate this Meal</p>
+              <p className='text-xs text-red-500 my-2'>Leave a Rating</p>
             )}
             </div>
             <button
               type='submit'
               className='h-12 w-full bg-logo-yellow text-lg text-white rounded-lg font-para transition-all cursor-pointer'>
-              Add Review
+              Update Review
             </button>
           </section>
         </form>
