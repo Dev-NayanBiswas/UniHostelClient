@@ -6,17 +6,31 @@ import FoodLoading from "../../../Components/Loadings/FoodLoading";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Toast from "../../../Utilities/sweetToast";
 import { faShieldBlank, faShieldHalved } from "@fortawesome/free-solid-svg-icons";
+import { useEffect, useState } from "react";
+import debounce from "lodash.debounce";
+import { set } from "react-hook-form";
 
 
 
 
 function Users(){
+  const [search, setSearch] = useState("");
+  const [badgeFilter, setBadgeFilter] = useState("");
+  const [page, setPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(1);
   const queryClient = useQueryClient();
   const axiosSecure = useAxiosSecure();
+
+
+
+
+
   const {data, isLoading, isError, error} = useQuery({
-    queryKey:["users"],
-    queryFn:fetchUsers
+    queryKey:["users", search,badgeFilter, page],
+    queryFn:()=>fetchUsers(search,badgeFilter, page)
   })
+
+
 
 
   const roleMutation = useMutation({
@@ -30,11 +44,26 @@ function Users(){
     }
   })
 
-  async function fetchUsers(){
-    const response = await axiosSecure.get("/students");
+  async function fetchUsers(searchTerm, badge, page){
+    const response = await axiosSecure.get(`/students?search=${searchTerm}&badge=${badge}&page=${page}`);
     const result = await response.data;
+    setTotalPages(result?.totalPages);
     return result;
   }
+
+  const handleSearch = debounce((e) => {
+    setSearch(e.target.value);
+    setPage(1)
+  }, 700);
+
+  const handleBadgeFilterChange = (e) => {
+    setBadgeFilter(e.target.value);
+    setPage(1)
+  };
+
+  const handlePageChange = (newPage) => {
+    setPage(newPage);
+  };
 
   if (isLoading) {
     return <FoodLoading/>;
@@ -65,6 +94,32 @@ function Users(){
     <>
       <HeadingTitle headingData={{heading:"All Users"}}/>
       <section className="w-full mx-auto">
+        {/* Sort Box */}
+        <div className="mb-4 flex md:flex-row flex-col gap-4 justify-end">
+          <select
+            className="defaultInput !border-logo-yellow/45 !rounded-none text-logo-yellow font-para"
+            onChange={handleBadgeFilterChange}
+            value={badgeFilter}
+          >
+            <option value="">All Badges</option>
+            <option value="gold">Gold</option>
+            <option value="platinum">Platinum</option>
+            <option value="silver">Silver</option>
+            <option value="bronze">Bronze</option>
+          </select>
+          <div className="mb-4 w-full rounded-none lg:block hidden"/>
+          <input
+            type="text"
+            placeholder="Search by name or email"
+            className="w-full defaultInput !rounded-none !border-logo-yellow/45 max-w-sm"
+            onChange={handleSearch}
+          />
+        </div>
+        {/* Search Box */}
+      
+          
+
+
       <div className="overflow-x-auto">
   <table className="table text-center text-gray-400">
     <thead className="font-heading md:text-lg text-sm border-[2px] rounded-full border-logo-yellow/45 text-logo-yellow">
@@ -84,14 +139,25 @@ function Users(){
       }
     </tbody>
     {/* foot */}
-    <tfoot>
-      <tr className="">
-        <td className="col-span-4" colSpan={6}>
-          <h1 className="text-center">Table Footer</h1>
-        </td>
-      </tr>
-    </tfoot>
   </table>
+  <section className="">
+
+      <div className="flex justify-center mt-5">
+          {Array.from({ length: totalPages }, (_, index) => (
+            <button
+              key={index + 1}
+              onClick={() => handlePageChange(index + 1)}
+              className={`px-4 py-2 mx-1 rounded-md font-semibold italic border-[1px] border-logo-yellow ${
+                page === index + 1
+                  ? "bg-logo-yellow text-white"
+                  : "bg-transparent text-gray-400"
+              }`}
+            >
+              {index + 1}
+            </button>
+          ))}
+        </div>
+    </section>
 </div>
       </section>
     </>

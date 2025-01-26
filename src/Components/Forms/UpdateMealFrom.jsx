@@ -5,16 +5,10 @@ import { useForm} from "react-hook-form"
 import useAuth from "../../Hooks/useAuth"
 import DynamicTitle from "../../Utilities/DynamicTitle.jsx"
 import HeadingTitle from "../HeadingTitle/HeadingTitle.jsx"
-import dateToday from "../../Utilities/dateToday.js"
 import Toast from "../../Utilities/sweetToast.js"
+import axios from "axios"
+import { useMutation, useQueryClient } from "@tanstack/react-query"
 
-
-
-
-const headingData = {
-    heading:"Update Meal",
-    desc:"Customize a meal options effortlessly to ensure a seamless dining experience for your users."
-  }
 
   const options = [
     { value: "breakfast", label: "Breakfast" },
@@ -22,64 +16,69 @@ const headingData = {
     { value: "Dinner", label: "Dinner" },
   ];
 
-function UpdateMealForm(){
-const navigate = useNavigate();
-const {userData} = useAuth();
+function UpdateMealForm({prevValue, closeModal}){
+  const queryClient = useQueryClient();
+  const {_id,title, category,ingredients,description, price, image} = prevValue || {};
 
-const [inputImage, setInputImage] = useState("")
-const {register, handleSubmit, reset, formState:{errors}} = useForm()
+const {register, handleSubmit, reset, formState:{errors}} = useForm({defaultValues:{
+  title:title,
+  category:category,
+  ingredients:ingredients,
+  description:description,
+  price:price,
+}})
 
 
-
-
-async function handleFileChange(e){
-  e.preventDefault();
-  const files = e.target.files[0];
-  if(!files)return;
-
-  try{
-      const image = await imageUploader(files)
-      setInputImage(image);
-
-  }catch(error){
-    Toast.fire({title:`${error.message}`, icon:"error"});
-  }
- 
+async function updateMeal(data){
+  const response = await axios.patch(`/meals/editMeal/${_id}`, data);
+  const result = await response.data;
+  console.log(result);
 }
 
-// console.log(dateToday);
-
-async function handleAddMeal(data){
-    const newData = {
-        ...data,
-        ingredients:data.ingredients.split(/[\s,]+/).join(",").split(","),
-        image:inputImage,
-        date:dateToday,
-        email:userData.email,
-        adminName:userData.displayName,
-        adminPhoto:userData.photoURL,
-        reviewCount:0,
-        likes:0,
-        rating:0
-    }
-    console.log(newData)
-    reset({
-        title:"",
-        category:"",
-        ingredients:"",
-        description:"",
-        price:"",
-        image:""
+const patchMutation = useMutation({
+  mutationKey:["patchMeal"],
+  mutationFn:(data)=>updateMeal(data),
+  onSuccess:()=>{
+    queryClient.invalidateQueries(["allCategoryMeals"]);
+    closeModal();
+    Toast.fire({
+      icon:"success",
+      title:"Meal Updated"
     })
+  },
+  onError:(error)=>{
+    Toast.fire({
+      icon:"error",
+      title:`Error in Updating Meal ${error.message}`
+    })
+  }
+})
+
+function handleAddMeal(data){
+  let ingredients = data.ingredients;
+  if (!Array.isArray(ingredients)) {
+    ingredients = ingredients.split(/[\s,]+/).filter(Boolean);
+  }
+
+  patchMutation.mutate({...data,ingredients});
+
+      reset({
+          title:"",
+          category:"",
+          ingredients:"",
+          description:"",
+          price:"",
+      })
 }
 
 
 
   return (
     <>
-    <DynamicTitle/>
-    <HeadingTitle headingData={headingData}/>
-    <div className="flex justify-center items-center h-full w-full mt-20">
+    <section className="md:block hidden">
+    <HeadingTitle headingData={{heading:"Update Meal"}}/>
+    </section>
+    <div className="flex justify-center items-center h-full w-full">
       <div className="w-full">
           <div className="lg:w-9/12 w-full mx-auto">
             <form onSubmit={handleSubmit(handleAddMeal)} className="flex flex-col gap-7">
@@ -113,17 +112,23 @@ async function handleAddMeal(data){
               </div>
               {/* Desc & Price & Thumbnail */}
               <section className="flex lg:flex-row flex-col justify-between items-center gap-7 min-h-[18vh]">
+                
+                <section className="lg:w-7/12 w-full flex flex-col gap-4">
                 <div className="w-full">
                 <textarea {...register("description",{required:"Description Required"})} placeholder="Meal Description here . . ." className="w-full min-h-[18vh] defaultInput"></textarea>
                 {errors.description && <p className="text-xs text-red-400">{errors.description.message}</p>}
                 </div>
-
-
-
-                <div className="h-full lg:flex-col flex-row flex w-full lg:gap-4 gap-7 justify-between">
+                  {/* Price */}
                 <div className="w-full">
-              <div className="relative">
-              <input 
+              <input {...register("price",{required:"Price is Required"})} className="defaultInput" type="number" placeholder="Price" />
+              {errors.price && <p className="text-xs text-red-400">{errors.price.message}</p>}
+              </div>
+                </section>
+
+
+              <div className="lg:w-5/12 md:w-full w-full lg:h-[25vh] h-[20vh]  aspect-video rounded-lg">
+                <img src={image} className="h-full w-full object-cover rounded-lg" alt="" />
+              {/* <input 
               {...register("image",{
                 required:"Please choose a Photo"
               })}
@@ -131,20 +136,11 @@ async function handleAddMeal(data){
                className="defaultInput opacity-0" type="file" placeholder="Choose your Profile Picture" />
               <div onClick={()=>document.querySelector('input[type="file"]').click()} className="absolute top-0 left-0 h-full w-full bg-logo-yellow rounded-lg font-semibold flex justify-center items-center text-white">
                 <p className="uppercase font-heading">Choose a Photo</p>
-              </div>
-              </div>
-              {errors.image && <p className="text-xs text-red-400">{errors.image.message}</p>}
-              </div>
 
-              {/* price */}
-              <div className="w-full">
-              <input {...register("price",{required:"Price is Required"})} className="defaultInput" type="number" placeholder="Price" />
-              {errors.price && <p className="text-xs text-red-400">{errors.price.message}</p>}
+              {/* {errors.image && <p className="text-xs text-red-400">{errors.image.message}</p>} */}
               </div>
-
-                </div>
               </section>
-              <button className="w-full p-3 mt-4 text-white font-semibold rounded-lg hover:scale-105 bg-logo-yellow transition transform duration-300 shadow-lg focus:outline-none focus:ring-2" type="submit">
+              <button className="w-full p-3 text-white font-semibold rounded-lg hover:scale-105 bg-logo-yellow transition transform duration-300 shadow-lg focus:outline-none focus:ring-2" type="submit">
                 Update Meal
               </button>
 
