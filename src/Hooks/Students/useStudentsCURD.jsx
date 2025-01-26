@@ -1,6 +1,7 @@
 
 import axios from "axios";
 import useAxiosSecure from "../AxiosAPI/useAxiosSecure";
+import Toast from "../../Utilities/sweetToast";
 function useStudentsCURD(){
   const axiosSecure = useAxiosSecure();
 
@@ -9,9 +10,9 @@ function useStudentsCURD(){
         try{
             const response = await axios.post('/students',data);
             const result = await response.data
-            alert(result.message);
+            Toast.fire({title:result.message, icon:"success"});
         }catch(error){
-            console.error(error)
+            Toast.fire({title:`${error.message}`, icon:"error"});
         }
         
     };
@@ -23,7 +24,7 @@ function useStudentsCURD(){
         const result = await response.data;
         return result;
       }catch(error){
-        console.error(error)
+        Toast.fire({title:`${error.message}`, icon:"error"});
       }
     }
   return {

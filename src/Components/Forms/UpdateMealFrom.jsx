@@ -6,6 +6,7 @@ import useAuth from "../../Hooks/useAuth"
 import DynamicTitle from "../../Utilities/DynamicTitle.jsx"
 import HeadingTitle from "../HeadingTitle/HeadingTitle.jsx"
 import dateToday from "../../Utilities/dateToday.js"
+import Toast from "../../Utilities/sweetToast.js"
 
 
 
@@ -41,8 +42,7 @@ async function handleFileChange(e){
       setInputImage(image);
 
   }catch(error){
-    alert("Error in uploading Image");
-    console.log(error)
+    Toast.fire({title:`${error.message}`, icon:"error"});
   }
  
 }

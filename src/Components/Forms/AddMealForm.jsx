@@ -8,6 +8,7 @@ import HeadingTitle from "../HeadingTitle/HeadingTitle.jsx"
 import AvatarHeading from "../HeadingTitle/AvatarHeading.jsx"
 import useMealCURD from "../../Hooks/CURDS/useMealCURD.jsx"
 import { useMutation, useQueryClient } from "@tanstack/react-query"
+import Toast from "../../Utilities/sweetToast.js"
 
 
 
@@ -47,7 +48,7 @@ async function handleFileChange(e){
       };
 
   }catch(error){
-    alert("Error in uploading Image");
+    Toast.fire({icon:"error",title:"Error in uploading Image"});
     // console.log(error)
   }
  
@@ -58,7 +59,7 @@ const postMealMutation = useMutation({
   mutationFn:(data)=>postMeal(data),
   onSuccess:()=>{
     queryClient.invalidateQueries(["meals"])
-    alert("Successfully added Meal from Mutation")
+    Toast.fire({icon:"success",title:"Successfully added Meal from Mutation"})
   },
   onError:(error)=>{
     console.log(error)

@@ -9,6 +9,7 @@ import { useForm } from "react-hook-form"
 import useAuth from "../../Hooks/useAuth"
 import useStudentsCURD from "../../Hooks/Students/useStudentsCURD"
 import HeadingTitle from "../../Components/HeadingTitle/HeadingTitle"
+import Toast from "../../Utilities/sweetToast"
 
 
 function Register(){
@@ -36,7 +37,7 @@ async function handleFileChange(e){
       await setInputImage(image);
 
   }catch(error){
-    alert("Error in uploading Image");
+    Toast.fire({title:"Error in uploading Image", icon:"error"});
   }
  
 }

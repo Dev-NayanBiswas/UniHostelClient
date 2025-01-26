@@ -4,6 +4,7 @@ import { faGithub, faGoogle } from "@fortawesome/free-brands-svg-icons";
 import { useLocation, useNavigate } from "react-router-dom";
 import useStudentsCURD from "../../Hooks/Students/useStudentsCURD";
 import useToken from "../../Hooks/Token/useToken";
+import Toast from "../../Utilities/sweetToast";
 
 function GoogleLogin(){
   const {postStudent} = useStudentsCURD()
@@ -28,7 +29,7 @@ function handleGoogleLogin(){
             navigate(location.state? location.state : "/")})
       .catch(error=>{
         const errorMessage = error.message;
-            alert(errorMessage);
+            Toast.fire({title:errorMessage, icon:"error"});
       });
     }          
   return (
