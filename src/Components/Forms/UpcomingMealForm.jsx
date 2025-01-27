@@ -8,14 +8,18 @@ import HeadingTitle from "../HeadingTitle/HeadingTitle.jsx"
 import AvatarHeading from "../HeadingTitle/AvatarHeading.jsx"
 import useMealCURD from "../../Hooks/CURDS/useMealCURD.jsx"
 import { useMutation, useQueryClient } from "@tanstack/react-query"
+import Toast from "../../Utilities/sweetToast.js"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faCross } from "@fortawesome/free-solid-svg-icons"
+import { faCircleXmark } from "@fortawesome/free-regular-svg-icons"
 
 
 
 
-const headingData = {
-    heading:"Upcoming Meal",
-    desc:"Ready to impress Students with our upcoming meal! A delicious blend of flavors awaits, crafted to delight and energize. Perfect for breakfast, lunch, or dinner—stay tuned!"
-  }
+// const headingData = {
+//     heading:"Upcoming Meal",
+//     desc:"Ready to impress Students with our upcoming meal! A delicious blend of flavors awaits, crafted to delight and energize. Perfect for breakfast, lunch, or dinner—stay tuned!"
+//   }
 
   const options = [
     { value: "breakfast", label: "Breakfast" },
@@ -23,10 +27,9 @@ const headingData = {
     { value: "dinner", label: "Dinner" },
   ];
 
-function UpcomingMealForm(){
+function UpcomingMealForm({closeModal}){
 const queryClient = useQueryClient();
 const {postMeal} = useMealCURD();
-const navigate = useNavigate();
 const {userData} = useAuth();
 
 const [inputImage, setInputImage] = useState("")
@@ -55,7 +58,8 @@ const postMealMutation = useMutation({
   mutationFn:(data)=>postMeal(data),
   onSuccess:()=>{
     queryClient.invalidateQueries(["meals"])
-    alert("Successfully added Meal from Mutation")
+    Toast.fire({icon:"success",title:"Upcoming Meal Added"});
+    closeModal()
   },
   onError:(error)=>{
     console.log(error)
@@ -98,12 +102,12 @@ async function handleAddMeal(data){
 
   return (
     <>
-    <DynamicTitle/>
-    <HeadingTitle headingData={headingData}/>
-    
     <div className="flex justify-center items-center h-full w-full mt-8 z-10">
-      <div className="w-full">
-          <div className="lg:w-9/12 w-full mx-auto">
+      <div className="w-full relative">
+        <span className="right-2 absolute top-2 text-4xl text-logo-yellow cursor-pointer" onClick={closeModal}>
+          <FontAwesomeIcon icon={faCircleXmark}/>
+        </span>
+          <div className="w-full mx-auto">
           <AvatarHeading avatarData={userData}/>
             <form onSubmit={handleSubmit(handleAddMeal)} className="flex flex-col gap-7">
 
@@ -183,7 +187,7 @@ async function handleAddMeal(data){
 
               
               <button className="w-full p-3 mt-4 text-white font-semibold rounded-lg hover:scale-105 bg-logo-yellow transition transform duration-300 shadow-lg focus:outline-none focus:ring-2" type="submit">
-                Add Meal
+                Add Upcoming Meal
               </button>
 
 

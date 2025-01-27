@@ -12,7 +12,7 @@ function UpcomingCard({cardData}){
         </div>
         <div className="z-10 group-hover:-translate-y-10 transition-all group-hover:text-gray-100 duration-500 text-logo-yellow tracking-tighter">
 
-          <p className="text-2xl font-semibold whitespace-pre-wrap">{title}</p>
+          <p className="text-2xl font-semibold whitespace-pre-wrap">{title.substring(0,15)} {'. . .'}</p>
           <p className="text-lg font-semibold capitalize">Category : {category}</p>
           <p>Price : $ {price}</p>
 

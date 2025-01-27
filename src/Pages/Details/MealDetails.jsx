@@ -305,10 +305,9 @@ function handleSanitization(state, navigate, badge, isUser){
   
   if(!isUser){
     Toast.fire({
-      icon:"warning",
-      title:"Need to Login"
+      icon:"info",
+      title:"Only Students Can Do this Action"
     });
-    navigate("/joinUs")
     return false;
   }
 
