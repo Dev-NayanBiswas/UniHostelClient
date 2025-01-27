@@ -1,0 +1,742 @@
+[{
+  "_id": {
+    "$oid": "678b1e49e118f0ada674ab33"
+  },
+  "title": "Classic Pancakes",
+  "category": "breakfast",
+  "ingredients": [
+    "Flour",
+    "Milk",
+    "Eggs",
+    "Butter",
+    "Maple",
+    "Syrup"
+  ],
+  "description": "Indulge in a stack of our signature classic pancakes, carefully crafted to achieve the perfect balance of fluffiness and golden crispness. Made with high-quality flour, fresh milk, and farm-fresh eggs, each pancake is lightly buttered for an irresistible melt-in-your-mouth texture. Served warm, they come with a generous drizzle of rich maple syrup that adds a touch of sweetness to every bite. Perfectly paired with a side of seasonal fruits or whipped cream for a wholesome breakfast experience.",
+  "image": "https://i.ibb.co.com/Gt1N8hP/classic-Pan-Cakes.jpg",
+  "price": 6,
+  "date": 1737170505007,
+  "email": "mr.nayan.biswas@gmail.com",
+  "adminName": "Nayan Biswas",
+  "adminPhoto": "https://lh3.googleusercontent.com/a/ACg8ocJrogE9U_2TK_TRs_EE-We37cA_mcDjqX8yQq2r6h9u3imhsEGh=s96-c",
+  "reviewCount": 1,
+  "likes": 7,
+  "rating": 4,
+  "state": "published"
+},
+{
+  "_id": {
+    "$oid": "678b1f2ee118f0ada674ab34"
+  },
+  "title": "Herb-Crusted Roast Chicken",
+  "category": "dinner",
+  "ingredients": [
+    "Chicken",
+    "Herbs",
+    "Garlic",
+    "Olive",
+    "Oil",
+    "Roasted",
+    "Vegetables"
+  ],
+  "description": "Savor the rich flavors of our Herb-Crusted Roast Chicken, marinated with a fragrant blend of fresh herbs, garlic, and olive oil. The chicken is roasted to golden perfection, achieving a crispy skin and juicy, tender meat. Served with a medley of roasted vegetables like carrots, potatoes, and zucchini, this hearty dish is perfect for a satisfying and wholesome dinner.",
+  "price": 14,
+  "image": "https://i.ibb.co.com/txJkhw3/Herb-Crusted-Roast-Chicken.jpg",
+  "date": 1737170734336,
+  "email": "mr.nayan.biswas@gmail.com",
+  "adminName": "Nayan Biswas",
+  "adminPhoto": "https://lh3.googleusercontent.com/a/ACg8ocJrogE9U_2TK_TRs_EE-We37cA_mcDjqX8yQq2r6h9u3imhsEGh=s96-c",
+  "reviewCount": 2,
+  "likes": 4,
+  "rating": 7,
+  "state": "published"
+},
+{
+  "_id": {
+    "$oid": "678b1fb8e118f0ada674ab35"
+  },
+  "title": "Grilled Chicken Caesar Salad",
+  "category": "lunch",
+  "ingredients": [
+    "Grilled",
+    "Chicken",
+    "Romaine",
+    "Lettuce",
+    "Caesar",
+    "Dressing",
+    "Croutons",
+    "Parmesan",
+    "Cheese"
+  ],
+  "description": "A fresh and hearty Grilled Chicken Caesar Salad featuring tender, perfectly grilled chicken breast atop crisp romaine lettuce. Tossed with creamy Caesar dressing, crunchy garlic croutons, and a generous sprinkle of shaved Parmesan cheese, this dish is both nutritious and satisfying. Served with a lemon wedge for a zesty finish, it's a classic favorite for a light yet filling lunch.",
+  "price": 9,
+  "image": "https://i.ibb.co.com/8gdjSPC/Grilled-Chicken-Caesar-Salad.jpg",
+  "date": 1737170872148,
+  "email": "mr.nayan.biswas@gmail.com",
+  "adminName": "Nayan Biswas",
+  "adminPhoto": "https://lh3.googleusercontent.com/a/ACg8ocJrogE9U_2TK_TRs_EE-We37cA_mcDjqX8yQq2r6h9u3imhsEGh=s96-c",
+  "reviewCount": 5,
+  "likes": 7,
+  "rating": 17,
+  "state": "published"
+},
+{
+  "_id": {
+    "$oid": "678b28bd90a8e68d366dbe84"
+  },
+  "title": "Avocado Toast with Poached Egg",
+  "category": "breakfast",
+  "ingredients": [
+    "Avocado",
+    "Poached",
+    "Egg",
+    "Whole",
+    "Grain",
+    "Bread",
+    "Lemon",
+    "Juice",
+    "Chili",
+    "Flakes"
+  ],
+  "description": "A modern breakfast favorite featuring creamy mashed avocado seasoned with lemon juice and chili flakes, served on crisp whole-grain toast. Topped with a perfectly poached egg, this dish is a delicious combination of flavors and textures, offering a nutritious start to your day.",
+  "image": "https://i.ibb.co.com/D4KbSDz/Avocado-Toastwith-Poached-Egg.jpg",
+  "price": 6,
+  "date": 1737173180951,
+  "email": "mr.nayan.biswas@gmail.com",
+  "adminName": "Nayan Biswas",
+  "adminPhoto": "https://lh3.googleusercontent.com/a/ACg8ocJrogE9U_2TK_TRs_EE-We37cA_mcDjqX8yQq2r6h9u3imhsEGh=s96-c",
+  "reviewCount": 0,
+  "likes": 0,
+  "rating": 0,
+  "state": "upcoming"
+},
+{
+  "_id": {
+    "$oid": "678c850192e914c14685f29c"
+  },
+  "title": "Veggie Omelette",
+  "category": "breakfast",
+  "ingredients": [
+    "Eggs",
+    "Bell-Peppers",
+    "Onions",
+    "Spinach",
+    "Cheese"
+  ],
+  "description": "Start your morning with a nutritious and satisfying veggie omelette, packed with fresh and vibrant flavors. Made with free-range eggs, this omelette is generously filled with sautéed bell peppers, finely chopped onions, and nutrient-rich spinach. A sprinkle of shredded cheese melts beautifully, adding a creamy and savory touch. The dish is cooked to perfection, with a slight golden crust on the outside while remaining fluffy and tender inside. Served hot, this hearty omelette is a great source of protein and vegetables to fuel your day.",
+  "image": "https://i.ibb.co.com/JncVGMB/veggie-Omlete.jpg",
+  "price": 7,
+  "date": 1737262337696,
+  "email": "nayan@email.com",
+  "adminName": "Nayan",
+  "adminPhoto": "https://i.ibb.co.com/yhbjVqr/Whats-App-Image-2025-01-08-at-4-49-57-AM.jpg",
+  "reviewCount": 3,
+  "likes": 7,
+  "rating": 10,
+  "state": "published"
+},
+{
+  "_id": {
+    "$oid": "678c872392e914c14685f29d"
+  },
+  "title": "Spaghetti Bolognese",
+  "category": "lunch",
+  "ingredients": [
+    "Spaghetti",
+    "Ground",
+    "Beef",
+    "Tomato",
+    "Sauce"
+  ],
+  "description": "Enjoy the rich and comforting flavors of our Spaghetti Bolognese, made with al dente pasta coated in a robust tomato sauce. The sauce is slow-cooked with ground beef, aromatic garlic, and fresh basil to create a hearty and flavorful dish. Finished with a sprinkle of Parmesan cheese, this classic Italian favorite is sure to satisfy your lunchtime cravings.",
+  "image": "https://i.ibb.co.com/RBcsbpJ/Spaghetti-Bolognese.jpg",
+  "price": 10,
+  "date": 1737262883839,
+  "email": "nayan@email.com",
+  "adminName": "Nayan",
+  "adminPhoto": "https://i.ibb.co.com/yhbjVqr/Whats-App-Image-2025-01-08-at-4-49-57-AM.jpg",
+  "reviewCount": 1,
+  "likes": 5,
+  "rating": 4,
+  "state": "published"
+},
+{
+  "_id": {
+    "$oid": "678c879292e914c14685f29e"
+  },
+  "title": "Vegetable Lasagna",
+  "category": "dinner",
+  "ingredients": [
+    "Lasagna",
+    "Sheets",
+    "Tomato",
+    "Sauce",
+    "Zucchini"
+  ],
+  "description": "Enjoy layers of wholesome goodness with our Vegetable Lasagna. Alternating sheets of lasagna are layered with a rich tomato sauce, sautéed zucchini, spinach, and creamy ricotta cheese. Topped with a generous layer of melted mozzarella, this dish is baked to bubbly perfection, making it an indulgent yet vegetarian-friendly dinner option.",
+  "image": "https://i.ibb.co.com/v1WLz7s/Vegetable-Lasagna.jpg",
+  "price": 11,
+  "date": 1737262994776,
+  "email": "nayan@email.com",
+  "adminName": "Nayan",
+  "adminPhoto": "https://i.ibb.co.com/yhbjVqr/Whats-App-Image-2025-01-08-at-4-49-57-AM.jpg",
+  "reviewCount": 0,
+  "likes": 2,
+  "rating": 0,
+  "state": "published"
+},
+{
+  "_id": {
+    "$oid": "678c883692e914c14685f29f"
+  },
+  "title": "Vegetable Stir-Fry Rice",
+  "category": "lunch",
+  "ingredients": [
+    "Rice",
+    "Bell-Peppers",
+    "Carrots",
+    "Broccoli"
+  ],
+  "description": "Our Vegetable Stir-Fry with Rice is a vibrant and healthy lunch option, packed with colorful vegetables like bell peppers, carrots, and broccoli. Cooked in a savory soy and ginger sauce, the vegetables retain their crunch and natural sweetness. Served over a bed of steamed rice, this dish is both nourishing and delicious, perfect for vegetarians and vegans.",
+  "price": 6,
+  "image": "https://i.ibb.co.com/NpDWVhh/Vegetable-Stir-Frywith-Rice.jpg",
+  "date": 1737263158003,
+  "email": "nayan@email.com",
+  "adminName": "Nayan",
+  "adminPhoto": "https://i.ibb.co.com/yhbjVqr/Whats-App-Image-2025-01-08-at-4-49-57-AM.jpg",
+  "reviewCount": 1,
+  "likes": 5,
+  "rating": 4,
+  "state": "published"
+},
+{
+  "_id": {
+    "$oid": "678c889692e914c14685f2a0"
+  },
+  "title": "Full English Breakfast",
+  "category": "breakfast",
+  "ingredients": [
+    "Bacon",
+    "Sausages",
+    "Eggs",
+    "Beans",
+    "Toast"
+  ],
+  "description": "Treat yourself to the ultimate Full English Breakfast, a classic and satisfying morning feast. This hearty platter includes crispy smoked bacon, juicy grilled sausages, and perfectly cooked eggs made to your liking. Complemented by baked beans in a rich tomato sauce, buttered toast slices, and roasted vine tomatoes for a burst of natural sweetness. Every component is carefully prepared to ensure an authentic British breakfast experience. Ideal for those mornings when you need a filling and flavorful start to the day.",
+  "price": 10,
+  "image": "https://i.ibb.co.com/zht4N75/english-Breakfast.jpg",
+  "date": 1737263254525,
+  "email": "nayan@email.com",
+  "adminName": "Nayan",
+  "adminPhoto": "https://i.ibb.co.com/yhbjVqr/Whats-App-Image-2025-01-08-at-4-49-57-AM.jpg",
+  "reviewCount": 1,
+  "likes": 3,
+  "rating": 4,
+  "state": "published"
+},
+{
+  "_id": {
+    "$oid": "678c88fd92e914c14685f2a1"
+  },
+  "title": "Beef Stroganoff Rice",
+  "category": "dinner",
+  "ingredients": [
+    "Beef",
+    "Mushrooms",
+    "Cream-Sauce",
+    "Rice"
+  ],
+  "description": "Our Beef Stroganoff is a classic comfort food, featuring tender strips of beef cooked in a rich and creamy mushroom sauce. Infused with the savory flavors of caramelized onions and fresh herbs, this dish is served over a bed of steamed rice, creating a hearty and satisfying dinner that’s full of flavor.",
+  "price": 15,
+  "image": "https://i.ibb.co.com/7z7ghBm/Beef-Stroganoffwith-Rice.jpg",
+  "date": 1737263357911,
+  "email": "nayan@email.com",
+  "adminName": "Nayan",
+  "adminPhoto": "https://i.ibb.co.com/yhbjVqr/Whats-App-Image-2025-01-08-at-4-49-57-AM.jpg",
+  "reviewCount": 0,
+  "likes": 5,
+  "rating": 0,
+  "state": "published"
+},
+{
+  "_id": {
+    "$oid": "678c896192e914c14685f2a2"
+  },
+  "title": "Beef Burger & Fries",
+  "category": "lunch",
+  "ingredients": [
+    "Beef-Patty",
+    "Brioche",
+    "Bun",
+    "Fries"
+  ],
+  "description": "Savor the ultimate comfort food with our Beef Burger and Fries. A juicy, seasoned beef patty is grilled to perfection and served on a soft brioche bun, layered with fresh lettuce, ripe tomatoes, and melted cheese. Paired with a side of crispy golden fries, this hearty meal is perfect for a quick and satisfying lunch.",
+  "price": 11,
+  "image": "https://i.ibb.co.com/4Y3j2mn/Beef-Burgerwith-Fries.jpg",
+  "date": 1737263457499,
+  "email": "nayan@email.com",
+  "adminName": "Nayan",
+  "adminPhoto": "https://i.ibb.co.com/yhbjVqr/Whats-App-Image-2025-01-08-at-4-49-57-AM.jpg",
+  "reviewCount": 0,
+  "likes": 5,
+  "rating": 0,
+  "state": "published"
+},
+{
+  "_id": {
+    "$oid": "678c89c492e914c14685f2a3"
+  },
+  "title": "Fruit & Yogurt Bowl",
+  "category": "breakfast",
+  "ingredients": [
+    "Fruits",
+    "Granola",
+    "Yogurt",
+    "Chia-Seeds"
+  ],
+  "description": "Enjoy a refreshing and healthy start to your day with our Fruit & Yogurt Bowl. This delightful dish features an assortment of freshly cut seasonal fruits, chosen for their ripeness and natural sweetness. The fruits are layered over creamy and smooth plant-based yogurt, providing a dairy-free alternative that is both rich and satisfying. A sprinkle of crunchy granola adds texture, while chia seeds provide an extra boost of nutrition. This bowl is as visually appealing as it is nourishing, perfect for a light yet fulfilling breakfast.",
+  "price": 5,
+  "image": "https://i.ibb.co.com/tmXPwqG/fruits-And-Yogut-Bowl.jpg",
+  "date": 1737263556213,
+  "email": "nayan@email.com",
+  "adminName": "Nayan",
+  "adminPhoto": "https://i.ibb.co.com/yhbjVqr/Whats-App-Image-2025-01-08-at-4-49-57-AM.jpg",
+  "reviewCount": 0,
+  "likes": 0,
+  "rating": 0,
+  "state": "published"
+},
+{
+  "_id": {
+    "$oid": "678c8a0992e914c14685f2a4"
+  },
+  "title": "Grilled Lamb Chops",
+  "category": "dinner",
+  "ingredients": [
+    "Lamb",
+    "Chops",
+    "Garlic",
+    "Rosemary",
+    ""
+  ],
+  "description": "Treat yourself to the succulent taste of Grilled Lamb Chops, seasoned with garlic, rosemary, and a touch of olive oil. These chops are grilled to perfection, offering a smoky and flavorful crust while remaining tender and juicy inside. Paired with creamy mashed potatoes and a rich, savory gravy, this dish is a gourmet dinner experience.",
+  "price": 18,
+  "image": "https://i.ibb.co.com/jwTT9VM/Grilled-Lamb-Chops.jpg",
+  "date": 1737263625519,
+  "email": "nayan@email.com",
+  "adminName": "Nayan",
+  "adminPhoto": "https://i.ibb.co.com/yhbjVqr/Whats-App-Image-2025-01-08-at-4-49-57-AM.jpg",
+  "reviewCount": 0,
+  "likes": 0,
+  "rating": 0,
+  "state": "published"
+},
+{
+  "_id": {
+    "$oid": "678c8a5d92e914c14685f2a5"
+  },
+  "title": "Butter Chicken Naan",
+  "category": "lunch",
+  "ingredients": [
+    "Chicken",
+    "Butter",
+    "Garlic",
+    "Naan",
+    "Bread"
+  ],
+  "description": "Indulge in the rich and creamy flavors of Butter Chicken, a beloved Indian dish. Tender chicken pieces are simmered in a luscious tomato-based cream sauce infused with aromatic spices and butter. Served with soft and fluffy naan bread, this dish is a perfect blend of savory and slightly sweet flavors, offering a satisfying lunch experience.",
+  "price": 12,
+  "image": "https://i.ibb.co.com/dK5zVyy/Butter-Chickenwith-Naan.jpg",
+  "date": 1737263709713,
+  "email": "nayan@email.com",
+  "adminName": "Nayan",
+  "adminPhoto": "https://i.ibb.co.com/yhbjVqr/Whats-App-Image-2025-01-08-at-4-49-57-AM.jpg",
+  "reviewCount": 1,
+  "likes": 6,
+  "rating": 4,
+  "state": "published"
+},
+{
+  "_id": {
+    "$oid": "678c953a92e914c14685f2a6"
+  },
+  "title": "Avocado Toast",
+  "category": "breakfast",
+  "ingredients": [
+    "Bread",
+    "Avocado",
+    "Juice",
+    "Chili-Flakes"
+  ],
+  "description": "Savor the simplicity and goodness of our Avocado Toast, a modern breakfast classic that combines flavor and nutrition. Thick slices of whole-grain bread are lightly toasted to achieve a crisp texture, then generously spread with creamy, mashed avocado seasoned with a hint of fresh lemon juice. A sprinkle of chili flakes adds a gentle kick, while the wholesome bread provides a satisfying crunch. Packed with healthy fats and fiber, this dish is a perfect choice for anyone looking for a quick and nutritious breakfast option.",
+  "image": "https://i.ibb.co.com/0YH2DgQ/avocado-Toast.jpg",
+  "price": 6,
+  "date": 1737266490176,
+  "email": "nayan@email.com",
+  "adminName": "Nayan",
+  "adminPhoto": "https://i.ibb.co.com/yhbjVqr/Whats-App-Image-2025-01-08-at-4-49-57-AM.jpg",
+  "reviewCount": 0,
+  "likes": 0,
+  "rating": 0,
+  "state": "published"
+},
+{
+  "_id": {
+    "$oid": "678c959792e914c14685f2a7"
+  },
+  "title": "Seafood Paella",
+  "category": "dinner",
+  "ingredients": [
+    "Rice",
+    "Shrimp",
+    "Mussels",
+    "Squid",
+    "Saffron"
+  ],
+  "description": "Dive into the vibrant flavors of our Seafood Paella, a traditional Spanish dish made with saffron-infused rice. Loaded with fresh shrimp, tender mussels, and perfectly cooked squid, this dish is bursting with the essence of the sea. Garnished with lemon wedges and fresh parsley, it’s a dinner option that’s both visually stunning and incredibly delicious.",
+  "price": 16,
+  "image": "https://i.ibb.co.com/pv4cY4z/Seafood-Paella.jpg",
+  "date": 1737266583728,
+  "email": "nayan@email.com",
+  "adminName": "Nayan",
+  "adminPhoto": "https://i.ibb.co.com/yhbjVqr/Whats-App-Image-2025-01-08-at-4-49-57-AM.jpg",
+  "reviewCount": 0,
+  "likes": 0,
+  "rating": 0,
+  "state": "published"
+},
+{
+  "_id": {
+    "$oid": "678c95e992e914c14685f2a8"
+  },
+  "title": "Grilled Salmon Vegetables",
+  "category": "lunch",
+  "ingredients": [
+    "Salmon-Fillet",
+    "Asparagus",
+    "Zucchini"
+  ],
+  "description": "A healthy and flavorful lunch option, our Grilled Salmon with Vegetables features a perfectly grilled salmon fillet seasoned with olive oil and a hint of lemon. Served alongside a medley of fresh, roasted vegetables including asparagus and zucchini, this dish is packed with nutrients and bursting with flavor. Ideal for those seeking a light yet wholesome meal.",
+  "price": 14,
+  "image": "https://i.ibb.co.com/zPwch3p/Grilled-Salmonwith-Vegetables.jpg",
+  "date": 1737266665186,
+  "email": "nayan@email.com",
+  "adminName": "Nayan",
+  "adminPhoto": "https://i.ibb.co.com/yhbjVqr/Whats-App-Image-2025-01-08-at-4-49-57-AM.jpg",
+  "reviewCount": 0,
+  "likes": 0,
+  "rating": 0,
+  "state": "published"
+},
+{
+  "_id": {
+    "$oid": "678c965492e914c14685f2a9"
+  },
+  "title": "Walnut French Toast",
+  "category": "breakfast",
+  "ingredients": [
+    "Bread",
+    "Eggs",
+    "Milk",
+    "Bananas",
+    "Walnuts"
+  ],
+  "description": "Delight in our Banana Walnut French Toast, a comforting and indulgent breakfast favorite. Thick slices of bread are dipped in a rich batter made with eggs, milk, and a hint of cinnamon, then pan-fried to golden perfection. Topped with caramelized banana slices and crunchy toasted walnuts, this dish offers a delightful mix of soft and crunchy textures. A generous drizzle of warm maple syrup ties all the flavors together, creating a balanced blend of sweetness and nuttiness. Perfect for those mornings when you crave a little extra decadence.",
+  "price": 7,
+  "image": "https://i.ibb.co.com/Zc938zS/banaa-Wallnut-French-Toast.jpg",
+  "date": 1737266772797,
+  "email": "nayan@email.com",
+  "adminName": "Nayan",
+  "adminPhoto": "https://i.ibb.co.com/yhbjVqr/Whats-App-Image-2025-01-08-at-4-49-57-AM.jpg",
+  "reviewCount": 0,
+  "likes": 0,
+  "rating": 0,
+  "state": "published"
+},
+{
+  "_id": {
+    "$oid": "678c96ad92e914c14685f2aa"
+  },
+  "title": "Green Curry Jasmine Rice",
+  "category": "dinner",
+  "ingredients": [
+    "Chicken",
+    "Green-Curry",
+    "Milk",
+    "Jasmine-Rice"
+  ],
+  "description": "Experience the exotic flavors of Thailand with our Thai Green Curry. Tender pieces of chicken are simmered in a fragrant green curry sauce made with coconut milk and aromatic spices. Served alongside perfectly steamed jasmine rice, this dish is a harmonious blend of spicy, creamy, and herbal flavors, making it a perfect choice for dinner.",
+  "price": 12,
+  "image": "https://i.ibb.co.com/9W64qxs/Thai-Green-Currywith-Jasmine-Rice.jpg",
+  "date": 1737266861318,
+  "email": "nayan@email.com",
+  "adminName": "Nayan",
+  "adminPhoto": "https://i.ibb.co.com/yhbjVqr/Whats-App-Image-2025-01-08-at-4-49-57-AM.jpg",
+  "reviewCount": 0,
+  "likes": 0,
+  "rating": 0,
+  "state": "published"
+},
+{
+  "_id": {
+    "$oid": "678c9be492e914c14685f2ab"
+  },
+  "title": "Mediterranean Grilled Chicken",
+  "category": "lunch",
+  "ingredients": [
+    "Grilled-Chicken",
+    "Mixed",
+    "Greens",
+    "Feta-Cheese"
+  ],
+  "description": "A vibrant Mediterranean salad featuring juicy grilled chicken, crisp mixed greens, tangy feta cheese, and briny olives. Tossed with a light vinaigrette, this dish offers a fresh and flavorful option for a healthy lunch.",
+  "image": "https://i.ibb.co.com/Jqk5R2y/Mediterranean-Grilled-Chicken-Salad.jpg",
+  "price": 10,
+  "date": 1737268196086,
+  "email": "nayan@email.com",
+  "adminName": "Nayan",
+  "adminPhoto": "https://i.ibb.co.com/yhbjVqr/Whats-App-Image-2025-01-08-at-4-49-57-AM.jpg",
+  "reviewCount": 0,
+  "likes": 0,
+  "rating": 0,
+  "state": "upcoming"
+},
+{
+  "_id": {
+    "$oid": "678c9c2c92e914c14685f2ac"
+  },
+  "title": "Shrimp Alfredo Pasta",
+  "category": "dinner",
+  "ingredients": [
+    "Shrimp",
+    "Fettuccine",
+    "Alfredo",
+    "Sauce"
+  ],
+  "description": "Indulge in our creamy Shrimp Alfredo Pasta, featuring tender shrimp sautéed with garlic and tossed in a rich Alfredo sauce. Served over perfectly cooked fettuccine and topped with grated Parmesan cheese, this dish is a comforting and decadent dinner choice.",
+  "price": 15,
+  "image": "https://i.ibb.co.com/gSjQ3VK/Shrimp-Alfredo-Pasta.jpg",
+  "date": 1737268268160,
+  "email": "nayan@email.com",
+  "adminName": "Nayan",
+  "adminPhoto": "https://i.ibb.co.com/yhbjVqr/Whats-App-Image-2025-01-08-at-4-49-57-AM.jpg",
+  "reviewCount": 0,
+  "likes": 10,
+  "rating": 0,
+  "state": "published"
+},
+{
+  "_id": {
+    "$oid": "678c9c6992e914c14685f2ad"
+  },
+  "title": "Blueberry Pancakes",
+  "category": "breakfast",
+  "ingredients": [
+    "Flour",
+    "Milk",
+    "Eggs",
+    "Blueberries",
+    ""
+  ],
+  "description": "Fluffy pancakes bursting with the natural sweetness of fresh blueberries. Cooked to golden perfection and drizzled with warm maple syrup, this breakfast treat is a delightful way to start your morning.",
+  "image": "https://i.ibb.co.com/kSzyjPH/Blueberry-Pancakes.jpg",
+  "price": 6,
+  "date": 1737268329329,
+  "email": "nayan@email.com",
+  "adminName": "Nayan",
+  "adminPhoto": "https://i.ibb.co.com/yhbjVqr/Whats-App-Image-2025-01-08-at-4-49-57-AM.jpg",
+  "reviewCount": 2,
+  "likes": 6,
+  "rating": 8,
+  "state": "upcoming"
+},
+{
+  "_id": {
+    "$oid": "678c9cb292e914c14685f2ae"
+  },
+  "title": "Chicken Tikka",
+  "category": "lunch",
+  "ingredients": [
+    "Chicken",
+    "Tomato-Sauce",
+    "Spices"
+  ],
+  "description": "A classic Indian dish featuring tender chicken pieces cooked in a flavorful tomato-based cream sauce infused with aromatic spices. Served with fragrant basmati rice and garnished with fresh cilantro, this dish is a hearty and satisfying lunch option.",
+  "price": 12,
+  "image": "https://i.ibb.co.com/PjBjDCg/Chicken-Tikka-Masalawith-Rice.jpg",
+  "date": 1737268402226,
+  "email": "nayan@email.com",
+  "adminName": "Nayan",
+  "adminPhoto": "https://i.ibb.co.com/yhbjVqr/Whats-App-Image-2025-01-08-at-4-49-57-AM.jpg",
+  "reviewCount": 3,
+  "likes": 8,
+  "rating": 10,
+  "state": "upcoming"
+},
+{
+  "_id": {
+    "$oid": "678c9cf892e914c14685f2af"
+  },
+  "title": "Grilled Salmon",
+  "category": "dinner",
+  "ingredients": [
+    "Salmon",
+    "Lemon-Butter-Sauce"
+  ],
+  "description": "Perfectly grilled salmon topped with a zesty lemon butter sauce, served with a side of tender asparagus spears. This dish combines simplicity and elegance for a healthy and flavorful dinner option.",
+  "price": 17,
+  "image": "https://i.ibb.co.com/rFWKH2c/Grilled-Salmonwith-Lemon-Butter.jpg",
+  "date": 1737268472100,
+  "email": "nayan@email.com",
+  "adminName": "Nayan",
+  "adminPhoto": "https://i.ibb.co.com/yhbjVqr/Whats-App-Image-2025-01-08-at-4-49-57-AM.jpg",
+  "reviewCount": 0,
+  "likes": 6,
+  "rating": 0,
+  "state": "upcoming"
+},
+{
+  "_id": {
+    "$oid": "678c9d2d92e914c14685f2b0"
+  },
+  "title": "Greek Yogurt Parfait",
+  "category": "breakfast",
+  "ingredients": [
+    "Greek",
+    "Yogurt",
+    "Granola",
+    "Berries"
+  ],
+  "description": "A light and refreshing breakfast option featuring creamy Greek yogurt layered with crunchy granola and sweet, juicy berries. Drizzled with honey and sprinkled with chia seeds, this parfait is both nutritious and delicious.",
+  "price": 5,
+  "image": "https://i.ibb.co.com/dpt4SYz/Greek-Yogurt-Parfait.jpg",
+  "date": 1737268525974,
+  "email": "nayan@email.com",
+  "adminName": "Nayan",
+  "adminPhoto": "https://i.ibb.co.com/yhbjVqr/Whats-App-Image-2025-01-08-at-4-49-57-AM.jpg",
+  "reviewCount": 0,
+  "likes": 4,
+  "rating": 0,
+  "state": "upcoming"
+},
+{
+  "_id": {
+    "$oid": "678c9d6792e914c14685f2b1"
+  },
+  "title": "Vegetarian Burrito Bowl",
+  "category": "lunch",
+  "ingredients": [
+    "Brown-Rice",
+    "Black-Beans",
+    "Corn"
+  ],
+  "description": "A hearty and colorful burrito bowl packed with brown rice, black beans, sweet corn, fresh avocado, and tangy salsa. This vegetarian-friendly dish is loaded with flavor and nutrients, making it a satisfying lunch option.",
+  "price": 9,
+  "image": "https://i.ibb.co.com/WgxSFD9/Vegetarian-Burrito-Bowl.jpg",
+  "date": 1737268582993,
+  "email": "nayan@email.com",
+  "adminName": "Nayan",
+  "adminPhoto": "https://i.ibb.co.com/yhbjVqr/Whats-App-Image-2025-01-08-at-4-49-57-AM.jpg",
+  "reviewCount": 1,
+  "likes": 5,
+  "rating": 4,
+  "state": "upcoming"
+},
+{
+  "_id": {
+    "$oid": "678c9da792e914c14685f2b2"
+  },
+  "title": "Stuffed Bell Peppers",
+  "category": "dinner",
+  "ingredients": [
+    "Bell",
+    "Peppers",
+    "Ground",
+    "Beef",
+    "Rice"
+  ],
+  "description": "Our Stuffed Bell Peppers are filled with a savory mixture of seasoned ground beef, rice, and tomato sauce. Baked to perfection and topped with melted cheese, this dish is both comforting and satisfying, ideal for a wholesome dinner.",
+  "price": 13,
+  "image": "https://i.ibb.co.com/RNHKcJY/Stuffed-Bell-Peppers2.jpg",
+  "date": 1737268647409,
+  "email": "nayan@email.com",
+  "adminName": "Nayan",
+  "adminPhoto": "https://i.ibb.co.com/yhbjVqr/Whats-App-Image-2025-01-08-at-4-49-57-AM.jpg",
+  "reviewCount": 0,
+  "likes": 0,
+  "rating": 0,
+  "state": "upcoming"
+},
+{
+  "_id": {
+    "$oid": "678f9319c501429059f62e98"
+  },
+  "title": "Beef Stroganoff",
+  "category": "dinner",
+  "ingredients": [
+    "Beef",
+    "Strips",
+    "Mushrooms",
+    "Onions",
+    "Garlic"
+  ],
+  "description": "Indulge in the comforting and rich flavors of our classic Beef Stroganoff. Tender strips of beef are seared to perfection and simmered in a savory sauce made with beef broth, sautéed mushrooms, onions, and a touch of garlic. The dish is finished with a dollop of sour cream, creating a creamy and luxurious texture, perfectly balanced with a hint of paprika for warmth. Served over a bed of buttery egg noodles, this hearty and satisfying meal is a timeless favorite for a cozy dinner.",
+  "image": "https://i.ibb.co.com/1GrSpk6/delicious-goulash-ready-dinner.jpg",
+  "price": 13,
+  "date": 1737462553434,
+  "email": "mr.nayan.biswas@gmail.com",
+  "adminName": "Nayan Biswas",
+  "adminPhoto": "https://lh3.googleusercontent.com/a/ACg8ocJrogE9U_2TK_TRs_EE-We37cA_mcDjqX8yQq2r6h9u3imhsEGh=s96-c",
+  "reviewCount": 0,
+  "likes": 0,
+  "rating": 0,
+  "state": "published"
+},
+{
+  "_id": {
+    "$oid": "678f99b81bd613f88e7d9b38"
+  },
+  "title": "Chicken Wrap",
+  "category": "lunch",
+  "ingredients": [
+    "Grilled",
+    "Chicken",
+    "Hummus",
+    "Cucumber",
+    ""
+  ],
+  "description": "Enjoy a fresh and flavorful Mediterranean Chicken Wrap, perfect for a light yet satisfying lunch. Grilled chicken seasoned with aromatic spices is paired with crisp cucumber, juicy tomato slices, and thinly sliced red onions. A generous layer of creamy hummus and crumbled feta cheese adds richness, while crisp lettuce provides a refreshing crunch. Everything is wrapped in a soft whole wheat tortilla and finished with a drizzle of tangy tzatziki sauce. This healthy and portable meal is packed with Mediterranean flavors and nutrients to fuel your day.",
+  "image": "https://i.ibb.co.com/W5BLsKB/chicken-Wrap.jpg",
+  "price": 10,
+  "date": 1737464248088,
+  "email": "mr.nayan.biswas@gmail.com",
+  "adminName": "Nayan Biswas",
+  "adminPhoto": "https://lh3.googleusercontent.com/a/ACg8ocJrogE9U_2TK_TRs_EE-We37cA_mcDjqX8yQq2r6h9u3imhsEGh=s96-c",
+  "reviewCount": 0,
+  "likes": 2,
+  "rating": 0,
+  "state": "published"
+},
+{
+  "_id": {
+    "$oid": "67974eef70de42ae1d469341"
+  },
+  "title": "text",
+  "category": "breakfast",
+  "ingredients": [
+    "Shrimp",
+    "Fettuccine",
+    "Alfredo"
+  ],
+  "description": "asdasdasdasd",
+  "image": "https://i.ibb.co.com/rMVsqZK/girl1.png",
+  "price": 145,
+  "date": 1737969391618,
+  "email": "mr.nayan.biswas@gmail.com",
+  "adminName": "Nayan Biswas",
+  "adminPhoto": "https://lh3.googleusercontent.com/a/ACg8ocJrogE9U_2TK_TRs_EE-We37cA_mcDjqX8yQq2r6h9u3imhsEGh=s96-c",
+  "reviewCount": 0,
+  "likes": 0,
+  "rating": 0,
+  "state": "published"
+}]
