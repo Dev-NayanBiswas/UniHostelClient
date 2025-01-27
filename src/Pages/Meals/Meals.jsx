@@ -20,7 +20,7 @@ async function fetchMeals({category, search, sort, min, max}){
   }
   const response = await axios.get("/meals/category/search/sort", {params});
   const result = await response.data;
-  console.log(result);
+  // console.log(result);
   return result;
 } 
 
@@ -42,14 +42,20 @@ function Meals(){
     setMax(value);
   }, 200);
 
-  const {isLoading, data, isError, error} = useQuery({
+  const {isLoading, data, isError, error, isPending} = useQuery({
     queryKey:["meals", category, search, sort, min, max],
     queryFn:()=>fetchMeals({category, search, sort, min , max}),
     keepPreviousData:true
   })
 
   if(isLoading){
-    return <FoodLoading/>
+    return <section className="flex justify-center items-center w-full h-[70vh]">
+    <div className="flex flex-row gap-2 ">
+    <div className="w-4 h-4 rounded-full bg-logo-yellow animate-bounce [animation-delay:.7s]" />
+    <div className="w-4 h-4 rounded-full bg-logo-yellow animate-bounce [animation-delay:.3s]" />
+    <div className="w-4 h-4 rounded-full bg-logo-yellow animate-bounce [animation-delay:.7s]" />
+  </div>
+  </section>
   }
 
   if(isError){
@@ -154,6 +160,7 @@ function Meals(){
 
 
     </section>
+    
 
 
 

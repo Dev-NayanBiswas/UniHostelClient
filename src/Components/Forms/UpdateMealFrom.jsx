@@ -32,7 +32,8 @@ const {register, handleSubmit, reset, formState:{errors}} = useForm({defaultValu
 async function updateMeal(data){
   const response = await axios.patch(`/meals/editMeal/${_id}`, data);
   const result = await response.data;
-  console.log(result);
+  // console.log(result);
+  return result;
 }
 
 const patchMutation = useMutation({

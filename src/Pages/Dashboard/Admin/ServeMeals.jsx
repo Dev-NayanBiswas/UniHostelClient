@@ -39,7 +39,8 @@ function ServedMeals(){
       queryClient.invalidateQueries(['requestedMeals']);
     },
     onError:(error)=>{
-      console.log(error)
+      // console.log(error)
+      Toast.fire({icon:"error", title:`${error.message} Error`})
     }
   })
 
@@ -77,7 +78,7 @@ function ServedMeals(){
   }
 
   async function handleMealState(id){
-    console.log(id);
+    // console.log(id);
     const response = await axiosSecure.patch("/studentMeals/requestedMeals/admin",null,{params:{id}});
     const result = await response.data;
     if(result?.result.modifiedCount === 1){
@@ -88,7 +89,7 @@ function ServedMeals(){
     }
   }
 
-console.log(data)
+// console.log(data)
 
   return (
     <>

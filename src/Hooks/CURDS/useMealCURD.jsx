@@ -43,7 +43,7 @@ function useMealCURD(){
     async function getAllRequestedMeals(email){
       const response = await axiosSecure.get(`/studentMeals/pendingMeals/${email}`);
       const result = await response.data;
-      console.log(result)
+      // console.log(result)
       return result;
     }
     

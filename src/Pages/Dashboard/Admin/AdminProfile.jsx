@@ -26,7 +26,7 @@ function AdminProfile(){
       </p>
     );
   }
-  console.log(data);
+  // console.log(data);
   const{_id,role,name,image,email:userEmail,badge,color, contribution}= data?.result || {}
 
   return (
@@ -35,8 +35,8 @@ function AdminProfile(){
       <HeadingTitle headingData={{heading:"Admin Profile"}}/>
         <section>
             <section className="text-center mx-auto flex justify-center flex-col">
-                    <section className="lg:w-7/12 w-11/12 mx-auto my-auto h-fit rounded-lg border-gray-500/35 border-[1px] p-4">
-                      <section className="w-full h-full rounded-lg p-2">
+                    <section className="lg:w-7/12 w-full mx-auto my-auto h-fit rounded-lg border-gray-500/35 border-[1px] p-4">
+                      <section className="w-full h-full rounded-lg md:p-2 p-1">
             
             
             
@@ -95,7 +95,7 @@ function AdminProfile(){
             
             
             
-                        <h1>I am a Computer Science and Engineering (CSE) student with a passion for learning, innovation, and technology. I enjoy solving problems, exploring new concepts in programming, and working on exciting projects. Beyond academics, I value collaboration and building meaningful connections with my peers. Living in the hostel has been a great opportunity to meet diverse individuals, exchange ideas, and grow together. I believe in balancing studies with personal growth and enjoy engaging in activities that challenge and inspire me. Always eager to learn and contribute, I look forward to making the most of my time here.</h1>
+                        <h1 className="text-justify mt-6">I am a Computer Science and Engineering (CSE) student with a passion for learning, innovation, and technology. I enjoy solving problems, exploring new concepts in programming, and working on exciting projects. Beyond academics, I value collaboration and building meaningful connections with my peers. Living in the hostel has been a great opportunity to meet diverse individuals, exchange ideas, and grow together. I believe in balancing studies with personal growth and enjoy engaging in activities that challenge and inspire me. Always eager to learn and contribute, I look forward to making the most of my time here.</h1>
                       </section>
                     </section>
                     </section>

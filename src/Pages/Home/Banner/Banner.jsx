@@ -55,7 +55,7 @@ function Banner(){
       return <p className="text-center text-3xl font-semibold text-red-600">{error.message}</p>
     }
 
-    console.log(data)
+    // console.log(data)
     
   return (
     <Swiper

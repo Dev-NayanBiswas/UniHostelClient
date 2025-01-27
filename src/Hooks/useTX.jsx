@@ -25,7 +25,7 @@ function useTX(){
           }
         };
         }catch(error){
-            alert(error.message);
+          Toast.fire({icon:"error",title:`Error ${error.message}`});
         }
     }
   return postTransactionData;

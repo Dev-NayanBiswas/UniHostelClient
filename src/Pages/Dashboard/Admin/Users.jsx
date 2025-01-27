@@ -39,7 +39,7 @@ function Users(){
       queryClient.invalidateQueries(['users']);
     },
     onError:(error)=>{
-      console.log(error)
+      Toast.fire({icon:"error", title:`${error.message} Error`})
     }
   })
 

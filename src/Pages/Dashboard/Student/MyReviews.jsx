@@ -101,7 +101,7 @@ const messages = {
 
 function TableRow({item,idx, deleteReview}){
   const [showModal, setShowModal] = useState(false);
-  console.log(item);
+  // console.log(item);
   const {_id,image,title,likes,reviewCount,reviewID, comment, myRating} = item || {}
   const data = {reviewID:reviewID, mealID:_id, myRating:myRating}
   return (

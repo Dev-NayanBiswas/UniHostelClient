@@ -49,7 +49,7 @@ function AllMeals(){
     const value = e.target.value;
       setSearch(value);
       setPage(1); // Reset to first page on new search
-      console.log(value)
+      // console.log(value)
   };
 
 
@@ -76,7 +76,7 @@ function AllMeals(){
   const handlePageChange = (pageNumber) => {
     setPage(pageNumber);
   };
-  console.log(data); 
+  // console.log(data); 
 
   return (
     <>

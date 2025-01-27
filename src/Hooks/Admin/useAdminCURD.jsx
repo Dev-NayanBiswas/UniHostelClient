@@ -10,7 +10,7 @@ function useAdminCURD(){
         const params = { email, sortBy, search, page, limit };
         const response = await axiosSecure.get('/meals/studentMeals/adminDashboard',{params});
         const result = await response.data;
-        console.log(result);
+        // console.log(result);
         return result;
     } 
   return {

@@ -33,7 +33,7 @@ function AllReviews(){
   </p>
   }
 
-  console.log(data.result);
+  // console.log(data.result);
 
 
   async function deleteReview(data){
@@ -83,8 +83,8 @@ function AllReviews(){
 }
 
 const headingData = {
-  heading:"My Reviews",
-  desc:"This platform lets you view, edit, or delete meal reviews with ease. The layout is designed for smooth navigation, making it simple for you to manage feedback, update entries, or remove them as needed, all in an intuitive and efficient way."
+  heading:"All Reviews",
+  desc:"This platform lets you view, edit, or delete meal reviews with ease. The layout is designed for smooth navigation, making it simple for Admin to manage feedback, or remove them as needed, all in an intuitive and efficient way."
 }
 
 const messages = {
@@ -96,7 +96,7 @@ const messages = {
 
 
 function TableRow({item,idx, deleteReview}){
-  console.log(item);
+  // console.log(item);
   const {_id,image,title,likes,reviewCount,reviewID, comment, myRating} = item || {}
   const data = {reviewID:reviewID, mealID:_id, myRating:myRating}
   return (

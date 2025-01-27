@@ -62,7 +62,7 @@ const postMealMutation = useMutation({
     closeModal()
   },
   onError:(error)=>{
-    console.log(error)
+    Toast.fire({icon:"error", title:`${error.message} Error`})
   }
 })
 
@@ -85,7 +85,7 @@ async function handleAddMeal(data){
     }
     if(userData?.email){
       postMealMutation.mutate(newData)
-      console.log(newData)
+      // console.log(newData)
     }
     reset({
         title:"",

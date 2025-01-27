@@ -39,7 +39,7 @@ function UpcomingMeals(){
     return <FoodLoading/>
   }
 
-  console.log(data)
+  // console.log(data)
   return (
     <>
     <DynamicTitle headingData={"Upcoming Meal"}/>

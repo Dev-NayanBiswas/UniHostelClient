@@ -62,7 +62,7 @@ const postMealMutation = useMutation({
     Toast.fire({icon:"success",title:"Successfully added Meal from Mutation"})
   },
   onError:(error)=>{
-    console.log(error)
+    Toast.fire({icon:"error", title:`${error.message} Error`})
   }
 })
 

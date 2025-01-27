@@ -26,12 +26,13 @@ import SecureRoute from "../Pages/Private/SecureRoute";
 import AdminRoute from "../Pages/Private/AdminRoute";
 import BuySubscription from "../Pages/BuySubscription/BuySubscription";
 import axios from "axios";
+import ErrorPage from "../Pages/ErrorPage.jsx/ErrorPage";
 
 const Routers = createBrowserRouter([
     {
         path:"/",
         element:<MainLayouts/>,
-        errorElement:<h1>Error Pages Goes here</h1>,
+        errorElement:<ErrorPage/>,
         children:[
             {
                 path:"/",

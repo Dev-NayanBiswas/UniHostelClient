@@ -38,7 +38,7 @@ function MealDetails(){
     queryFn:async()=>{
       const response = await axiosSecure.get(`/studentMeals/${userEmail}`);
       const result = await response.data;
-      console.log(result);
+      // console.log(result);
       return result;
     },
     enabled:!!userEmail && !loading,
@@ -90,7 +90,7 @@ function MealDetails(){
 
   const {badge,role,name,image:studentPhoto,email} = student?.studentData || {};
 
-  console.log(mealArrayValue)
+  // console.log(mealArrayValue)
 
   const disabled = mealArrayValue?.mealIDs?.includes(_id);
 
@@ -120,7 +120,7 @@ function MealDetails(){
         status:"requested",
       }
       const result = await addRequestedMeals(setData);
-      console.log(result);
+      // console.log(result);
       if(result?.result?.insertedId){
         Toast.fire({
           icon:"success",

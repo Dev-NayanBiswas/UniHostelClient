@@ -11,7 +11,7 @@ function useStudent(){
         queryFn:async()=>{
             const response = await axiosSecure.get(`/isStudent/${userData?.email}`);
             const result = await response.data;
-            console.log(result);
+            // console.log(result);
             return result;
         },
         enabled: !!userData?.email && !loading,
