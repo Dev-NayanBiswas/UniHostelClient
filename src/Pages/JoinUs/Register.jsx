@@ -58,7 +58,7 @@ function handleRegistration(data){
                 postStudent(studentData);
                 navigate(location.state? location.state : "/")
    })
-   .catch((error)=>console.error(error.message))
+   .catch((error)=>Toast.fire({icon:"error", title:"Error in Registration"}))
   //  console.log(login.user.accessToken)
   //  console.log(studentData)
    reset({

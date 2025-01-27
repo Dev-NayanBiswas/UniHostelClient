@@ -35,6 +35,12 @@ function Meals(){
   const handleSearchDebounced = debounce((value) => {
     setSearch(value);
   }, 1000);
+  const handleMinDebounced = debounce((value) => {
+    setMin(value);
+  }, 200);
+  const handleMaxDebounced = debounce((value) => {
+    setMax(value);
+  }, 200);
 
   const {isLoading, data, isError, error} = useQuery({
     queryKey:["meals", category, search, sort, min, max],
@@ -115,7 +121,7 @@ function Meals(){
     <section>
       <section className="w-full mt-4 flex justify-center items-center gap-1">
         <div className="flex justify-between">
-          <span className="py-1 text-xs text-center text-gray-bg/45 w-[61px] font-heading rounded-full bg-logo-yellow font-semibold">Min : {min}</span>
+          <span className="py-1 text-xs text-center text-gray-bg/45 min-w-[61px] font-heading rounded-full bg-logo-yellow font-semibold">Min : {min}</span>
         </div>
         <input
           type="range"
@@ -123,8 +129,8 @@ function Meals(){
           max="20"
           step="1"
           value={min}
-          onChange={(e) => setMin(e.target.value)}
-          className="w-full bg-gray-600/25 h-[2px] rounded-full accent-logo-yellow appearance-none"
+          onChange={(e) => handleMinDebounced(e.target.value)}
+          className="w-full bg-gray-600/25 h-[2px] rounded-full accent-logo-yellow appearance-none cursor-pointer"
         />
       </section>
       <section className="w-full mt-4 flex justify-center items-center gap-1">
@@ -135,11 +141,11 @@ function Meals(){
           max="20"
           step="1"
           value={max}
-          onChange={(e) => setMax(e.target.value)}
-          className="w-full bg-gray-600/25 h-[2px] rounded-full accent-logo-yellow appearance-none"
+          onChange={(e) => handleMaxDebounced(e.target.value)}
+          className="w-full bg-gray-600/25 h-[2px] rounded-full accent-logo-yellow appearance-none cursor-pointer"
         />
         <div className="flex justify-between">
-          <span className="py-1 text-xs text-center text-gray-bg/45 w-[61px] font-heading rounded-full bg-logo-yellow font-semibold">Max : {max}</span>
+          <span className="py-1 text-xs text-center text-gray-bg/45 min-w-[61px] font-heading rounded-full bg-logo-yellow font-semibold whitespace-nowrap px-2">Max : {max}</span>
         </div>
       </section>
       </section>

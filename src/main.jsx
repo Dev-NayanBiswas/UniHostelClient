@@ -10,6 +10,7 @@ import AuthProvider from "./Providers/AuthProvider";
 import axios from "axios";
 import { ParallaxProvider } from "react-scroll-parallax";
 import { ToastContainer } from "react-toastify";
+import { ReactLenis, useLenis } from 'lenis/react'
 
 const queryClient = new QueryClient();
 
@@ -21,7 +22,9 @@ createRoot(document.getElementById("root")).render(
       <AuthProvider>
       <QueryClientProvider client={queryClient}>
         <ParallaxProvider>
-      <RouterProvider router={Routers}/>
+        <ReactLenis root>
+        <RouterProvider router={Routers}/>
+        </ReactLenis>
       <ReactQueryDevtools initialIsOpen />
       </ParallaxProvider>
       <ToastContainer position='top-center' />

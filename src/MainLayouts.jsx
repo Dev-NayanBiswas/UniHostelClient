@@ -1,6 +1,7 @@
 import { Outlet } from "react-router-dom"
 import Container from "./Components/Container"
 import Navbar from "./Components/Navbar/Navbar"
+import Footer from "./Components/Footer/Footer"
 
 function MainLayouts() {
   return (
@@ -15,7 +16,7 @@ function MainLayouts() {
             <Outlet/>
           </section>
         </Container>
-        <h1 className="min-h-[30vh]">Footer</h1>
+        <Footer/>
       </section>
     </>
   )

@@ -75,6 +75,7 @@ function AuthProvider({children}){
               localStorage.removeItem("ClientSecret")
               setLoading(false)
             }
+            setLoading(false)
             
           })
           return ()=>{
