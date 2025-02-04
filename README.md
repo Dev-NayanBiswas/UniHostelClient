@@ -12,7 +12,10 @@
 </a>
 </p>
 
-***
+
+
+
+
 #### *Short Overview*
 *unihostel is for university students who want to get hustle free food for daily and monthly basis, Terms are simple buy any subscription packages for months and get all the benefits under the condition of subscription, Only logged in students and subscribed students can access whole website*
 
@@ -33,7 +36,17 @@
 - *Admin can filter out the less interacted of favorite meals and can take actions*
 - *Admin can remove miss leading reviews as well*
 
+***
 
+| Role   | Email   | Password   |
+|---------|---------|------------|
+| Admin  | test@admin.com  | Nayan@123 |
+| Student  | lal@neel.com  | Nayan@123 |
+
+
+[_Feel Free to Visit UniHostel_](https://unihostel.netlify.app)
+
+***
 
 
 
@@ -94,12 +107,26 @@
 
 
 <br/>
+<br/>
+<br/>
 
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
 <p>
 <a>
 <h1 align="center">Routes & Components</h1>
 </a>
 </p>
+
 
 
 
@@ -149,8 +176,12 @@ class id20,id21,id22,id23,id24,id25 homeStyle
 
 ```
 
-
-
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
 <br/>
 
 
@@ -233,13 +264,6 @@ class id20,id21,id22,id23,id24,id25,id26,id27 homeStyle
 </br>
 
 
-
-
-
-
-
-
-[**_Feel Free to Visit UniHostel_**](https://unihostel.netlify.app)
 <br/>
 <p>
     <a>
@@ -261,8 +285,6 @@ class id20,id21,id22,id23,id24,id25,id26,id27 homeStyle
 
 
 
-clientClassroom - https://github.com/Programming-Hero-Web-Course4/b10a12-client-side-Dev-NayanBiswas.git
 
 
-serverClassroom - https://github.com/Programming-Hero-Web-Course4/b10a12-server-side-Dev-NayanBiswas.git
 
