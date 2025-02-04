@@ -6,7 +6,7 @@ import axios from "axios";
 import MealLoading from "../../../Components/Loadings/MealLoading";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAnglesLeft, faAnglesRight } from "@fortawesome/free-solid-svg-icons";
-import Container from "../../../Components/Container";
+import { motion } from "motion/react";
 
 
 const headingData = {
@@ -37,7 +37,6 @@ function CategoryMeals(){
     }
 
 
-
   return (
     <>
     <section className="min-h-[70vh]">
@@ -50,22 +49,22 @@ function CategoryMeals(){
         </section>
         <section className="my-10 flex flex-wrap gap-5 justify-center items-center min-h-[50vh]">
           {
-            data?.data?.result.slice(0,cardNumber).map((item)=><MealCard key={item._id} cardData={item}/>)
+            data?.data?.result.slice(0,cardNumber).map((item, index)=><MealCard key={item._id} index={index} cardData={item}/>)
           }
         </section>
 
           <section className="my-5 mx-10 flex justify-between items-center">
           {
-            cardNumber > 10 ? <button onClick={()=>setCardNumber(prev=>prev-5)}>
-            <FontAwesomeIcon className="text-xl font-semibold text-logo-yellow fa-beat" icon={faAnglesLeft}/>
-          </button> : ""
+            cardNumber > 10 ? <motion.button whileHover={{scale:1.5}} whileTap={{scale:1}} transition={{duration:0.5}} onClick={()=>setCardNumber(prev=>prev-5)}>
+            <FontAwesomeIcon className="text-xl font-semibold text-logo-yellow" icon={faAnglesLeft}/>
+          </motion.button> : ""
           }
           <div className="w-full"/>
           {
             data?.data?.result?.length > cardNumber ||  data?.data?.result?.length === 10 ?
-            <button onClick={()=>setCardNumber(prev=>prev+5)}>
-            <FontAwesomeIcon className="text-xl font-semibold text-logo-yellow fa-beat" icon={faAnglesRight}/>
-          </button> : ""
+            <motion.button whileHover={{scale:1.5}} transition={{duration:0.5}} whileTap={{scale:1}} onClick={()=>setCardNumber(prev=>prev+5)}>
+            <FontAwesomeIcon className="text-xl font-semibold text-logo-yellow" icon={faAnglesRight}/>
+          </motion.button> : ""
           }
         </section>
 

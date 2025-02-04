@@ -1,11 +1,14 @@
 import { Link } from "react-router-dom"
+import { motion } from "motion/react";
 
 
-function MealCard({cardData}){
+function MealCard({cardData, index}){
   const {rating,title,price,category,image,_id} = cardData || {};
   return (
     <>
-        <div className="relative rounded-xl group overflow-hidden duration-500 h-80 aspect-square text-gray-50 border-4 border-logo-yellow">
+        <div
+          
+        className="relative rounded-xl group overflow-hidden duration-500 h-80 aspect-square text-gray-50 border-4 border-logo-yellow">
       
             <img className="h-full w-full object-cover object-center z-40 rounded-lg" src={image} alt="" />
             <Link to={`/details/${_id}`} className="bg-gray-bg/75 group-hover:w-5/12 w-4/12 duration-500 rounded-s-full text-logo-yellow font-semibold px-3 py-1 absolute top-5 right-0">See Details</Link>

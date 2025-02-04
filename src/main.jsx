@@ -11,6 +11,7 @@ import axios from "axios";
 import { ParallaxProvider } from "react-scroll-parallax";
 import { ToastContainer } from "react-toastify";
 import { ReactLenis, useLenis } from 'lenis/react'
+import { AnimatePresence } from "motion/react";
 
 const queryClient = new QueryClient();
 
@@ -18,12 +19,13 @@ axios.defaults.baseURL = import.meta.env.VITE_BASE_URl;
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
+    <AnimatePresence mode="wait">
     <HelmetProvider>
       <AuthProvider>
       <QueryClientProvider client={queryClient}>
         <ParallaxProvider>
         <ReactLenis root>
-        <RouterProvider router={Routers}/>
+        <RouterProvider key={crypto.randomUUID()} router={Routers}/>
         </ReactLenis>
       <ReactQueryDevtools initialIsOpen />
       </ParallaxProvider>
@@ -31,5 +33,6 @@ createRoot(document.getElementById("root")).render(
     </QueryClientProvider>
       </AuthProvider>
     </HelmetProvider>
+    </AnimatePresence>
   </StrictMode>,
 );
