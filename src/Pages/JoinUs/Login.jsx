@@ -61,7 +61,8 @@ function handleLogin(data){
     <HeadingTitle headingData={headingData}/>
     <section className="my-5 flex justify-center items-center gap-4">
           <button onClick={()=>setUserCred({email:"test@admin.com", password:"Nayan@123"})} className="px-7 py-2 border-2 border-logo-yellow/45 text-logo-yellow font-para font-semibold">Admin</button>
-          <button>User</button>
+          <button onClick={()=>setUserCred({email:"john@doe.com", password:"Nayan@123"})} className="px-7 py-2 border-2 border-logo-yellow/45 text-logo-yellow font-para font-semibold">User</button>
+          
     </section>
     <div className="flex justify-center items-center h-full w-full mt-20">
       <div className="w-full">
