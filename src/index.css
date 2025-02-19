@@ -5,6 +5,10 @@
 @tailwind components;
 @tailwind utilities;
 
+body{
+    overflow: hidden;
+}
+
 @layer components{
     .badgeShadow{
         filter: drop-shadow(.75em .75em .80em, silver);

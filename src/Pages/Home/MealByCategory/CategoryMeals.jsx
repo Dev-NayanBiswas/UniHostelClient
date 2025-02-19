@@ -30,7 +30,13 @@ function CategoryMeals(){
     })
 
     if(isLoading){
-      return <MealLoading/>;
+      return <section className="flex justify-center items-center w-full h-[70vh]">
+      <div className="flex flex-row gap-2 ">
+      <div className="w-4 h-4 rounded-full bg-logo-yellow animate-bounce [animation-delay:.7s]" />
+      <div className="w-4 h-4 rounded-full bg-logo-yellow animate-bounce [animation-delay:.3s]" />
+      <div className="w-4 h-4 rounded-full bg-logo-yellow animate-bounce [animation-delay:.7s]" />
+    </div>
+    </section>;
     }
     if(isError){
       return <p className="text-center text-3xl font-semibold text-red-600">{error.message}</p>
