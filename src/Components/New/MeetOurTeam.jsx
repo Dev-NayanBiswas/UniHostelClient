@@ -4,16 +4,16 @@ import HeadingTitle from '../HeadingTitle/HeadingTitle';
 function MeetOurTeam(){
   return (
     <>
-    <HeadingTitle headingData={{heading:"Our Team"}}/>
     <section className="flex flex-col-reverse lg:flex-row items-center p-6 rounded-lg gap-5">
             
 
             <section className="grid lg:grid-cols-3 md:grid-cols-3 grid-cols-2 gap-4 " >
                 {
-                    teamData?.map((item)=><TeamCard key={item.id} cardData={item}/>)
+                  teamData?.map((item)=><TeamCard key={item.id} cardData={item}/>)
                 }
             </section>
             <article className="lg:w-9/12 w-full flex flex-col gap-5">
+                <HeadingTitle headingData={{heading:"Our Team"}}/>
                 <p className="line-clamp-5">At the heart of our hostel community is a dedicated team committed to providing nutritious and delicious meals for university students. We understand the importance of a well-balanced diet in supporting academic success and overall well-being. Our chefs and kitchen staff work tirelessly to prepare meals that are not only healthy but also cater to different tastes and dietary preferences. From hearty breakfasts to fulfilling dinners, we ensure that every student has access to fresh, home-style meals in a welcoming environment.</p>
                 <p className="line-clamp-5">Beyond just serving food, our team fosters a sense of community within the hostel. We believe that shared meals bring people together, creating a space where students can connect, relax, and recharge after a long day of studies. Our friendly staff members strive to make the dining experience enjoyable, ensuring that every student feels valued and cared for. Whether it's through special meal events, themed dinners, or personalized service, we go the extra mile to make dining a highlight of student life.</p>
                 <p className="line-clamp-5">We take pride in maintaining high standards of hygiene, quality, and service. Our team continuously seeks feedback to improve the menu and enhance the overall experience for our residents. By providing consistent, nutritious meals in a warm and inclusive setting, we aim to make students feel at home away from home. For us, it's not just about food; it's about creating a supportive environment where students can thrive both academically and personally.</p>
