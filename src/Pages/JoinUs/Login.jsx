@@ -23,7 +23,14 @@ function Login(){
   const redirect = location?.state ? location.state : "/";
   const {signingWithEmail} = useAuth();
   const [showPass, setShowPass] = useState(false);
-  const {handleSubmit, formState:{errors}, register, reset} = useForm();
+  const [userCred, setUserCred] = useState({
+    email:"test@admin.com",
+    password:"Nayan@123"
+  })
+  const {handleSubmit, formState:{errors}, register, reset} = useForm({defaultValues:{
+    email : userCred.email,
+    password : userCred.password
+  }});
 
 
 function handleLogin(data){
@@ -54,6 +61,10 @@ function handleLogin(data){
     <>
     <DynamicTitle/>
     <HeadingTitle headingData={headingData}/>
+    <section className="my-5 flex justify-center items-center gap-4">
+          <button>Admin</button>
+          <button>User</button>
+    </section>
     <div className="flex justify-center items-center h-full w-full mt-20">
       <div className="w-full">
           <div className="lg:w-9/12 w-full mx-auto">
