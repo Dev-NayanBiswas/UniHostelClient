@@ -1,7 +1,7 @@
 import { Link, useLocation, useNavigate } from "react-router-dom"
 import DynamicTitle from "../../Utilities/DynamicTitle"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { faEye, faEyeSlash } from "@fortawesome/free-regular-svg-icons"
 import GoogleLogin from "./GoogleLogin"
 import useAuth from "../../Hooks/useAuth"
@@ -24,13 +24,11 @@ function Login(){
   const {signingWithEmail} = useAuth();
   const [showPass, setShowPass] = useState(false);
   const [userCred, setUserCred] = useState({
-    email:"test@admin.com",
-    password:"Nayan@123"
+    email:"",
+    password:""
   })
-  const {handleSubmit, formState:{errors}, register, reset} = useForm({defaultValues:{
-    email : userCred.email,
-    password : userCred.password
-  }});
+  const {handleSubmit, formState:{errors}, register, reset} = useForm();
+
 
 
 function handleLogin(data){
@@ -62,7 +60,7 @@ function handleLogin(data){
     <DynamicTitle/>
     <HeadingTitle headingData={headingData}/>
     <section className="my-5 flex justify-center items-center gap-4">
-          <button>Admin</button>
+          <button onClick={()=>setUserCred({email:"test@admin.com", password:"Nayan@123"})} className="px-7 py-2 border-2 border-logo-yellow/45 text-logo-yellow font-para font-semibold">Admin</button>
           <button>User</button>
     </section>
     <div className="flex justify-center items-center h-full w-full mt-20">
@@ -72,13 +70,13 @@ function handleLogin(data){
 
 
               <div>
-                <input {...register("email", {required:"Email Required"})} className="defaultInput" type="email" placeholder="Email" />
+                <input {...register("email", {required:"Email Required"})} className="defaultInput" type="email" placeholder="Email" defaultValue={userCred.email} />
                 {errors.email && <p className="text-xs text-red-400">{errors.email.message}</p>}
               </div>
 
 
               <div className="relative group">
-                <input {...register("password",{
+                <input defaultValue={userCred.password} {...register("password",{
                   required:"Password Required",
                   minLength:{
                     value:6,
